@@ -295,9 +295,14 @@ class SignumMCPClient:
     """
     Async client for Signum's MCP server.
 
-    Auth: OAuth 2.0 refresh_token grant.
-    On connect(), exchanges the stored refresh token for a fresh access token.
-    If the access token expires mid-session, auto-refreshes and retries once.
+    Uses direct JSON-RPC 2.0 over HTTP (no mcp SDK transport dependency).
+    Auth: OAuth 2.0 refresh_token grant — exchanges for access token on connect().
+
+    MCP protocol:
+      - POST /mcp with initialize → get Mcp-Session-Id in response headers
+      - All subsequent calls include Mcp-Session-Id header
+      - tools/list to discover available tools
+      - tools/call to invoke them
     """
 
     def __init__(self, server_url: str, client_id: str, refresh_token: str):
@@ -305,11 +310,25 @@ class SignumMCPClient:
         self.client_id = client_id
         self.refresh_token = refresh_token
         self._access_token: Optional[str] = None
-        self._session: Optional[Any] = None     # MCP ClientSession
-        self._read: Optional[Any] = None
-        self._write: Optional[Any] = None
+        self._session_id: Optional[str] = None
+        self._http: Optional[httpx.AsyncClient] = None
+        self._req_id: int = 0
         self._available_tools: dict[str, Any] = {}
         self._mcp_bot_edit_supported: Optional[bool] = None
+
+    def _next_id(self) -> int:
+        self._req_id += 1
+        return self._req_id
+
+    def _auth_headers(self) -> dict[str, str]:
+        h = {
+            "Authorization": f"Bearer {self._access_token}",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        }
+        if self._session_id:
+            h["Mcp-Session-Id"] = self._session_id
+        return h
 
     async def _get_access_token(self) -> str:
         """Exchange the refresh token for a fresh access token via OAuth."""
@@ -331,7 +350,6 @@ class SignumMCPClient:
             access_token = data.get("access_token")
             if not access_token:
                 raise RuntimeError(f"OAuth token response missing access_token: {list(data.keys())}")
-            # If a new refresh token is issued, store it (rotation)
             new_refresh = data.get("refresh_token")
             if new_refresh and new_refresh != self.refresh_token:
                 log.info("Refresh token rotated — updating stored token.")
@@ -344,85 +362,125 @@ class SignumMCPClient:
             )
             return access_token
 
+    async def _rpc(self, method: str, params: dict | None = None) -> Any:
+        """Send a single JSON-RPC call and return the result."""
+        if not self._http or not self._access_token:
+            raise RuntimeError("MCP not connected — call connect() first.")
+
+        payload = {
+            "jsonrpc": "2.0",
+            "id": self._next_id(),
+            "method": method,
+            "params": params or {},
+        }
+        resp = await _retry_with_backoff(
+            f"mcp_rpc:{method}",
+            self._http.post,
+            self.server_url,
+            json=payload,
+            headers=self._auth_headers(),
+        )
+        resp.raise_for_status()
+        body = resp.json()
+        if "error" in body:
+            err = body["error"]
+            raise RuntimeError(f"MCP error {err.get('code')}: {err.get('message')}")
+        return body.get("result")
+
     async def connect(self) -> None:
         """
-        Establish an MCP session.
+        Establish an MCP session via JSON-RPC over HTTP.
 
-        Obtains an OAuth access token, then connects via streamable HTTP
-        with Bearer auth.
+        1. Get OAuth access token
+        2. POST initialize to get Mcp-Session-Id
+        3. Discover available tools via tools/list
         """
         self._access_token = await self._get_access_token()
 
+        self._http = httpx.AsyncClient(timeout=CONFIG["NETWORK_TIMEOUT"])
+
+        # Send initialize (no session ID yet — first request)
+        log.info("Initializing MCP session…")
+        init_resp = await self._http.post(
+            self.server_url,
+            json={
+                "jsonrpc": "2.0",
+                "id": self._next_id(),
+                "method": "initialize",
+                "params": {
+                    "protocolVersion": "2025-06-18",
+                    "capabilities": {},
+                    "clientInfo": {"name": "deepseek-trading-bot", "version": "1.0.0"},
+                },
+            },
+            headers={
+                "Authorization": f"Bearer {self._access_token}",
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+        )
+        init_resp.raise_for_status()
+
+        # Extract session ID from response headers
+        self._session_id = init_resp.headers.get("Mcp-Session-Id")
+        if not self._session_id:
+            raise RuntimeError(
+                "MCP initialize response missing Mcp-Session-Id header. "
+                f"Got headers: {dict(init_resp.headers)}"
+            )
+        log.info("MCP session established. Session ID: %s", self._session_id[:8] + "...")
+
+        # Send initialized notification (required by spec after initialize)
         try:
-            # Lazy-import so the rest of the script can at least start without mcp installed
-            from mcp import ClientSession                       # type: ignore[import-untyped]
-            from mcp.client.streamable_http import streamablehttp_client  # type: ignore[import-untyped]
-
-            headers = {"Authorization": f"Bearer {self._access_token}"}
-            self._stream_ctx = streamablehttp_client(
+            await self._http.post(
                 self.server_url,
-                headers=headers,
+                json={"jsonrpc": "2.0", "method": "notifications/initialized"},
+                headers=self._auth_headers(),
             )
-            read, write, _ = await self._stream_ctx.__aenter__()
-            self._read = read
-            self._write = write
-            self._session = ClientSession(read, write)
-            await self._session.initialize()
-            # Discover available tools
-            tools_result = await self._session.list_tools()
-            for tool in (tools_result.tools if hasattr(tools_result, "tools") else tools_result):
-                self._available_tools[tool.name] = tool
-            log.info("MCP connected. Available tools: %s", sorted(self._available_tools.keys()))
+        except Exception:
+            pass  # best-effort
 
-            # Check whether bot-editing tools exist
-            edit_tools = {CONFIG["MCP_TOOL_EDIT_BOT"], "set-bot-trading-pair", "update-bot-title"}
-            self._mcp_bot_edit_supported = bool(edit_tools & self._available_tools.keys())
+        # Discover tools
+        log.info("Discovering MCP tools…")
+        tools_result = await self._rpc("tools/list")
+        tool_list = tools_result if isinstance(tools_result, list) else tools_result.get("tools", [])
+        for tool in tool_list:
+            self._available_tools[tool["name"]] = tool
+        log.info("MCP connected. Available tools: %s", sorted(self._available_tools.keys()))
 
-        except ImportError:
-            log.error(
-                "The 'mcp' Python package is not installed. "
-                "Install it with: pip install mcp"
-            )
-            raise
-        except Exception as exc:
-            log.error(
-                "Failed to connect to Signum MCP at %s. "
-                "Underlying error: %s",
-                self.server_url, exc,
-            )
-            raise
+        # Check whether bot-editing tools exist
+        edit_tools = {CONFIG["MCP_TOOL_EDIT_BOT"], "set-bot-trading-pair", "update-bot-title"}
+        self._mcp_bot_edit_supported = bool(edit_tools & self._available_tools.keys())
 
     async def close(self) -> None:
         """Tear down the MCP session."""
-        if self._stream_ctx:
+        if self._http:
             try:
-                await self._stream_ctx.__aexit__(None, None, None)
+                await self._http.aclose()
             except Exception:
                 pass
-        self._session = None
-        self._read = None
-        self._write = None
+        self._http = None
+        self._session_id = None
 
     async def _call_tool(self, tool_name: str, arguments: dict[str, Any]) -> Any:
-        """Call an MCP tool by name. Returns parsed JSON content."""
-        if not self._session:
+        """Call an MCP tool by name via tools/call. Returns parsed result."""
+        if not self._session_id:
             raise RuntimeError("MCP session not connected — call connect() first.")
         if tool_name not in self._available_tools:
             raise ValueError(
                 f"MCP tool '{tool_name}' not found. Available: {sorted(self._available_tools.keys())}"
             )
-        result = await self._session.call_tool(tool_name, arguments=arguments)
-        # MCP tool results are Content objects; extract text
-        content_parts = result.content if hasattr(result, "content") else result
-        texts: list[str] = []
-        for part in content_parts:
-            if hasattr(part, "text"):
-                texts.append(part.text)
+        result = await self._rpc("tools/call", {"name": tool_name, "arguments": arguments})
+        # Result is {content: [{type: "text", text: "..."}]} or similar
+        content = result.get("content", [result]) if isinstance(result, dict) else [result]
+        texts = []
+        for part in (content if isinstance(content, list) else [content]):
+            if isinstance(part, dict) and part.get("type") == "text":
+                texts.append(part.get("text", ""))
         raw = "".join(texts)
         try:
             return json.loads(raw)
         except json.JSONDecodeError:
-            # Some MCP tools return non-JSON; return raw string
             return raw
 
     async def fetch_holdings(self) -> dict[str, Any]:
