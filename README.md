@@ -44,6 +44,12 @@ python deepseek_trading_bot.py
 
 # Live (sends real orders)
 python deepseek_trading_bot.py --live
+
+# Paper trading (real data, virtual portfolio — safe testing)
+python deepseek_trading_bot.py --paper
+
+# Simulated orders (inject fake signals for pipeline testing)
+python deepseek_trading_bot.py --simulate-orders test/test_orders.json
 ```
 
 ## Environment Variables
@@ -115,6 +121,52 @@ This prevents stale percentages from under-sizing later orders as quote balance 
 Every run saves the full DeepSeek prompt + response to `decisions/run-YYYYMMDDTHHMMSSZ.json`.
 Review these files to understand the model's reasoning for each trading decision.
 
+## Modes
+
+| Flag | Holdings source | DeepSeek | Execution | Label |
+|---|---|---|---|---|
+| (default) | Real MCP | Real | Logged only | `[DRY-RUN]` |
+| `--paper` | Virtual portfolio | Real | Virtual fills at real prices | `[PAPER TRADE]` |
+| `--live` | Real MCP | Real | Real send-trading-signal | `[LIVE]` |
+| `--simulate-orders PATH` | Real MCP | Bypassed (JSON file) | Logged only | `[DRY-RUN]` |
+
+### Paper Trading (`--paper`)
+
+Paper mode runs the full pipeline (real Trend Radar, real DeepSeek decisions, full
+guardrail checks with real pair prices) but executes against a **virtual portfolio**
+stored in `paper_state.json`. The portfolio persists between runs, so a daily cron
+job builds an equity curve over time with zero capital at risk.
+
+- `python deepseek_trading_bot.py --paper` — run once
+- `python deepseek_trading_bot.py --paper --paper-balance 1000` — start with $1,000
+- `python paper_summary.py` — full P&L report, trade breakdown, equity curve
+- `python paper_summary.py --brief` — one-line NAV/P&L/trades summary
+
+### Simulated Orders (`--simulate-orders`)
+
+Bypasses DeepSeek entirely — loads orders from a JSON file so you can test the
+order pipeline (ticker collision, sizing math, min order, auto-convert, dry-run
+payload) with hand-checkable fake signals.
+
+```json
+{
+  "orders": [
+    {
+      "asset": "TRX",
+      "ticker": "BINANCE:TRXUSDT",
+      "action": "buy",
+      "order_size": 0,
+      "position_size": 1.0,
+      "_force_size_pct": 8.0,
+      "reasoning": "Test entry at 8% NAV sizing"
+    }
+  ]
+}
+```
+
+Optional `_force_size_pct` overrides breakout-based entry sizing for testing.
+Only works in dry-run mode (incompatible with `--live` and `--paper`).
+
 ## Scheduling (cron-compatible, one-shot)
 
 ```bash
@@ -131,12 +183,15 @@ Also works with Windows Task Scheduler, GitHub Actions, or any scheduler.
 
 | File | Purpose |
 |---|---|
-| `deepseek_trading_bot.py` | Main script — all 8 layers in one file |
+| `deepseek_trading_bot.py` | Main script — all modes + full pipeline in one file (~1,800 lines) |
 | `setup_oauth.py` | One-time OAuth 2.0 PKCE setup (run once, saves tokens to `.env`) |
+| `paper_summary.py` | Paper trading P&L report — NAV curve, win/loss, per-trade detail |
 | `requirements.txt` | Python dependencies (no mcp SDK) |
 | `.env.example` | Environment variable template |
-| `.gitignore` | Prevents committing secrets and noise |
+| `.gitignore` | Prevents committing secrets, `decisions/`, and `paper_state.json` |
+| `test/` | Simulated orders JSON + unit tests |
 | `decisions/` | Runtime audit trail — DeepSeek prompt + response per run |
+| `paper_state.json` | Paper trading portfolio state (runtime only, gitignored) |
 
 ## Dependencies
 
