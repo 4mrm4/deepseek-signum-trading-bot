@@ -41,3 +41,6 @@ package-lock.json
 
 # Runtime audit trail
 decisions/
+
+# Paper trading state (runtime portfolio)
+paper_state.json

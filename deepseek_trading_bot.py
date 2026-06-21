@@ -1115,6 +1115,297 @@ class OrderExecutor:
 
 
 # ═══════════════════════════════════════════════════════════════════════════
+# 10a. Paper Trading — Virtual Portfolio
+# ═══════════════════════════════════════════════════════════════════════════
+
+PAPER_STATE_PATH = Path(__file__).resolve().parent / "paper_state.json"
+
+
+class PaperPortfolio:
+    """
+    Virtual portfolio for paper trading.
+
+    Stores cash/stablecoin balances and open positions in a local JSON file
+    that persists between daily runs.  ``to_holdings_dict()`` emits the same
+    ``{balance: [...], positions: [...]}`` shape that Signum's get-bot-assets
+    returns, so DeepSeek sees data indistinguishable from a real account.
+    """
+
+    def __init__(self, initial_balance_usd: float):
+        self._path = PAPER_STATE_PATH
+        self._initial_balance = initial_balance_usd
+        self._state: dict[str, Any] = {}
+        self._trade_history: list[dict[str, Any]] = []
+
+        # Load existing state or initialise fresh
+        if self._path.exists():
+            self.load()
+        else:
+            self._state = {
+                "created": datetime.now(timezone.utc).isoformat(),
+                "initial_balance": initial_balance_usd,
+                "balances": {"USD": initial_balance_usd},
+                "positions": [],
+            }
+            self._trade_history = []
+            self.save()
+
+    # ------------------------------------------------------------------
+    # Persistence
+    # ------------------------------------------------------------------
+
+    def load(self) -> None:
+        with open(self._path, "r", encoding="utf-8") as f:
+            self._state = json.load(f)
+        self._trade_history = self._state.get("trade_history", [])
+
+    def save(self) -> None:
+        self._state["trade_history"] = self._trade_history
+        with open(self._path, "w", encoding="utf-8") as f:
+            json.dump(self._state, f, indent=2, default=str)
+        log.debug("[PAPER] Portfolio saved to %s", self._path)
+
+    # ------------------------------------------------------------------
+    # Accessors
+    # ------------------------------------------------------------------
+
+    def balances(self) -> dict[str, float]:
+        """Return {asset_upper: usd_value} for all cash/stablecoin balances."""
+        out: dict[str, float] = {}
+        for entry in self._state.get("balances", {}).items():
+            # JSON keys are strings; deserialise to float
+            out[_norm_asset(entry[0])] = float(entry[1])
+        return out
+
+    def positions(self) -> list[dict[str, Any]]:
+        return self._state.get("positions", [])
+
+    def nav(self) -> float:
+        """Total NAV = sum of cash balances + position values (at mark)."""
+        total = sum(float(v) for v in self._state.get("balances", {}).values())
+        for pos in self.positions():
+            qty = float(pos.get("quantity", 0))
+            mark = float(pos.get("entry_price", pos.get("mark_price", 0)))
+            total += qty * mark
+        return round(total, 6)
+
+    def trade_count(self) -> int:
+        return len(self._trade_history)
+
+    # ------------------------------------------------------------------
+    # DeepSeek-compatible holdings format
+    # ------------------------------------------------------------------
+
+    def to_holdings_dict(self) -> dict[str, Any]:
+        """
+        Emit holdings in Signum's get-bot-assets shape.
+
+        Returns ``{balance: [...], positions: [...]}`` so the same
+        ``_normalise_holdings()`` / ``_iter_holdings()`` / ``_compute_nav()``
+        helpers parse it identically to real MCP output.
+        """
+        balance_list: list[dict[str, Any]] = []
+        for coin, amount in self._state.get("balances", {}).items():
+            amt = float(amount)
+            if amt <= 0:
+                continue
+            usd_rate = FIAT_USD_RATES.get(coin.upper(), 1.0)
+            balance_list.append({
+                "coin": coin,
+                "balance": str(amt),
+                "valueUsd": round(amt * usd_rate, 6),
+            })
+
+        result: dict[str, Any] = {"balance": balance_list}
+        paper_positions = self._state.get("positions", [])
+        if paper_positions:
+            result["positions"] = list(paper_positions)
+        return result
+
+    # ------------------------------------------------------------------
+    # Trade execution (simulated fills at real market prices)
+    # ------------------------------------------------------------------
+
+    def execute_buy(
+        self, asset: str, ticker: str, quote_asset: str,
+        cost_usd: float, fill_price: float, timestamp: str,
+    ) -> dict[str, Any]:
+        """
+        Execute a simulated buy at *fill_price*.
+
+        Deducts *cost_usd* from available balances (auto-converts across
+        stablecoins if needed) and adds the position to the virtual portfolio.
+        Returns a trade record for the history log.
+        """
+        qty = cost_usd / fill_price if fill_price > 0 else 0.0
+
+        # Deduct cost_usd from balances — prefer direct quote, fall back to
+        # pro-rata draw across all held stablecoin/fiat balances.
+        remaining = cost_usd
+        balances = self._state.setdefault("balances", {})
+        quote_norm = _norm_asset(quote_asset)
+        if quote_norm in balances and float(balances[quote_norm]) >= remaining:
+            balances[quote_norm] = round(float(balances[quote_norm]) - remaining, 8)
+            remaining = 0.0
+        else:
+            # Deduct from the exact quote first, then pro-rata from others
+            if quote_norm in balances:
+                remaining -= float(balances.pop(quote_norm, 0))
+            # Pro-rata across remaining stablecoin/fiat balances
+            if remaining > 0:
+                stable = {
+                    k: float(v) for k, v in balances.items()
+                    if _is_stablecoin(k) or _is_fiat(k)
+                }
+                total = sum(stable.values())
+                if total <= 0:
+                    raise ValueError(f"[PAPER] Insufficient balance for {asset} buy — need ${cost_usd:.2f}")
+                for coin, val in stable.items():
+                    share = remaining * (val / total)
+                    draw = min(share, val)
+                    balances[coin] = round(float(balances[coin]) - draw, 8)
+                    remaining -= draw
+                remaining = max(0.0, remaining)
+
+        # Clean up zero balances
+        self._state["balances"] = {k: v for k, v in balances.items() if float(v) > 0.000001}
+
+        # Add position
+        positions: list[dict[str, Any]] = self._state.setdefault("positions", [])
+        positions.append({
+            "asset": asset,
+            "ticker": ticker,
+            "quantity": str(round(qty, 8)),
+            "entry_price": fill_price,
+            "cost_usd": cost_usd,
+            "timestamp": timestamp,
+        })
+
+        trade = {
+            "timestamp": timestamp,
+            "action": "buy",
+            "asset": asset,
+            "ticker": ticker,
+            "qty": round(qty, 8),
+            "price": fill_price,
+            "cost_usd": round(cost_usd, 2),
+        }
+        self._trade_history.append(trade)
+        self.save()
+        return trade
+
+    def execute_sell(
+        self, asset: str, fill_price: float, timestamp: str,
+    ) -> dict[str, Any]:
+        """
+        Execute a simulated sell at *fill_price*.
+
+        Removes the position(s) for *asset* from the virtual portfolio and
+        credits the proceeds to USD balance. Returns a trade record.
+        """
+        asset_norm = _norm_asset(asset)
+        positions: list[dict[str, Any]] = self._state.get("positions", [])
+        matching = [p for p in positions if _norm_asset(p.get("asset", "")) == asset_norm]
+        if not matching:
+            raise ValueError(f"[PAPER] Cannot sell {asset} — not held in paper portfolio")
+
+        total_qty = sum(float(p.get("quantity", 0)) for p in matching)
+        proceeds = total_qty * fill_price
+
+        # Remove all matching positions
+        self._state["positions"] = [p for p in positions if _norm_asset(p.get("asset", "")) != asset_norm]
+
+        # Credit USD balance
+        balances = self._state.setdefault("balances", {})
+        balances["USD"] = round(float(balances.get("USD", 0)) + proceeds, 8)
+
+        trade = {
+            "timestamp": timestamp,
+            "action": "sell",
+            "asset": asset,
+            "ticker": matching[0].get("ticker", ""),
+            "qty": round(total_qty, 8),
+            "price": fill_price,
+            "proceeds_usd": round(proceeds, 2),
+        }
+        self._trade_history.append(trade)
+        self.save()
+        return trade
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 10b. Paper Executor (subclass — structurally cannot call send-trading-signal)
+# ═══════════════════════════════════════════════════════════════════════════
+
+class PaperExecutor(OrderExecutor):
+    """
+    Order executor for paper trading.
+
+    Inherits all guardrails (ticker collision, min order, sizing recompute,
+    quote balance tracking) from OrderExecutor by setting ``dry_run=False``.
+    Overrides ``send_order()`` to fill against the virtual PaperPortfolio
+    using real market prices from Signum's get-pair-price MCP tool.
+
+    This executor NEVER calls send-trading-signal, set_trading_pair, or
+    update_bot_title_suffix — those are structurally impossible here.
+    """
+
+    def __init__(self, bot_id: int, mcp: SignumMCPClient, paper: PaperPortfolio):
+        super().__init__(bot_id, mcp, dry_run=False)
+        self._paper = paper
+
+    async def send_order(self, order: Order, timestamp: str) -> bool:
+        """Fill the order against the virtual portfolio at a real market price."""
+        # Fetch real fill price from Signum
+        fill_price: Optional[float] = None
+        if order.ticker:
+            fill_price = await self.mcp.fetch_pair_price(order.ticker)
+
+        if fill_price is None:
+            log.warning("[PAPER] Cannot fill %s %s — no pair price available. Using ref price fallback.",
+                        order.action, order.ticker)
+            # For paper, we can use a 0-price fill so the run doesn't abort;
+            # the trade history will show fill_price=0.0 which is obvious.
+            fill_price = 0.0
+
+        order_value_usd = (order.order_size / 100.0) * self._get_quote_balance(
+            order.ticker.split("/")[-1] if "/" in (order.ticker or "") else "USDT"
+        )
+
+        try:
+            if order.action == "buy":
+                trade = self._paper.execute_buy(
+                    asset=order.asset,
+                    ticker=order.ticker,
+                    quote_asset=order.ticker.split("/")[-1]
+                    if "/" in (order.ticker or "") else "USDT",
+                    cost_usd=order_value_usd,
+                    fill_price=fill_price,
+                    timestamp=timestamp,
+                )
+                log.info(
+                    "[PAPER] Filled BUY  %s  qty=%.6f  @ $%.4f  cost=$%.2f | %s",
+                    order.ticker, trade["qty"], fill_price, order_value_usd,
+                    order.reasoning[:120] if order.reasoning else "",
+                )
+            else:
+                trade = self._paper.execute_sell(
+                    asset=order.asset,
+                    fill_price=fill_price,
+                    timestamp=timestamp,
+                )
+                log.info(
+                    "[PAPER] Filled SELL %s  qty=%.6f  @ $%.4f  proceeds=$%.2f | %s",
+                    order.ticker, trade["qty"], fill_price, trade.get("proceeds_usd", 0),
+                    order.reasoning[:120] if order.reasoning else "",
+                )
+            return True
+        except Exception as exc:
+            log.error("[PAPER] Fill FAILED [%s %s]: %s", order.action, order.ticker, exc)
+            return False
+
+
+# ═══════════════════════════════════════════════════════════════════════════
 # 11. Verification
 # ═══════════════════════════════════════════════════════════════════════════
 
@@ -1196,6 +1487,34 @@ async def send_telegram(
         return False
 
 
+def _verify_paper_portfolio(
+    paper: "PaperPortfolio",
+    expected_assets: set[str],
+    exited_assets: set[str],
+    entered_assets: set[str],
+) -> list[str]:
+    """Verify virtual portfolio state matches expected end-state after trades."""
+    errors: list[str] = []
+    positions = paper.positions()
+    held_now = {_norm_asset(p.get("asset", "")) for p in positions}
+
+    for asset in expected_assets:
+        if asset not in held_now:
+            errors.append(f"[PAPER] ASSET MISSING after entry: {asset}")
+
+    for asset in exited_assets:
+        if asset in held_now:
+            errors.append(f"[PAPER] ASSET STILL HELD after exit: {asset}")
+
+    for asset in entered_assets:
+        if asset not in held_now:
+            errors.append(f"[PAPER] ENTRY NOT FOUND in portfolio: {asset}")
+
+    if not errors:
+        log.info("[PAPER] Post-trade verification: all holdings match expected end-state.")
+    return errors
+
+
 def _build_telegram_summary(
     nav_before: float,
     nav_after: Optional[float],
@@ -1203,9 +1522,15 @@ def _build_telegram_summary(
     orders_skipped: list[dict],
     errors: list[str],
     dry_run: bool,
+    paper: bool = False,
 ) -> str:
     """Build a human-readable Telegram summary message."""
-    mode = "DRY-RUN" if dry_run else "LIVE"
+    if paper:
+        mode = "PAPER TRADE"
+    elif dry_run:
+        mode = "DRY-RUN"
+    else:
+        mode = "LIVE"
     lines = [
         f"*DeepSeek Trading Bot — TR-GC-Crypto-9* ({mode})",
         f"*Time:* {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
@@ -1248,8 +1573,17 @@ def _build_telegram_summary(
 # 13. Main Orchestrator
 # ═══════════════════════════════════════════════════════════════════════════
 
-async def run(dry_run: bool = True, simulate_orders_path: str | None = None) -> None:
+async def run(
+    dry_run: bool = True,
+    paper_mode: bool = False,
+    paper_balance: float = 232.90,
+    simulate_orders_path: str | None = None,
+) -> None:
     """Execute one full run of the trading bot.
+
+    When paper_mode is True, the bot uses real market data and real DeepSeek
+    decisions but executes against a simulated virtual portfolio. Portfolio
+    state persists in paper_state.json between runs.
 
     When simulate_orders_path is provided, DeepSeek is bypassed and orders
     are loaded from a JSON file instead. Each order may include an optional
@@ -1268,6 +1602,14 @@ async def run(dry_run: bool = True, simulate_orders_path: str | None = None) -> 
     telegram_token = os.getenv("TELEGRAM_BOT_TOKEN", "")
     telegram_chat_id = os.getenv("TELEGRAM_CHAT_ID", "")
 
+    # --- Paper portfolio init ---
+    paper_portfolio: Optional[PaperPortfolio] = None
+    if paper_mode:
+        log.info("[PAPER] Initialising virtual portfolio (balance=$%.2f)…", paper_balance)
+        paper_portfolio = PaperPortfolio(paper_balance)
+        log.info("[PAPER] Portfolio NAV: $%.2f | trades so far: %d",
+                 paper_portfolio.nav(), paper_portfolio.trade_count())
+
     # --- Simulated orders: load from file, skip DeepSeek ---
     simulated_orders_raw: Optional[dict] = None
     if simulate_orders_path:
@@ -1278,21 +1620,27 @@ async def run(dry_run: bool = True, simulate_orders_path: str | None = None) -> 
             sys.exit(f"ERROR: {simulate_orders_path} must contain {{\"orders\": [...]}}.")
 
     # --- Connect MCP ---
-    log.info("=== DeepSeek Trading Bot (TR-GC-Crypto-9) starting === mode=%s", "dry-run" if dry_run else "LIVE")
+    mode_label = "PAPER" if paper_mode else ("dry-run" if dry_run else "LIVE")
+    log.info("=== DeepSeek Trading Bot (TR-GC-Crypto-9) starting === mode=%s", mode_label)
     mcp = SignumMCPClient(CONFIG["MCP_SERVER_URL"], mcp_client_id, mcp_refresh_token)
     try:
         await mcp.connect()
     except Exception as exc:
         errors.append(f"MCP connection failed: {exc}")
         # Try to notify Telegram even on fatal errors
-        await _maybe_notify(telegram_token, telegram_chat_id, 0.0, None, [], [], errors, dry_run)
+        await _maybe_notify(telegram_token, telegram_chat_id, 0.0, None, [], [], errors, dry_run, paper_mode)
         sys.exit(1)
 
     try:
         # --- Step 1: Fetch HOLDINGS ---
-        holdings_data = await mcp.fetch_holdings()
-        nav_before = _compute_nav(holdings_data)
-        log.info("NAV before: $%.2f", nav_before)
+        if paper_mode and paper_portfolio is not None:
+            holdings_data = paper_portfolio.to_holdings_dict()
+            nav_before = _compute_nav(holdings_data)
+            log.info("[PAPER] Virtual NAV before: $%.2f", nav_before)
+        else:
+            holdings_data = await mcp.fetch_holdings()
+            nav_before = _compute_nav(holdings_data)
+            log.info("NAV before: $%.2f", nav_before)
 
         # --- Step 2: Fetch Trend Radar ---
         trend_radar = await mcp.fetch_trend_radar()
@@ -1326,8 +1674,12 @@ async def run(dry_run: bool = True, simulate_orders_path: str | None = None) -> 
                 return
 
         # --- Step 5: Set up order executor ---
-        executor = OrderExecutor(CONFIG["BOT_ID"], mcp, dry_run=dry_run)
-        initial_balances = _get_quote_balance(holdings_data)
+        if paper_mode and paper_portfolio is not None:
+            executor = PaperExecutor(CONFIG["BOT_ID"], mcp, paper_portfolio)
+            initial_balances = paper_portfolio.balances()
+        else:
+            executor = OrderExecutor(CONFIG["BOT_ID"], mcp, dry_run=dry_run)
+            initial_balances = _get_quote_balance(holdings_data)
         executor.update_balances(initial_balances)
 
         # Track what we do this run
@@ -1467,7 +1819,8 @@ async def run(dry_run: bool = True, simulate_orders_path: str | None = None) -> 
             )
 
             # ---- 6e. Set trading pair (best-effort, warn if unsupported) ----
-            if order.ticker:
+            # Paper mode: no real bot to configure — skip.
+            if order.ticker and not paper_mode:
                 await mcp.set_trading_pair(order.ticker)
 
             # ---- 6f. Send order ----
@@ -1498,7 +1851,8 @@ async def run(dry_run: bool = True, simulate_orders_path: str | None = None) -> 
                 orders_skipped.append({"asset": order.asset, "reason": reason})
 
         # --- Step 7: Bot title suffix (best-effort) ---
-        if not dry_run:
+        # Paper mode: no real bot — skip.
+        if not dry_run and not paper_mode:
             updated = await mcp.update_bot_title_suffix("(TR-GC-Crypto-9)")
             if not updated:
                 log.warning("Could not update bot title suffix — MCP may not support edit-bot.")
@@ -1506,13 +1860,22 @@ async def run(dry_run: bool = True, simulate_orders_path: str | None = None) -> 
         # --- Step 8: Verification ---
         nav_after: Optional[float] = None
         try:
-            post_holdings = await mcp.fetch_holdings()
-            nav_after = _compute_nav(post_holdings)
-            log.info("NAV after: $%.2f", nav_after)
-            verification_errors = await verify_holdings(
-                mcp, held_assets_now, exited_assets, entered_assets,
-            )
-            errors.extend(verification_errors)
+            if paper_mode and paper_portfolio is not None:
+                # Verify against virtual portfolio state
+                nav_after = paper_portfolio.nav()
+                log.info("[PAPER] Virtual NAV after: $%.2f", nav_after)
+                verification_errors = _verify_paper_portfolio(
+                    paper_portfolio, held_assets_now, exited_assets, entered_assets,
+                )
+                errors.extend(verification_errors)
+            else:
+                post_holdings = await mcp.fetch_holdings()
+                nav_after = _compute_nav(post_holdings)
+                log.info("NAV after: $%.2f", nav_after)
+                verification_errors = await verify_holdings(
+                    mcp, held_assets_now, exited_assets, entered_assets,
+                )
+                errors.extend(verification_errors)
         except Exception as exc:
             errors.append(f"Verification failed: {exc}")
 
@@ -1522,11 +1885,11 @@ async def run(dry_run: bool = True, simulate_orders_path: str | None = None) -> 
     # --- Step 9: Telegram notification ---
     await _maybe_notify(
         telegram_token, telegram_chat_id, nav_before, nav_after,
-        orders_sent, orders_skipped, errors, dry_run,
+        orders_sent, orders_skipped, errors, dry_run and not paper_mode, paper_mode,
     )
 
     log.info("=== Run complete === mode=%s orders_sent=%d skipped=%d errors=%d",
-             "dry-run" if dry_run else "LIVE", len(orders_sent), len(orders_skipped), len(errors))
+             mode_label, len(orders_sent), len(orders_skipped), len(errors))
     # Ensure logs are flushed on Windows before process exits
     for h in logging.getLogger().handlers:
         h.flush()
@@ -1535,12 +1898,13 @@ async def run(dry_run: bool = True, simulate_orders_path: str | None = None) -> 
 async def _maybe_notify(
     token: str, chat_id: str, nav_before: float, nav_after: Optional[float],
     orders_sent: list, orders_skipped: list, errors: list, dry_run: bool,
+    paper: bool = False,
 ) -> None:
     """Send Telegram notification if configured; log failure but don't crash."""
     if not token or not chat_id:
         log.info("Telegram not configured — skipping notification.")
         return
-    msg = _build_telegram_summary(nav_before, nav_after, orders_sent, orders_skipped, errors, dry_run)
+    msg = _build_telegram_summary(nav_before, nav_after, orders_sent, orders_skipped, errors, dry_run, paper)
     await send_telegram(token, chat_id, msg)
 
 
@@ -1552,11 +1916,28 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="DeepSeek Trading Bot — TR-GC-Crypto-9 (Bot ID 25880)",
     )
-    parser.add_argument(
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
         "--live",
         action="store_true",
         default=False,
         help="Send real orders to Signum (default: dry-run, which only logs intended actions).",
+    )
+    group.add_argument(
+        "--paper",
+        action="store_true",
+        default=False,
+        help="Paper trading: use real market data + real DeepSeek decisions, "
+             "but execute against a simulated virtual portfolio. "
+             "Portfolio state persists in paper_state.json between runs.",
+    )
+    parser.add_argument(
+        "--paper-balance",
+        type=float,
+        default=232.90,
+        metavar="USD",
+        help="Starting USD balance for paper portfolio (default: 232.90). "
+             "Only used on first run; ignored if paper_state.json already exists.",
     )
     parser.add_argument(
         "--simulate-orders",
@@ -1569,17 +1950,28 @@ def main() -> None:
     )
     args = parser.parse_args()
     live = args.live
+    paper = args.paper
+    paper_balance = args.paper_balance
     simulate_orders = args.simulate_orders
 
-    if live and simulate_orders:
-        sys.exit("ERROR: --simulate-orders can only be used in dry-run mode (without --live).")
+    if simulate_orders and (live or paper):
+        which = "--live" if live else "--paper"
+        sys.exit(f"ERROR: --simulate-orders is incompatible with {which}. "
+                  "Use plain dry-run for simulated orders.")
 
     if live:
         log.warning("=" * 60)
         log.warning("  LIVE MODE — real orders will be sent to the exchange.")
         log.warning("=" * 60)
+    elif paper:
+        log.info("=== Paper Trading Mode — virtual portfolio, real data ===")
 
-    asyncio.run(run(dry_run=not live, simulate_orders_path=simulate_orders))
+    asyncio.run(run(
+        dry_run=not (live or paper),
+        paper_mode=paper,
+        paper_balance=paper_balance,
+        simulate_orders_path=simulate_orders,
+    ))
 
 
 if __name__ == "__main__":

@@ -4,634 +4,1957 @@
   "graph": {},
   "nodes": [
     {
-      "label": "run-20260621T014044Z.json",
-      "file_type": "code",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L1",
-      "community": 6,
-      "norm_label": "run-20260621t014044z.json",
-      "id": "decisions_run_20260621t014044z"
-    },
-    {
-      "label": "timestamp",
-      "file_type": "code",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L2",
-      "community": 6,
-      "norm_label": "timestamp",
-      "id": "decisions_run_20260621t014044z_timestamp"
-    },
-    {
-      "label": "prompt_snapshot",
-      "file_type": "code",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L3",
-      "community": 6,
-      "norm_label": "prompt_snapshot",
-      "id": "decisions_run_20260621t014044z_prompt_snapshot"
-    },
-    {
-      "label": "holdings",
-      "file_type": "code",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L4",
-      "community": 6,
-      "norm_label": "holdings",
-      "id": "decisions_run_20260621t014044z_prompt_snapshot_holdings"
-    },
-    {
-      "label": "balance",
-      "file_type": "code",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L5",
-      "community": 6,
-      "norm_label": "balance",
-      "id": "decisions_run_20260621t014044z_holdings_balance"
-    },
-    {
-      "label": "positions",
-      "file_type": "code",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L22",
-      "community": 6,
-      "norm_label": "positions",
-      "id": "decisions_run_20260621t014044z_holdings_positions"
-    },
-    {
-      "label": "trend_radar",
-      "file_type": "code",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L24",
-      "community": 6,
-      "norm_label": "trend_radar",
-      "id": "decisions_run_20260621t014044z_prompt_snapshot_trend_radar"
-    },
-    {
-      "label": "response_raw",
-      "file_type": "code",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L4300",
-      "community": 6,
-      "norm_label": "response_raw",
-      "id": "decisions_run_20260621t014044z_response_raw"
-    },
-    {
       "label": "deepseek_trading_bot.py",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L1",
+      "id": "deepseek_trading_bot",
       "community": 0,
-      "norm_label": "deepseek_trading_bot.py",
-      "id": "deepseek_trading_bot"
+      "norm_label": "deepseek_trading_bot.py"
     },
     {
       "label": "_require_secret()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L101",
+      "id": "deepseek_trading_bot_require_secret",
       "community": 0,
-      "norm_label": "_require_secret()",
-      "id": "deepseek_trading_bot_require_secret"
+      "norm_label": "_require_secret()"
     },
     {
       "label": "_update_env_refresh_token()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L109",
+      "id": "deepseek_trading_bot_update_env_refresh_token",
       "community": 0,
-      "norm_label": "_update_env_refresh_token()",
-      "id": "deepseek_trading_bot_update_env_refresh_token"
+      "norm_label": "_update_env_refresh_token()"
     },
     {
       "label": "_FlushingHandler",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L134",
+      "id": "deepseek_trading_bot_flushinghandler",
       "community": 0,
-      "norm_label": "_flushinghandler",
-      "id": "deepseek_trading_bot_flushinghandler"
+      "norm_label": "_flushinghandler"
     },
     {
       "label": ".emit()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L136",
+      "id": "deepseek_trading_bot_flushinghandler_emit",
       "community": 0,
-      "norm_label": ".emit()",
-      "id": "deepseek_trading_bot_flushinghandler_emit"
+      "norm_label": ".emit()"
     },
     {
       "label": "Order",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L155",
+      "source_location": "L158",
+      "id": "deepseek_trading_bot_order",
       "community": 4,
-      "norm_label": "order",
-      "id": "deepseek_trading_bot_order"
+      "norm_label": "order"
     },
     {
       "label": "BaseModel",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
+      "id": "basemodel",
       "community": 4,
-      "norm_label": "basemodel",
-      "id": "basemodel"
+      "norm_label": "basemodel"
     },
     {
       "label": "._validate_action()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L167",
+      "source_location": "L170",
+      "id": "deepseek_trading_bot_order_validate_action",
       "community": 4,
-      "norm_label": "._validate_action()",
-      "id": "deepseek_trading_bot_order_validate_action"
+      "norm_label": "._validate_action()"
     },
     {
       "label": "._validate_order_size()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L175",
+      "source_location": "L178",
+      "id": "deepseek_trading_bot_order_validate_order_size",
       "community": 4,
-      "norm_label": "._validate_order_size()",
-      "id": "deepseek_trading_bot_order_validate_order_size"
+      "norm_label": "._validate_order_size()"
     },
     {
       "label": "OrdersResponse",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L181",
+      "source_location": "L184",
+      "id": "deepseek_trading_bot_ordersresponse",
       "community": 4,
-      "norm_label": "ordersresponse",
-      "id": "deepseek_trading_bot_ordersresponse"
+      "norm_label": "ordersresponse"
     },
     {
       "label": "._validate_orders_non_empty()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L188",
+      "source_location": "L191",
+      "id": "deepseek_trading_bot_ordersresponse_validate_orders_non_empty",
       "community": 4,
-      "norm_label": "._validate_orders_non_empty()",
-      "id": "deepseek_trading_bot_ordersresponse_validate_orders_non_empty"
+      "norm_label": "._validate_orders_non_empty()"
     },
     {
       "label": "_retry_with_backoff()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L270",
+      "source_location": "L273",
+      "id": "deepseek_trading_bot_retry_with_backoff",
       "community": 1,
-      "norm_label": "_retry_with_backoff()",
-      "id": "deepseek_trading_bot_retry_with_backoff"
+      "norm_label": "_retry_with_backoff()"
     },
     {
       "label": "Any",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L270",
-      "community": 1,
-      "norm_label": "any",
-      "id": "any"
+      "source_location": "L273",
+      "id": "deepseek_trading_bot_py_any",
+      "community": 2,
+      "norm_label": "any"
     },
     {
       "label": "SignumMCPClient",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L300",
+      "source_location": "L303",
+      "id": "deepseek_trading_bot_signummcpclient",
       "community": 1,
-      "norm_label": "signummcpclient",
-      "id": "deepseek_trading_bot_signummcpclient"
-    },
-    {
-      "label": "._next_id()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L325",
-      "community": 1,
-      "norm_label": "._next_id()",
-      "id": "deepseek_trading_bot_signummcpclient_next_id"
-    },
-    {
-      "label": "._auth_headers()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L329",
-      "community": 1,
-      "norm_label": "._auth_headers()",
-      "id": "deepseek_trading_bot_signummcpclient_auth_headers"
-    },
-    {
-      "label": "._get_access_token()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L339",
-      "community": 1,
-      "norm_label": "._get_access_token()",
-      "id": "deepseek_trading_bot_signummcpclient_get_access_token"
-    },
-    {
-      "label": "._rpc()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L371",
-      "community": 1,
-      "norm_label": "._rpc()",
-      "id": "deepseek_trading_bot_signummcpclient_rpc"
-    },
-    {
-      "label": ".connect()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L396",
-      "community": 1,
-      "norm_label": ".connect()",
-      "id": "deepseek_trading_bot_signummcpclient_connect"
-    },
-    {
-      "label": ".close()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L461",
-      "community": 2,
-      "norm_label": ".close()",
-      "id": "deepseek_trading_bot_signummcpclient_close"
-    },
-    {
-      "label": "._call_tool()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L471",
-      "community": 1,
-      "norm_label": "._call_tool()",
-      "id": "deepseek_trading_bot_signummcpclient_call_tool"
-    },
-    {
-      "label": ".fetch_holdings()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L492",
-      "community": 1,
-      "norm_label": ".fetch_holdings()",
-      "id": "deepseek_trading_bot_signummcpclient_fetch_holdings"
-    },
-    {
-      "label": ".fetch_trend_radar()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L506",
-      "community": 1,
-      "norm_label": ".fetch_trend_radar()",
-      "id": "deepseek_trading_bot_signummcpclient_fetch_trend_radar"
-    },
-    {
-      "label": ".fetch_available_pairs()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L540",
-      "community": 1,
-      "norm_label": ".fetch_available_pairs()",
-      "id": "deepseek_trading_bot_signummcpclient_fetch_available_pairs"
-    },
-    {
-      "label": ".fetch_pair_price()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L554",
-      "community": 1,
-      "norm_label": ".fetch_pair_price()",
-      "id": "deepseek_trading_bot_signummcpclient_fetch_pair_price"
-    },
-    {
-      "label": ".edit_bot_field()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L576",
-      "community": 1,
-      "norm_label": ".edit_bot_field()",
-      "id": "deepseek_trading_bot_signummcpclient_edit_bot_field"
-    },
-    {
-      "label": ".set_trading_pair()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L598",
-      "community": 1,
-      "norm_label": ".set_trading_pair()",
-      "id": "deepseek_trading_bot_signummcpclient_set_trading_pair"
-    },
-    {
-      "label": ".update_bot_title_suffix()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L615",
-      "community": 1,
-      "norm_label": ".update_bot_title_suffix()",
-      "id": "deepseek_trading_bot_signummcpclient_update_bot_title_suffix"
-    },
-    {
-      "label": ".bot_edit_supported()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L632",
-      "community": 1,
-      "norm_label": ".bot_edit_supported()",
-      "id": "deepseek_trading_bot_signummcpclient_bot_edit_supported"
-    },
-    {
-      "label": "DeepSeekClient",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L640",
-      "community": 4,
-      "norm_label": "deepseekclient",
-      "id": "deepseek_trading_bot_deepseekclient"
-    },
-    {
-      "label": ".get_orders()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L650",
-      "community": 4,
-      "norm_label": ".get_orders()",
-      "id": "deepseek_trading_bot_deepseekclient_get_orders"
-    },
-    {
-      "label": "_save_decision()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L720",
-      "community": 4,
-      "norm_label": "_save_decision()",
-      "id": "deepseek_trading_bot_save_decision"
-    },
-    {
-      "label": "_is_stablecoin()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L742",
-      "community": 2,
-      "norm_label": "_is_stablecoin()",
-      "id": "deepseek_trading_bot_is_stablecoin"
-    },
-    {
-      "label": "_is_fiat()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L762",
-      "community": 2,
-      "norm_label": "_is_fiat()",
-      "id": "deepseek_trading_bot_is_fiat"
-    },
-    {
-      "label": "_norm_asset()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L766",
-      "community": 2,
-      "norm_label": "_norm_asset()",
-      "id": "deepseek_trading_bot_norm_asset"
-    },
-    {
-      "label": "_iter_holdings()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L770",
-      "community": 2,
-      "norm_label": "_iter_holdings()",
-      "id": "deepseek_trading_bot_iter_holdings"
-    },
-    {
-      "label": "_get_quote_balance()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L777",
-      "community": 2,
-      "norm_label": "_get_quote_balance()",
-      "id": "deepseek_trading_bot_get_quote_balance"
-    },
-    {
-      "label": "_compute_nav()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L793",
-      "community": 2,
-      "norm_label": "_compute_nav()",
-      "id": "deepseek_trading_bot_compute_nav"
-    },
-    {
-      "label": "_find_trend_radar_row()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L801",
-      "community": 0,
-      "norm_label": "_find_trend_radar_row()",
-      "id": "deepseek_trading_bot_find_trend_radar_row"
-    },
-    {
-      "label": "_is_in_trend_radar()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L810",
-      "community": 0,
-      "norm_label": "_is_in_trend_radar()",
-      "id": "deepseek_trading_bot_is_in_trend_radar"
-    },
-    {
-      "label": "_latest_candle()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L814",
-      "community": 7,
-      "norm_label": "_latest_candle()",
-      "id": "deepseek_trading_bot_latest_candle"
-    },
-    {
-      "label": "_prev_candle()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L823",
-      "community": 0,
-      "norm_label": "_prev_candle()",
-      "id": "deepseek_trading_bot_prev_candle"
-    },
-    {
-      "label": "_candle_close()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L832",
-      "community": 7,
-      "norm_label": "_candle_close()",
-      "id": "deepseek_trading_bot_candle_close"
-    },
-    {
-      "label": "_candle_gc_upper()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L839",
-      "community": 0,
-      "norm_label": "_candle_gc_upper()",
-      "id": "deepseek_trading_bot_candle_gc_upper"
-    },
-    {
-      "label": "_get_ref_price()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L846",
-      "community": 7,
-      "norm_label": "_get_ref_price()",
-      "id": "deepseek_trading_bot_get_ref_price"
-    },
-    {
-      "label": "_breakout_within_days()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L861",
-      "community": 0,
-      "norm_label": "_breakout_within_days()",
-      "id": "deepseek_trading_bot_breakout_within_days"
-    },
-    {
-      "label": "validate_min_order()",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L881",
-      "community": 4,
-      "norm_label": "validate_min_order()",
-      "id": "deepseek_trading_bot_validate_min_order"
-    },
-    {
-      "label": "OrderExecutor",
-      "file_type": "code",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L915",
-      "community": 2,
-      "norm_label": "orderexecutor",
-      "id": "deepseek_trading_bot_orderexecutor"
+      "norm_label": "signummcpclient"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L918",
+      "source_location": "L317",
+      "id": "deepseek_trading_bot_signummcpclient_init",
+      "community": 1,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": "._next_id()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L328",
+      "id": "deepseek_trading_bot_signummcpclient_next_id",
+      "community": 1,
+      "norm_label": "._next_id()"
+    },
+    {
+      "label": "._auth_headers()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L332",
+      "id": "deepseek_trading_bot_signummcpclient_auth_headers",
+      "community": 1,
+      "norm_label": "._auth_headers()"
+    },
+    {
+      "label": "._get_access_token()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L342",
+      "id": "deepseek_trading_bot_signummcpclient_get_access_token",
+      "community": 1,
+      "norm_label": "._get_access_token()"
+    },
+    {
+      "label": "._rpc()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L374",
+      "id": "deepseek_trading_bot_signummcpclient_rpc",
+      "community": 1,
+      "norm_label": "._rpc()"
+    },
+    {
+      "label": ".connect()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L399",
+      "id": "deepseek_trading_bot_signummcpclient_connect",
+      "community": 1,
+      "norm_label": ".connect()"
+    },
+    {
+      "label": ".close()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L464",
+      "id": "deepseek_trading_bot_signummcpclient_close",
+      "community": 1,
+      "norm_label": ".close()"
+    },
+    {
+      "label": "._call_tool()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L474",
+      "id": "deepseek_trading_bot_signummcpclient_call_tool",
+      "community": 1,
+      "norm_label": "._call_tool()"
+    },
+    {
+      "label": ".fetch_holdings()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L495",
+      "id": "deepseek_trading_bot_signummcpclient_fetch_holdings",
+      "community": 1,
+      "norm_label": ".fetch_holdings()"
+    },
+    {
+      "label": ".fetch_trend_radar()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L509",
+      "id": "deepseek_trading_bot_signummcpclient_fetch_trend_radar",
+      "community": 1,
+      "norm_label": ".fetch_trend_radar()"
+    },
+    {
+      "label": ".fetch_available_pairs()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L543",
+      "id": "deepseek_trading_bot_signummcpclient_fetch_available_pairs",
+      "community": 1,
+      "norm_label": ".fetch_available_pairs()"
+    },
+    {
+      "label": ".fetch_pair_price()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L557",
+      "id": "deepseek_trading_bot_signummcpclient_fetch_pair_price",
+      "community": 2,
+      "norm_label": ".fetch_pair_price()"
+    },
+    {
+      "label": ".edit_bot_field()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L585",
+      "id": "deepseek_trading_bot_signummcpclient_edit_bot_field",
+      "community": 1,
+      "norm_label": ".edit_bot_field()"
+    },
+    {
+      "label": ".set_trading_pair()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L607",
+      "id": "deepseek_trading_bot_signummcpclient_set_trading_pair",
+      "community": 1,
+      "norm_label": ".set_trading_pair()"
+    },
+    {
+      "label": ".update_bot_title_suffix()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L624",
+      "id": "deepseek_trading_bot_signummcpclient_update_bot_title_suffix",
+      "community": 1,
+      "norm_label": ".update_bot_title_suffix()"
+    },
+    {
+      "label": ".bot_edit_supported()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L641",
+      "id": "deepseek_trading_bot_signummcpclient_bot_edit_supported",
+      "community": 1,
+      "norm_label": ".bot_edit_supported()"
+    },
+    {
+      "label": "DeepSeekClient",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L649",
+      "id": "deepseek_trading_bot_deepseekclient",
+      "community": 6,
+      "norm_label": "deepseekclient"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L652",
+      "id": "deepseek_trading_bot_deepseekclient_init",
+      "community": 6,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".get_orders()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L659",
+      "id": "deepseek_trading_bot_deepseekclient_get_orders",
+      "community": 6,
+      "norm_label": ".get_orders()"
+    },
+    {
+      "label": "_strip_code_fences()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L730",
+      "id": "deepseek_trading_bot_strip_code_fences",
+      "community": 6,
+      "norm_label": "_strip_code_fences()"
+    },
+    {
+      "label": "_extract_json_from_text()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L742",
+      "id": "deepseek_trading_bot_extract_json_from_text",
+      "community": 6,
+      "norm_label": "_extract_json_from_text()"
+    },
+    {
+      "label": "_save_decision()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L786",
+      "id": "deepseek_trading_bot_save_decision",
+      "community": 6,
+      "norm_label": "_save_decision()"
+    },
+    {
+      "label": "_normalise_holdings()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L816",
+      "id": "deepseek_trading_bot_normalise_holdings",
+      "community": 0,
+      "norm_label": "_normalise_holdings()"
+    },
+    {
+      "label": "_is_stablecoin()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L843",
+      "id": "deepseek_trading_bot_is_stablecoin",
+      "community": 2,
+      "norm_label": "_is_stablecoin()"
+    },
+    {
+      "label": "_is_fiat()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L863",
+      "id": "deepseek_trading_bot_is_fiat",
+      "community": 2,
+      "norm_label": "_is_fiat()"
+    },
+    {
+      "label": "_norm_asset()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L867",
+      "id": "deepseek_trading_bot_norm_asset",
+      "community": 2,
+      "norm_label": "_norm_asset()"
+    },
+    {
+      "label": "_iter_holdings()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L871",
+      "id": "deepseek_trading_bot_iter_holdings",
+      "community": 2,
+      "norm_label": "_iter_holdings()"
+    },
+    {
+      "label": "_get_quote_balance()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L878",
+      "id": "deepseek_trading_bot_get_quote_balance",
+      "community": 2,
+      "norm_label": "_get_quote_balance()"
+    },
+    {
+      "label": "_compute_nav()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L894",
+      "id": "deepseek_trading_bot_compute_nav",
+      "community": 2,
+      "norm_label": "_compute_nav()"
+    },
+    {
+      "label": "_find_trend_radar_row()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L902",
+      "id": "deepseek_trading_bot_find_trend_radar_row",
+      "community": 0,
+      "norm_label": "_find_trend_radar_row()"
+    },
+    {
+      "label": "_is_in_trend_radar()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L911",
+      "id": "deepseek_trading_bot_is_in_trend_radar",
+      "community": 0,
+      "norm_label": "_is_in_trend_radar()"
+    },
+    {
+      "label": "_latest_candle()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L915",
+      "id": "deepseek_trading_bot_latest_candle",
+      "community": 0,
+      "norm_label": "_latest_candle()"
+    },
+    {
+      "label": "_prev_candle()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L924",
+      "id": "deepseek_trading_bot_prev_candle",
+      "community": 15,
+      "norm_label": "_prev_candle()"
+    },
+    {
+      "label": "_candle_close()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L933",
+      "id": "deepseek_trading_bot_candle_close",
+      "community": 0,
+      "norm_label": "_candle_close()"
+    },
+    {
+      "label": "_candle_gc_upper()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L940",
+      "id": "deepseek_trading_bot_candle_gc_upper",
+      "community": 0,
+      "norm_label": "_candle_gc_upper()"
+    },
+    {
+      "label": "_get_ref_price()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L947",
+      "id": "deepseek_trading_bot_get_ref_price",
+      "community": 0,
+      "norm_label": "_get_ref_price()"
+    },
+    {
+      "label": "_breakout_within_days()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L962",
+      "id": "deepseek_trading_bot_breakout_within_days",
+      "community": 0,
+      "norm_label": "_breakout_within_days()"
+    },
+    {
+      "label": "validate_min_order()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L982",
+      "id": "deepseek_trading_bot_validate_min_order",
       "community": 4,
-      "norm_label": ".__init__()",
-      "id": "deepseek_trading_bot_orderexecutor_init"
+      "norm_label": "validate_min_order()"
+    },
+    {
+      "label": "OrderExecutor",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1016",
+      "id": "deepseek_trading_bot_orderexecutor",
+      "community": 2,
+      "norm_label": "orderexecutor"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1019",
+      "id": "deepseek_trading_bot_orderexecutor_init",
+      "community": 6,
+      "norm_label": ".__init__()"
     },
     {
       "label": ".update_balances()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L924",
+      "source_location": "L1025",
+      "id": "deepseek_trading_bot_orderexecutor_update_balances",
+      "community": 15,
+      "norm_label": ".update_balances()"
+    },
+    {
+      "label": "._get_quote_balance()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1029",
+      "id": "deepseek_trading_bot_orderexecutor_get_quote_balance",
       "community": 2,
-      "norm_label": ".update_balances()",
-      "id": "deepseek_trading_bot_orderexecutor_update_balances"
+      "norm_label": "._get_quote_balance()"
     },
     {
       "label": "._debit_quote()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L932",
+      "source_location": "L1033",
+      "id": "deepseek_trading_bot_orderexecutor_debit_quote",
       "community": 2,
-      "norm_label": "._debit_quote()",
-      "id": "deepseek_trading_bot_orderexecutor_debit_quote"
+      "norm_label": "._debit_quote()"
     },
     {
       "label": ".compute_order_pct()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L938",
+      "source_location": "L1039",
+      "id": "deepseek_trading_bot_orderexecutor_compute_order_pct",
       "community": 2,
-      "norm_label": ".compute_order_pct()",
-      "id": "deepseek_trading_bot_orderexecutor_compute_order_pct"
+      "norm_label": ".compute_order_pct()"
     },
     {
       "label": ".send_order()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L964",
+      "source_location": "L1074",
+      "id": "deepseek_trading_bot_orderexecutor_send_order",
+      "community": 4,
+      "norm_label": ".send_order()"
+    },
+    {
+      "label": "PaperPortfolio",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1124",
+      "id": "deepseek_trading_bot_paperportfolio",
       "community": 2,
-      "norm_label": ".send_order()",
-      "id": "deepseek_trading_bot_orderexecutor_send_order"
+      "norm_label": "paperportfolio"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1134",
+      "id": "deepseek_trading_bot_paperportfolio_init",
+      "community": 2,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".load()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1157",
+      "id": "deepseek_trading_bot_paperportfolio_load",
+      "community": 2,
+      "norm_label": ".load()"
+    },
+    {
+      "label": ".save()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1162",
+      "id": "deepseek_trading_bot_paperportfolio_save",
+      "community": 2,
+      "norm_label": ".save()"
+    },
+    {
+      "label": ".balances()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1172",
+      "id": "deepseek_trading_bot_paperportfolio_balances",
+      "community": 2,
+      "norm_label": ".balances()"
+    },
+    {
+      "label": ".positions()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1180",
+      "id": "deepseek_trading_bot_paperportfolio_positions",
+      "community": 2,
+      "norm_label": ".positions()"
+    },
+    {
+      "label": ".nav()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1183",
+      "id": "deepseek_trading_bot_paperportfolio_nav",
+      "community": 2,
+      "norm_label": ".nav()"
+    },
+    {
+      "label": ".trade_count()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1192",
+      "id": "deepseek_trading_bot_paperportfolio_trade_count",
+      "community": 2,
+      "norm_label": ".trade_count()"
+    },
+    {
+      "label": ".to_holdings_dict()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1199",
+      "id": "deepseek_trading_bot_paperportfolio_to_holdings_dict",
+      "community": 2,
+      "norm_label": ".to_holdings_dict()"
+    },
+    {
+      "label": ".execute_buy()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1229",
+      "id": "deepseek_trading_bot_paperportfolio_execute_buy",
+      "community": 2,
+      "norm_label": ".execute_buy()"
+    },
+    {
+      "label": ".execute_sell()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1297",
+      "id": "deepseek_trading_bot_paperportfolio_execute_sell",
+      "community": 2,
+      "norm_label": ".execute_sell()"
+    },
+    {
+      "label": "PaperExecutor",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1340",
+      "id": "deepseek_trading_bot_paperexecutor",
+      "community": 2,
+      "norm_label": "paperexecutor"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1353",
+      "id": "deepseek_trading_bot_paperexecutor_init",
+      "community": 2,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".send_order()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1357",
+      "id": "deepseek_trading_bot_paperexecutor_send_order",
+      "community": 2,
+      "norm_label": ".send_order()"
     },
     {
       "label": "verify_holdings()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L1011",
+      "source_location": "L1412",
+      "id": "deepseek_trading_bot_verify_holdings",
       "community": 2,
-      "norm_label": "verify_holdings()",
-      "id": "deepseek_trading_bot_verify_holdings"
+      "norm_label": "verify_holdings()"
     },
     {
       "label": "send_telegram()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L1058",
-      "community": 0,
-      "norm_label": "send_telegram()",
-      "id": "deepseek_trading_bot_send_telegram"
+      "source_location": "L1459",
+      "id": "deepseek_trading_bot_send_telegram",
+      "community": 11,
+      "norm_label": "send_telegram()"
+    },
+    {
+      "label": "_verify_paper_portfolio()",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1490",
+      "id": "deepseek_trading_bot_verify_paper_portfolio",
+      "community": 2,
+      "norm_label": "_verify_paper_portfolio()"
     },
     {
       "label": "_build_telegram_summary()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L1085",
-      "community": 0,
-      "norm_label": "_build_telegram_summary()",
-      "id": "deepseek_trading_bot_build_telegram_summary"
+      "source_location": "L1518",
+      "id": "deepseek_trading_bot_build_telegram_summary",
+      "community": 11,
+      "norm_label": "_build_telegram_summary()"
     },
     {
       "label": "run()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L1137",
+      "source_location": "L1576",
+      "id": "deepseek_trading_bot_run",
       "community": 2,
-      "norm_label": "run()",
-      "id": "deepseek_trading_bot_run"
+      "norm_label": "run()"
     },
     {
       "label": "_maybe_notify()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L1358",
-      "community": 0,
-      "norm_label": "_maybe_notify()",
-      "id": "deepseek_trading_bot_maybe_notify"
+      "source_location": "L1898",
+      "id": "deepseek_trading_bot_maybe_notify",
+      "community": 11,
+      "norm_label": "_maybe_notify()"
     },
     {
       "label": "main()",
       "file_type": "code",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L1374",
+      "source_location": "L1915",
+      "id": "deepseek_trading_bot_main",
       "community": 0,
-      "norm_label": "main()",
-      "id": "deepseek_trading_bot_main"
+      "norm_label": "main()"
     },
     {
       "label": "Fetch a required secret; abort with a clear message if missing.",
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L102",
+      "id": "deepseek_trading_bot_rationale_102",
       "community": 0,
-      "norm_label": "fetch a required secret; abort with a clear message if missing.",
-      "id": "deepseek_trading_bot_rationale_102"
+      "norm_label": "fetch a required secret; abort with a clear message if missing."
     },
     {
       "label": "Persist a rotated refresh token back to the .env file.",
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L110",
+      "id": "deepseek_trading_bot_rationale_110",
       "community": 0,
-      "norm_label": "persist a rotated refresh token back to the .env file.",
-      "id": "deepseek_trading_bot_rationale_110"
+      "norm_label": "persist a rotated refresh token back to the .env file."
     },
     {
       "label": "StreamHandler that flushes after every emit \u2014 needed on Windows.",
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L135",
+      "id": "deepseek_trading_bot_rationale_135",
       "community": 0,
-      "norm_label": "streamhandler that flushes after every emit \u2014 needed on windows.",
-      "id": "deepseek_trading_bot_rationale_135"
+      "norm_label": "streamhandler that flushes after every emit \u2014 needed on windows."
+    },
+    {
+      "label": "A single trading order produced by DeepSeek.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L159",
+      "id": "deepseek_trading_bot_rationale_159",
+      "community": 4,
+      "norm_label": "a single trading order produced by deepseek."
+    },
+    {
+      "label": "Wrapper for the DeepSeek JSON response.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L185",
+      "id": "deepseek_trading_bot_rationale_185",
+      "community": 4,
+      "norm_label": "wrapper for the deepseek json response."
+    },
+    {
+      "label": "Call an async function with exponential-backoff retries.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L281",
+      "id": "deepseek_trading_bot_rationale_281",
+      "community": 1,
+      "norm_label": "call an async function with exponential-backoff retries."
+    },
+    {
+      "label": "Async client for Signum's MCP server.      Uses direct JSON-RPC 2.0 over HTTP",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L304",
+      "id": "deepseek_trading_bot_rationale_304",
+      "community": 1,
+      "norm_label": "async client for signum's mcp server.      uses direct json-rpc 2.0 over http"
+    },
+    {
+      "label": "Exchange the refresh token for a fresh access token via OAuth.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L343",
+      "id": "deepseek_trading_bot_rationale_343",
+      "community": 1,
+      "norm_label": "exchange the refresh token for a fresh access token via oauth."
+    },
+    {
+      "label": "Send a single JSON-RPC call and return the result.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L375",
+      "id": "deepseek_trading_bot_rationale_375",
+      "community": 1,
+      "norm_label": "send a single json-rpc call and return the result."
+    },
+    {
+      "label": "Establish an MCP session via JSON-RPC over HTTP.          1. Get OAuth access",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L400",
+      "id": "deepseek_trading_bot_rationale_400",
+      "community": 1,
+      "norm_label": "establish an mcp session via json-rpc over http.          1. get oauth access"
+    },
+    {
+      "label": "Tear down the MCP session.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L465",
+      "id": "deepseek_trading_bot_rationale_465",
+      "community": 1,
+      "norm_label": "tear down the mcp session."
+    },
+    {
+      "label": "Call an MCP tool by name via tools/call. Returns parsed result.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L475",
+      "id": "deepseek_trading_bot_rationale_475",
+      "community": 1,
+      "norm_label": "call an mcp tool by name via tools/call. returns parsed result."
+    },
+    {
+      "label": "Fetch current HOLDINGS / positions for Bot ID 25880.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L496",
+      "id": "deepseek_trading_bot_rationale_496",
+      "community": 1,
+      "norm_label": "fetch current holdings / positions for bot id 25880."
+    },
+    {
+      "label": "Fetch Crypto Trend Radar for the \"gc\" detector with includeIndicators=true.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L510",
+      "id": "deepseek_trading_bot_rationale_510",
+      "community": 1,
+      "norm_label": "fetch crypto trend radar for the \"gc\" detector with includeindicators=true."
+    },
+    {
+      "label": "Fetch available trading pairs for the bot.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L544",
+      "id": "deepseek_trading_bot_rationale_544",
+      "community": 1,
+      "norm_label": "fetch available trading pairs for the bot."
+    },
+    {
+      "label": "Fetch current USD price for a trading pair. Returns None on failure.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L558",
+      "id": "deepseek_trading_bot_rationale_558",
+      "community": 2,
+      "norm_label": "fetch current usd price for a trading pair. returns none on failure."
+    },
+    {
+      "label": "Attempt to edit a bot config field. Returns True on success, False if unsupporte",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L586",
+      "id": "deepseek_trading_bot_rationale_586",
+      "community": 1,
+      "norm_label": "attempt to edit a bot config field. returns true on success, false if unsupporte"
+    },
+    {
+      "label": "Set the bot's active trading pair. Returns True on success.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L608",
+      "id": "deepseek_trading_bot_rationale_608",
+      "community": 1,
+      "norm_label": "set the bot's active trading pair. returns true on success."
+    },
+    {
+      "label": "Ensure the bot title ends with the strategy suffix.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L625",
+      "id": "deepseek_trading_bot_rationale_625",
+      "community": 1,
+      "norm_label": "ensure the bot title ends with the strategy suffix."
+    },
+    {
+      "label": "Async client for DeepSeek V4 Pro (OpenAI-compatible API).",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L650",
+      "id": "deepseek_trading_bot_rationale_650",
+      "community": 6,
+      "norm_label": "async client for deepseek v4 pro (openai-compatible api)."
+    },
+    {
+      "label": "Send holdings + trend radar data, receive structured JSON orders.          Use",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L660",
+      "id": "deepseek_trading_bot_rationale_660",
+      "community": 6,
+      "norm_label": "send holdings + trend radar data, receive structured json orders.          use"
+    },
+    {
+      "label": "Remove markdown code fences (```json ... ```) from DeepSeek output.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L731",
+      "id": "deepseek_trading_bot_rationale_731",
+      "community": 6,
+      "norm_label": "remove markdown code fences (```json ... ```) from deepseek output."
+    },
+    {
+      "label": "Extract the last valid JSON object from reasoning model output.      Reasoning",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L743",
+      "id": "deepseek_trading_bot_rationale_743",
+      "community": 6,
+      "norm_label": "extract the last valid json object from reasoning model output.      reasoning"
+    },
+    {
+      "label": "Persist the DeepSeek prompt + response to decisions/ for audit trail.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L787",
+      "id": "deepseek_trading_bot_rationale_787",
+      "community": 6,
+      "norm_label": "persist the deepseek prompt + response to decisions/ for audit trail."
+    },
+    {
+      "label": "Convert Signum's {balance: [...], positions: [...]} into unified 'holdings' list",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L817",
+      "id": "deepseek_trading_bot_rationale_817",
+      "community": 0,
+      "norm_label": "convert signum's {balance: [...], positions: [...]} into unified 'holdings' list"
+    },
+    {
+      "label": "Check whether an asset ticker is a stablecoin.      Prefers an asset-type/cate",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L844",
+      "id": "deepseek_trading_bot_rationale_844",
+      "community": 2,
+      "norm_label": "check whether an asset ticker is a stablecoin.      prefers an asset-type/cate"
+    },
+    {
+      "label": "Extract holdings list from various response shapes.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L872",
+      "id": "deepseek_trading_bot_rationale_872",
+      "community": 2,
+      "norm_label": "extract holdings list from various response shapes."
+    },
+    {
+      "label": "Extract available quote-coin balances from HOLDINGS.      Returns {asset_upper",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L879",
+      "id": "deepseek_trading_bot_rationale_879",
+      "community": 2,
+      "norm_label": "extract available quote-coin balances from holdings.      returns {asset_upper"
+    },
+    {
+      "label": "Compute total NAV in USD from HOLDINGS.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L895",
+      "id": "deepseek_trading_bot_rationale_895",
+      "community": 2,
+      "norm_label": "compute total nav in usd from holdings."
+    },
+    {
+      "label": "Find a Trend Radar row for the given asset (case-insensitive).",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L903",
+      "id": "deepseek_trading_bot_rationale_903",
+      "community": 0,
+      "norm_label": "find a trend radar row for the given asset (case-insensitive)."
+    },
+    {
+      "label": "Return the latest (newest) candle from indicators.data[].",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L916",
+      "id": "deepseek_trading_bot_rationale_916",
+      "community": 0,
+      "norm_label": "return the latest (newest) candle from indicators.data[]."
+    },
+    {
+      "label": "Return the second-to-last candle from indicators.data[].",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L925",
+      "id": "deepseek_trading_bot_rationale_925",
+      "community": 15,
+      "norm_label": "return the second-to-last candle from indicators.data[]."
+    },
+    {
+      "label": "Extract ohlc.c (close) from a candle.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L934",
+      "id": "deepseek_trading_bot_rationale_934",
+      "community": 0,
+      "norm_label": "extract ohlc.c (close) from a candle."
+    },
+    {
+      "label": "Extract gc.upper from a candle.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L941",
+      "id": "deepseek_trading_bot_rationale_941",
+      "community": 0,
+      "norm_label": "extract gc.upper from a candle."
+    },
+    {
+      "label": "Get the USD reference price for ticker-collision guard.      Priority: cmcRefP",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L948",
+      "id": "deepseek_trading_bot_rationale_948",
+      "community": 0,
+      "norm_label": "get the usd reference price for ticker-collision guard.      priority: cmcrefp"
+    },
+    {
+      "label": "Check if breakoutDate is within the last N calendar days.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L963",
+      "id": "deepseek_trading_bot_rationale_963",
+      "community": 0,
+      "norm_label": "check if breakoutdate is within the last n calendar days."
+    },
+    {
+      "label": "Check minimum order value guardrails. Returns an error string if the order",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L987",
+      "id": "deepseek_trading_bot_rationale_987",
+      "community": 4,
+      "norm_label": "check minimum order value guardrails. returns an error string if the order"
+    },
+    {
+      "label": "Sends orders via Signum's MCP 'send-trading-signal' tool, one-at-a-time, sequent",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1017",
+      "id": "deepseek_trading_bot_rationale_1017",
+      "community": 2,
+      "norm_label": "sends orders via signum's mcp 'send-trading-signal' tool, one-at-a-time, sequent"
+    },
+    {
+      "label": "Initialize / refresh the local quote-balance tracker.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1026",
+      "id": "deepseek_trading_bot_rationale_1026",
+      "community": 15,
+      "norm_label": "initialize / refresh the local quote-balance tracker."
+    },
+    {
+      "label": "Get currently available balance for a quote asset.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1030",
+      "id": "deepseek_trading_bot_rationale_1030",
+      "community": 2,
+      "norm_label": "get currently available balance for a quote asset."
+    },
+    {
+      "label": "Deduct from local quote balance after an order is sent.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1034",
+      "id": "deepseek_trading_bot_rationale_1034",
+      "community": 2,
+      "norm_label": "deduct from local quote balance after an order is sent."
+    },
+    {
+      "label": "Recompute order_size as a fresh % of currently available quote balance.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1045",
+      "id": "deepseek_trading_bot_rationale_1045",
+      "community": 2,
+      "norm_label": "recompute order_size as a fresh % of currently available quote balance."
+    },
+    {
+      "label": "Send a single order via Signum's MCP send-trading-signal tool.         Returns",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1075",
+      "id": "deepseek_trading_bot_rationale_1075",
+      "community": 4,
+      "norm_label": "send a single order via signum's mcp send-trading-signal tool.         returns"
+    },
+    {
+      "label": "Virtual portfolio for paper trading.      Stores cash/stablecoin balances and",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1125",
+      "id": "deepseek_trading_bot_rationale_1125",
+      "community": 2,
+      "norm_label": "virtual portfolio for paper trading.      stores cash/stablecoin balances and"
+    },
+    {
+      "label": "Return {asset_upper: usd_value} for all cash/stablecoin balances.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1173",
+      "id": "deepseek_trading_bot_rationale_1173",
+      "community": 11,
+      "norm_label": "return {asset_upper: usd_value} for all cash/stablecoin balances."
+    },
+    {
+      "label": "Total NAV = sum of cash balances + position values (at mark).",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1184",
+      "id": "deepseek_trading_bot_rationale_1184",
+      "community": 2,
+      "norm_label": "total nav = sum of cash balances + position values (at mark)."
+    },
+    {
+      "label": "Emit holdings in Signum's get-bot-assets shape.          Returns ``{balance: [",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1200",
+      "id": "deepseek_trading_bot_rationale_1200",
+      "community": 2,
+      "norm_label": "emit holdings in signum's get-bot-assets shape.          returns ``{balance: ["
+    },
+    {
+      "label": "Execute a simulated buy at *fill_price*.          Deducts *cost_usd* from avai",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1233",
+      "id": "deepseek_trading_bot_rationale_1233",
+      "community": 2,
+      "norm_label": "execute a simulated buy at *fill_price*.          deducts *cost_usd* from avai"
+    },
+    {
+      "label": "Execute a simulated sell at *fill_price*.          Removes the position(s) for",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1300",
+      "id": "deepseek_trading_bot_rationale_1300",
+      "community": 2,
+      "norm_label": "execute a simulated sell at *fill_price*.          removes the position(s) for"
+    },
+    {
+      "label": "Order executor for paper trading.      Inherits all guardrails (ticker collisi",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1341",
+      "id": "deepseek_trading_bot_rationale_1341",
+      "community": 2,
+      "norm_label": "order executor for paper trading.      inherits all guardrails (ticker collisi"
+    },
+    {
+      "label": "Fill the order against the virtual portfolio at a real market price.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1358",
+      "id": "deepseek_trading_bot_rationale_1358",
+      "community": 2,
+      "norm_label": "fill the order against the virtual portfolio at a real market price."
+    },
+    {
+      "label": "Re-fetch HOLDINGS and compare against expected end-state.      Returns a list",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1418",
+      "id": "deepseek_trading_bot_rationale_1418",
+      "community": 2,
+      "norm_label": "re-fetch holdings and compare against expected end-state.      returns a list"
+    },
+    {
+      "label": "Send a Telegram message via Bot API. Returns True on success.      Failure is",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1464",
+      "id": "deepseek_trading_bot_rationale_1464",
+      "community": 11,
+      "norm_label": "send a telegram message via bot api. returns true on success.      failure is"
+    },
+    {
+      "label": "Verify virtual portfolio state matches expected end-state after trades.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1496",
+      "id": "deepseek_trading_bot_rationale_1496",
+      "community": 2,
+      "norm_label": "verify virtual portfolio state matches expected end-state after trades."
+    },
+    {
+      "label": "Build a human-readable Telegram summary message.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1527",
+      "id": "deepseek_trading_bot_rationale_1527",
+      "community": 11,
+      "norm_label": "build a human-readable telegram summary message."
+    },
+    {
+      "label": "Execute one full run of the trading bot.      When paper_mode is True, the bot",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1582",
+      "id": "deepseek_trading_bot_rationale_1582",
+      "community": 2,
+      "norm_label": "execute one full run of the trading bot.      when paper_mode is true, the bot"
+    },
+    {
+      "label": "Send Telegram notification if configured; log failure but don't crash.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1903",
+      "id": "deepseek_trading_bot_rationale_1903",
+      "community": 11,
+      "norm_label": "send telegram notification if configured; log failure but don't crash."
+    },
+    {
+      "label": "paper_state.json",
+      "file_type": "code",
+      "source_file": "paper_state.json",
+      "source_location": "L1",
+      "id": "paper_state",
+      "community": 14,
+      "norm_label": "paper_state.json"
+    },
+    {
+      "label": "created",
+      "file_type": "code",
+      "source_file": "paper_state.json",
+      "source_location": "L2",
+      "id": "paper_state_created",
+      "community": 14,
+      "norm_label": "created"
+    },
+    {
+      "label": "initial_balance",
+      "file_type": "code",
+      "source_file": "paper_state.json",
+      "source_location": "L3",
+      "id": "paper_state_initial_balance",
+      "community": 14,
+      "norm_label": "initial_balance"
+    },
+    {
+      "label": "balances",
+      "file_type": "code",
+      "source_file": "paper_state.json",
+      "source_location": "L4",
+      "id": "paper_state_balances",
+      "community": 14,
+      "norm_label": "balances"
+    },
+    {
+      "label": "USD",
+      "file_type": "code",
+      "source_file": "paper_state.json",
+      "source_location": "L5",
+      "id": "paper_state_balances_usd",
+      "community": 14,
+      "norm_label": "usd"
+    },
+    {
+      "label": "positions",
+      "file_type": "code",
+      "source_file": "paper_state.json",
+      "source_location": "L7",
+      "id": "paper_state_positions",
+      "community": 14,
+      "norm_label": "positions"
+    },
+    {
+      "label": "trade_history",
+      "file_type": "code",
+      "source_file": "paper_state.json",
+      "source_location": "L8",
+      "id": "paper_state_trade_history",
+      "community": 14,
+      "norm_label": "trade_history"
+    },
+    {
+      "label": "paper_summary.py",
+      "file_type": "code",
+      "source_file": "paper_summary.py",
+      "source_location": "L1",
+      "id": "paper_summary",
+      "community": 7,
+      "norm_label": "paper_summary.py"
+    },
+    {
+      "label": "load_paper_state()",
+      "file_type": "code",
+      "source_file": "paper_summary.py",
+      "source_location": "L34",
+      "id": "paper_summary_load_paper_state",
+      "community": 7,
+      "norm_label": "load_paper_state()"
+    },
+    {
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "paper_summary.py",
+      "source_location": "L34",
+      "id": "paper_summary_py_any",
+      "community": 7,
+      "norm_label": "any"
+    },
+    {
+      "label": "compute_current_nav()",
+      "file_type": "code",
+      "source_file": "paper_summary.py",
+      "source_location": "L42",
+      "id": "paper_summary_compute_current_nav",
+      "community": 7,
+      "norm_label": "compute_current_nav()"
+    },
+    {
+      "label": "win_loss()",
+      "file_type": "code",
+      "source_file": "paper_summary.py",
+      "source_location": "L52",
+      "id": "paper_summary_win_loss",
+      "community": 7,
+      "norm_label": "win_loss()"
+    },
+    {
+      "label": "nav_curve()",
+      "file_type": "code",
+      "source_file": "paper_summary.py",
+      "source_location": "L148",
+      "id": "paper_summary_nav_curve",
+      "community": 7,
+      "norm_label": "nav_curve()"
+    },
+    {
+      "label": "print_full()",
+      "file_type": "code",
+      "source_file": "paper_summary.py",
+      "source_location": "L195",
+      "id": "paper_summary_print_full",
+      "community": 7,
+      "norm_label": "print_full()"
+    },
+    {
+      "label": "print_brief()",
+      "file_type": "code",
+      "source_file": "paper_summary.py",
+      "source_location": "L262",
+      "id": "paper_summary_print_brief",
+      "community": 7,
+      "norm_label": "print_brief()"
+    },
+    {
+      "label": "print_trades()",
+      "file_type": "code",
+      "source_file": "paper_summary.py",
+      "source_location": "L275",
+      "id": "paper_summary_print_trades",
+      "community": 7,
+      "norm_label": "print_trades()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "paper_summary.py",
+      "source_location": "L287",
+      "id": "paper_summary_main",
+      "community": 7,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Recompute NAV from paper state: cash + positions at entry price.",
+      "file_type": "rationale",
+      "source_file": "paper_summary.py",
+      "source_location": "L43",
+      "id": "paper_summary_rationale_43",
+      "community": 7,
+      "norm_label": "recompute nav from paper state: cash + positions at entry price."
+    },
+    {
+      "label": "Compute realised P&L from completed buy/sell pairs.     Trades are matched FIFO",
+      "file_type": "rationale",
+      "source_file": "paper_summary.py",
+      "source_location": "L53",
+      "id": "paper_summary_rationale_53",
+      "community": 7,
+      "norm_label": "compute realised p&l from completed buy/sell pairs.     trades are matched fifo"
+    },
+    {
+      "label": "Reconstruct NAV over time from trade history.     Each snapshot records NAV afte",
+      "file_type": "rationale",
+      "source_file": "paper_summary.py",
+      "source_location": "L149",
+      "id": "paper_summary_rationale_149",
+      "community": 7,
+      "norm_label": "reconstruct nav over time from trade history.     each snapshot records nav afte"
+    },
+    {
+      "label": "setup_oauth.py",
+      "file_type": "code",
+      "source_file": "setup_oauth.py",
+      "source_location": "L1",
+      "id": "setup_oauth",
+      "community": 3,
+      "norm_label": "setup_oauth.py"
+    },
+    {
+      "label": "_pkce_challenge()",
+      "file_type": "code",
+      "source_file": "setup_oauth.py",
+      "source_location": "L60",
+      "id": "setup_oauth_pkce_challenge",
+      "community": 3,
+      "norm_label": "_pkce_challenge()"
+    },
+    {
+      "label": "CallbackHandler",
+      "file_type": "code",
+      "source_file": "setup_oauth.py",
+      "source_location": "L74",
+      "id": "setup_oauth_callbackhandler",
+      "community": 3,
+      "norm_label": "callbackhandler"
+    },
+    {
+      "label": "BaseHTTPRequestHandler",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "basehttprequesthandler",
+      "community": 3,
+      "norm_label": "basehttprequesthandler"
+    },
+    {
+      "label": ".log_message()",
+      "file_type": "code",
+      "source_file": "setup_oauth.py",
+      "source_location": "L77",
+      "id": "setup_oauth_callbackhandler_log_message",
+      "community": 3,
+      "norm_label": ".log_message()"
+    },
+    {
+      "label": ".do_GET()",
+      "file_type": "code",
+      "source_file": "setup_oauth.py",
+      "source_location": "L81",
+      "id": "setup_oauth_callbackhandler_do_get",
+      "community": 3,
+      "norm_label": ".do_get()"
+    },
+    {
+      "label": "._respond()",
+      "file_type": "code",
+      "source_file": "setup_oauth.py",
+      "source_location": "L108",
+      "id": "setup_oauth_callbackhandler_respond",
+      "community": 3,
+      "norm_label": "._respond()"
+    },
+    {
+      "label": "_register_client()",
+      "file_type": "code",
+      "source_file": "setup_oauth.py",
+      "source_location": "L115",
+      "id": "setup_oauth_register_client",
+      "community": 3,
+      "norm_label": "_register_client()"
+    },
+    {
+      "label": "_build_authorize_url()",
+      "file_type": "code",
+      "source_file": "setup_oauth.py",
+      "source_location": "L132",
+      "id": "setup_oauth_build_authorize_url",
+      "community": 3,
+      "norm_label": "_build_authorize_url()"
+    },
+    {
+      "label": "_exchange_code()",
+      "file_type": "code",
+      "source_file": "setup_oauth.py",
+      "source_location": "L149",
+      "id": "setup_oauth_exchange_code",
+      "community": 3,
+      "norm_label": "_exchange_code()"
+    },
+    {
+      "label": "_print_token_summary()",
+      "file_type": "code",
+      "source_file": "setup_oauth.py",
+      "source_location": "L164",
+      "id": "setup_oauth_print_token_summary",
+      "community": 3,
+      "norm_label": "_print_token_summary()"
+    },
+    {
+      "label": "_save_to_env()",
+      "file_type": "code",
+      "source_file": "setup_oauth.py",
+      "source_location": "L204",
+      "id": "setup_oauth_save_to_env",
+      "community": 3,
+      "norm_label": "_save_to_env()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "setup_oauth.py",
+      "source_location": "L240",
+      "id": "setup_oauth_main",
+      "community": 3,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Generate PKCE code_verifier and S256 code_challenge.      Returns (verifier, cha",
+      "file_type": "rationale",
+      "source_file": "setup_oauth.py",
+      "source_location": "L61",
+      "id": "setup_oauth_rationale_61",
+      "community": 3,
+      "norm_label": "generate pkce code_verifier and s256 code_challenge.      returns (verifier, cha"
+    },
+    {
+      "label": "Minimal HTTP handler to catch the OAuth redirect.",
+      "file_type": "rationale",
+      "source_file": "setup_oauth.py",
+      "source_location": "L75",
+      "id": "setup_oauth_rationale_75",
+      "community": 3,
+      "norm_label": "minimal http handler to catch the oauth redirect."
+    },
+    {
+      "label": "Register a new OAuth client at Signum. Returns the JSON response.",
+      "file_type": "rationale",
+      "source_file": "setup_oauth.py",
+      "source_location": "L116",
+      "id": "setup_oauth_rationale_116",
+      "community": 3,
+      "norm_label": "register a new oauth client at signum. returns the json response."
+    },
+    {
+      "label": "Build the full authorize URL with PKCE challenge.",
+      "file_type": "rationale",
+      "source_file": "setup_oauth.py",
+      "source_location": "L133",
+      "id": "setup_oauth_rationale_133",
+      "community": 3,
+      "norm_label": "build the full authorize url with pkce challenge."
+    },
+    {
+      "label": "Exchange authorization code for tokens. Returns the full JSON response.",
+      "file_type": "rationale",
+      "source_file": "setup_oauth.py",
+      "source_location": "L150",
+      "id": "setup_oauth_rationale_150",
+      "community": 3,
+      "norm_label": "exchange authorization code for tokens. returns the full json response."
+    },
+    {
+      "label": "Print token response with secrets redacted so the user can verify it.",
+      "file_type": "rationale",
+      "source_file": "setup_oauth.py",
+      "source_location": "L165",
+      "id": "setup_oauth_rationale_165",
+      "community": 3,
+      "norm_label": "print token response with secrets redacted so the user can verify it."
+    },
+    {
+      "label": "Save client_id and refresh_token to the .env file.",
+      "file_type": "rationale",
+      "source_file": "setup_oauth.py",
+      "source_location": "L205",
+      "id": "setup_oauth_rationale_205",
+      "community": 3,
+      "norm_label": "save client_id and refresh_token to the .env file."
+    },
+    {
+      "label": "test_orders.json",
+      "file_type": "code",
+      "source_file": "test/test_orders.json",
+      "source_location": "L1",
+      "id": "test_test_orders",
+      "community": 13,
+      "norm_label": "test_orders.json"
+    },
+    {
+      "label": "_comment",
+      "file_type": "code",
+      "source_file": "test/test_orders.json",
+      "source_location": "L2",
+      "id": "test_test_orders_comment",
+      "community": 13,
+      "norm_label": "_comment"
+    },
+    {
+      "label": "orders",
+      "file_type": "code",
+      "source_file": "test/test_orders.json",
+      "source_location": "L3",
+      "id": "test_test_orders_orders",
+      "community": 13,
+      "norm_label": "orders"
+    },
+    {
+      "label": "test_strip_fences.py",
+      "file_type": "code",
+      "source_file": "test/test_strip_fences.py",
+      "source_location": "L1",
+      "id": "test_test_strip_fences",
+      "community": 6,
+      "norm_label": "test_strip_fences.py"
+    },
+    {
+      "label": "Quick test of _strip_code_fences function.",
+      "file_type": "rationale",
+      "source_file": "test/test_strip_fences.py",
+      "source_location": "L1",
+      "id": "test_test_strip_fences_rationale_1",
+      "community": 6,
+      "norm_label": "quick test of _strip_code_fences function."
+    },
+    {
+      "label": "test_mcp_auth.py",
+      "file_type": "code",
+      "source_file": "test_mcp_auth.py",
+      "source_location": "L1",
+      "id": "test_mcp_auth",
+      "community": 5,
+      "norm_label": "test_mcp_auth.py"
+    },
+    {
+      "label": "hr()",
+      "file_type": "code",
+      "source_file": "test_mcp_auth.py",
+      "source_location": "L45",
+      "id": "test_mcp_auth_hr",
+      "community": 5,
+      "norm_label": "hr()"
+    },
+    {
+      "label": "print_response()",
+      "file_type": "code",
+      "source_file": "test_mcp_auth.py",
+      "source_location": "L51",
+      "id": "test_mcp_auth_print_response",
+      "community": 5,
+      "norm_label": "print_response()"
+    },
+    {
+      "label": "Response",
+      "file_type": "code",
+      "source_file": "test_mcp_auth.py",
+      "source_location": "L51",
+      "id": "response",
+      "community": 5,
+      "norm_label": "response"
+    },
+    {
+      "label": "probe_mcp_no_auth()",
+      "file_type": "code",
+      "source_file": "test_mcp_auth.py",
+      "source_location": "L81",
+      "id": "test_mcp_auth_probe_mcp_no_auth",
+      "community": 5,
+      "norm_label": "probe_mcp_no_auth()"
+    },
+    {
+      "label": "AsyncClient",
+      "file_type": "code",
+      "source_file": "test_mcp_auth.py",
+      "source_location": "L81",
+      "id": "asyncclient",
+      "community": 5,
+      "norm_label": "asyncclient"
+    },
+    {
+      "label": "probe_discovery()",
+      "file_type": "code",
+      "source_file": "test_mcp_auth.py",
+      "source_location": "L103",
+      "id": "test_mcp_auth_probe_discovery",
+      "community": 5,
+      "norm_label": "probe_discovery()"
+    },
+    {
+      "label": "probe_mcp_protocol()",
+      "file_type": "code",
+      "source_file": "test_mcp_auth.py",
+      "source_location": "L131",
+      "id": "test_mcp_auth_probe_mcp_protocol",
+      "community": 5,
+      "norm_label": "probe_mcp_protocol()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "test_mcp_auth.py",
+      "source_location": "L200",
+      "id": "test_mcp_auth_main",
+      "community": 5,
+      "norm_label": "main()"
+    },
+    {
+      "label": "CLAUDE.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "id": "claude",
+      "community": 12,
+      "norm_label": "claude.md"
+    },
+    {
+      "label": "Rules for this project",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "id": "claude_rules_for_this_project",
+      "community": 12,
+      "norm_label": "rules for this project"
+    },
+    {
+      "label": "CRITICAL - Do not explore files directly",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L3",
+      "id": "claude_critical_do_not_explore_files_directly",
+      "community": 12,
+      "norm_label": "critical - do not explore files directly"
+    },
+    {
+      "label": "How to understand this project",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L8",
+      "id": "claude_how_to_understand_this_project",
+      "community": 12,
+      "norm_label": "how to understand this project"
+    },
+    {
+      "label": "Workflow for every task",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L13",
+      "id": "claude_workflow_for_every_task",
+      "community": 12,
+      "norm_label": "workflow for every task"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "readme",
+      "community": 10,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "DeepSeek Trading Bot \u2014 TR-GC-Crypto-9",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "readme_deepseek_trading_bot_tr_gc_crypto_9",
+      "community": 10,
+      "norm_label": "deepseek trading bot \u2014 tr-gc-crypto-9"
+    },
+    {
+      "label": "Architecture",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L7",
+      "id": "readme_architecture",
+      "community": 10,
+      "norm_label": "architecture"
+    },
+    {
+      "label": "Quick Start",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L23",
+      "id": "readme_quick_start",
+      "community": 10,
+      "norm_label": "quick start"
+    },
+    {
+      "label": "Environment Variables",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L49",
+      "id": "readme_environment_variables",
+      "community": 10,
+      "norm_label": "environment variables"
+    },
+    {
+      "label": "Strategy (TR-GC-Crypto-9) \u2014 Verified against spec as of 2026-06-21",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L63",
+      "id": "readme_strategy_tr_gc_crypto_9_verified_against_spec_as_of_2026_06_21",
+      "community": 10,
+      "norm_label": "strategy (tr-gc-crypto-9) \u2014 verified against spec as of 2026-06-21"
+    },
+    {
+      "label": "Long Exits",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L69",
+      "id": "readme_long_exits",
+      "community": 10,
+      "norm_label": "long exits"
+    },
+    {
+      "label": "Long Entries",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L76",
+      "id": "readme_long_entries",
+      "community": 10,
+      "norm_label": "long entries"
+    },
+    {
+      "label": "Entry Sizing (computed from NAV snapshot, never recomputed mid-run)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L84",
+      "id": "readme_entry_sizing_computed_from_nav_snapshot_never_recomputed_mid_run",
+      "community": 10,
+      "norm_label": "entry sizing (computed from nav snapshot, never recomputed mid-run)"
+    },
+    {
+      "label": "orderSize Calculation (recomputed before EACH order)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L92",
+      "id": "readme_ordersize_calculation_recomputed_before_each_order",
+      "community": 10,
+      "norm_label": "ordersize calculation (recomputed before each order)"
+    },
+    {
+      "label": "Safety Guardrails (enforced in Python only \u2014 never in the LLM prompt)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L100",
+      "id": "readme_safety_guardrails_enforced_in_python_only_never_in_the_llm_prompt",
+      "community": 10,
+      "norm_label": "safety guardrails (enforced in python only \u2014 never in the llm prompt)"
+    },
+    {
+      "label": "Audit Trail",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L113",
+      "id": "readme_audit_trail",
+      "community": 10,
+      "norm_label": "audit trail"
+    },
+    {
+      "label": "Scheduling (cron-compatible, one-shot)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L118",
+      "id": "readme_scheduling_cron_compatible_one_shot",
+      "community": 10,
+      "norm_label": "scheduling (cron-compatible, one-shot)"
+    },
+    {
+      "label": "Files",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L130",
+      "id": "readme_files",
+      "community": 10,
+      "norm_label": "files"
+    },
+    {
+      "label": "Dependencies",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L141",
+      "id": "readme_dependencies",
+      "community": 10,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "License",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L148",
+      "id": "readme_license",
+      "community": 10,
+      "norm_label": "license"
+    },
+    {
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L273",
+      "community": 1,
+      "norm_label": "any",
+      "id": "any"
+    },
+    {
+      "label": "Re-fetch HOLDINGS and compare against expected end-state.      Returns a list",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1127",
+      "community": 2,
+      "norm_label": "re-fetch holdings and compare against expected end-state.      returns a list",
+      "id": "deepseek_trading_bot_rationale_1127"
+    },
+    {
+      "label": "Build a human-readable Telegram summary message.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1207",
+      "community": 11,
+      "norm_label": "build a human-readable telegram summary message.",
+      "id": "deepseek_trading_bot_rationale_1207"
+    },
+    {
+      "label": "Execute one full run of the trading bot.      When simulate_orders_path is pro",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1252",
+      "community": 2,
+      "norm_label": "execute one full run of the trading bot.      when simulate_orders_path is pro",
+      "id": "deepseek_trading_bot_rationale_1252"
+    },
+    {
+      "label": "Send Telegram notification if configured; log failure but don't crash.",
+      "file_type": "rationale",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1539",
+      "community": 11,
+      "norm_label": "send telegram notification if configured; log failure but don't crash.",
+      "id": "deepseek_trading_bot_rationale_1539"
     },
     {
       "label": "A single trading order produced by DeepSeek.",
@@ -701,7 +2024,7 @@
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L462",
-      "community": 2,
+      "community": 1,
       "norm_label": "tear down the mcp session.",
       "id": "deepseek_trading_bot_rationale_462"
     },
@@ -746,7 +2069,7 @@
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L555",
-      "community": 1,
+      "community": 2,
       "norm_label": "fetch current usd price for a trading pair. returns none on failure.",
       "id": "deepseek_trading_bot_rationale_555"
     },
@@ -782,7 +2105,7 @@
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L641",
-      "community": 4,
+      "community": 6,
       "norm_label": "async client for deepseek v4 pro (openai-compatible api).",
       "id": "deepseek_trading_bot_rationale_641"
     },
@@ -791,7 +2114,7 @@
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L651",
-      "community": 4,
+      "community": 6,
       "norm_label": "send holdings + trend radar data, receive structured json orders.          uses",
       "id": "deepseek_trading_bot_rationale_651"
     },
@@ -800,18 +2123,9 @@
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L721",
-      "community": 4,
+      "community": 6,
       "norm_label": "persist the deepseek prompt + response to decisions/ for audit trail.",
       "id": "deepseek_trading_bot_rationale_721"
-    },
-    {
-      "label": "Check whether an asset ticker is a stablecoin.      Prefers an asset-type/catego",
-      "file_type": "rationale",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L743",
-      "community": 2,
-      "norm_label": "check whether an asset ticker is a stablecoin.      prefers an asset-type/catego",
-      "id": "deepseek_trading_bot_rationale_743"
     },
     {
       "label": "Extract holdings list from various response shapes.",
@@ -854,7 +2168,7 @@
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L815",
-      "community": 7,
+      "community": 0,
       "norm_label": "return the latest (newest) candle from indicators.data[].",
       "id": "deepseek_trading_bot_rationale_815"
     },
@@ -863,7 +2177,7 @@
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L824",
-      "community": 0,
+      "community": 15,
       "norm_label": "return the second-to-last candle from indicators.data[].",
       "id": "deepseek_trading_bot_rationale_824"
     },
@@ -872,7 +2186,7 @@
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L833",
-      "community": 7,
+      "community": 0,
       "norm_label": "extract ohlc.c (close) from a candle.",
       "id": "deepseek_trading_bot_rationale_833"
     },
@@ -890,7 +2204,7 @@
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L847",
-      "community": 7,
+      "community": 0,
       "norm_label": "get the usd reference price for ticker-collision guard.      priority: cmcrefpri",
       "id": "deepseek_trading_bot_rationale_847"
     },
@@ -911,24 +2225,6 @@
       "community": 4,
       "norm_label": "check minimum order value guardrails. returns an error string if the order     s",
       "id": "deepseek_trading_bot_rationale_886"
-    },
-    {
-      "label": "Sends orders via Signum's MCP 'send-trading-signal' tool, one-at-a-time, sequent",
-      "file_type": "rationale",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L916",
-      "community": 2,
-      "norm_label": "sends orders via signum's mcp 'send-trading-signal' tool, one-at-a-time, sequent",
-      "id": "deepseek_trading_bot_rationale_916"
-    },
-    {
-      "label": "Initialize / refresh the local quote-balance tracker.",
-      "file_type": "rationale",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L925",
-      "community": 2,
-      "norm_label": "initialize / refresh the local quote-balance tracker.",
-      "id": "deepseek_trading_bot_rationale_925"
     },
     {
       "label": "Get currently available balance for a quote asset.",
@@ -962,25 +2258,16 @@
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L965",
-      "community": 2,
+      "community": 4,
       "norm_label": "send a single order via signum's mcp send-trading-signal tool.         returns t",
       "id": "deepseek_trading_bot_rationale_965"
-    },
-    {
-      "label": "Re-fetch HOLDINGS and compare against expected end-state.      Returns a list of",
-      "file_type": "rationale",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L1017",
-      "community": 2,
-      "norm_label": "re-fetch holdings and compare against expected end-state.      returns a list of",
-      "id": "deepseek_trading_bot_rationale_1017"
     },
     {
       "label": "Send a Telegram message via Bot API. Returns True on success.      Failure is lo",
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L1063",
-      "community": 0,
+      "community": 11,
       "norm_label": "send a telegram message via bot api. returns true on success.      failure is lo",
       "id": "deepseek_trading_bot_rationale_1063"
     },
@@ -989,7 +2276,7 @@
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L1093",
-      "community": 0,
+      "community": 11,
       "norm_label": "build a human-readable telegram summary message.",
       "id": "deepseek_trading_bot_rationale_1093"
     },
@@ -1007,297 +2294,9 @@
       "file_type": "rationale",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L1362",
-      "community": 0,
+      "community": 11,
       "norm_label": "send telegram notification if configured; log failure but don't crash.",
       "id": "deepseek_trading_bot_rationale_1362"
-    },
-    {
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L1",
-      "community": 10,
-      "norm_label": "package.json",
-      "id": "package"
-    },
-    {
-      "label": "devDependencies",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "community": 10,
-      "norm_label": "devdependencies",
-      "id": "package_devdependencies"
-    },
-    {
-      "label": "@gitlawb/openclaude",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "community": 10,
-      "norm_label": "@gitlawb/openclaude",
-      "id": "package_devdependencies_gitlawb_openclaude"
-    },
-    {
-      "label": "setup_oauth.py",
-      "file_type": "code",
-      "source_file": "setup_oauth.py",
-      "source_location": "L1",
-      "community": 3,
-      "norm_label": "setup_oauth.py",
-      "id": "setup_oauth"
-    },
-    {
-      "label": "_pkce_challenge()",
-      "file_type": "code",
-      "source_file": "setup_oauth.py",
-      "source_location": "L60",
-      "community": 3,
-      "norm_label": "_pkce_challenge()",
-      "id": "setup_oauth_pkce_challenge"
-    },
-    {
-      "label": "CallbackHandler",
-      "file_type": "code",
-      "source_file": "setup_oauth.py",
-      "source_location": "L74",
-      "community": 3,
-      "norm_label": "callbackhandler",
-      "id": "setup_oauth_callbackhandler"
-    },
-    {
-      "label": "BaseHTTPRequestHandler",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "community": 3,
-      "norm_label": "basehttprequesthandler",
-      "id": "basehttprequesthandler"
-    },
-    {
-      "label": ".log_message()",
-      "file_type": "code",
-      "source_file": "setup_oauth.py",
-      "source_location": "L77",
-      "community": 3,
-      "norm_label": ".log_message()",
-      "id": "setup_oauth_callbackhandler_log_message"
-    },
-    {
-      "label": ".do_GET()",
-      "file_type": "code",
-      "source_file": "setup_oauth.py",
-      "source_location": "L81",
-      "community": 3,
-      "norm_label": ".do_get()",
-      "id": "setup_oauth_callbackhandler_do_get"
-    },
-    {
-      "label": "._respond()",
-      "file_type": "code",
-      "source_file": "setup_oauth.py",
-      "source_location": "L108",
-      "community": 3,
-      "norm_label": "._respond()",
-      "id": "setup_oauth_callbackhandler_respond"
-    },
-    {
-      "label": "_register_client()",
-      "file_type": "code",
-      "source_file": "setup_oauth.py",
-      "source_location": "L115",
-      "community": 3,
-      "norm_label": "_register_client()",
-      "id": "setup_oauth_register_client"
-    },
-    {
-      "label": "_build_authorize_url()",
-      "file_type": "code",
-      "source_file": "setup_oauth.py",
-      "source_location": "L132",
-      "community": 3,
-      "norm_label": "_build_authorize_url()",
-      "id": "setup_oauth_build_authorize_url"
-    },
-    {
-      "label": "_exchange_code()",
-      "file_type": "code",
-      "source_file": "setup_oauth.py",
-      "source_location": "L149",
-      "community": 3,
-      "norm_label": "_exchange_code()",
-      "id": "setup_oauth_exchange_code"
-    },
-    {
-      "label": "_print_token_summary()",
-      "file_type": "code",
-      "source_file": "setup_oauth.py",
-      "source_location": "L164",
-      "community": 3,
-      "norm_label": "_print_token_summary()",
-      "id": "setup_oauth_print_token_summary"
-    },
-    {
-      "label": "_save_to_env()",
-      "file_type": "code",
-      "source_file": "setup_oauth.py",
-      "source_location": "L204",
-      "community": 3,
-      "norm_label": "_save_to_env()",
-      "id": "setup_oauth_save_to_env"
-    },
-    {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "setup_oauth.py",
-      "source_location": "L240",
-      "community": 3,
-      "norm_label": "main()",
-      "id": "setup_oauth_main"
-    },
-    {
-      "label": "Generate PKCE code_verifier and S256 code_challenge.      Returns (verifier, cha",
-      "file_type": "rationale",
-      "source_file": "setup_oauth.py",
-      "source_location": "L61",
-      "community": 3,
-      "norm_label": "generate pkce code_verifier and s256 code_challenge.      returns (verifier, cha",
-      "id": "setup_oauth_rationale_61"
-    },
-    {
-      "label": "Minimal HTTP handler to catch the OAuth redirect.",
-      "file_type": "rationale",
-      "source_file": "setup_oauth.py",
-      "source_location": "L75",
-      "community": 3,
-      "norm_label": "minimal http handler to catch the oauth redirect.",
-      "id": "setup_oauth_rationale_75"
-    },
-    {
-      "label": "Register a new OAuth client at Signum. Returns the JSON response.",
-      "file_type": "rationale",
-      "source_file": "setup_oauth.py",
-      "source_location": "L116",
-      "community": 3,
-      "norm_label": "register a new oauth client at signum. returns the json response.",
-      "id": "setup_oauth_rationale_116"
-    },
-    {
-      "label": "Build the full authorize URL with PKCE challenge.",
-      "file_type": "rationale",
-      "source_file": "setup_oauth.py",
-      "source_location": "L133",
-      "community": 3,
-      "norm_label": "build the full authorize url with pkce challenge.",
-      "id": "setup_oauth_rationale_133"
-    },
-    {
-      "label": "Exchange authorization code for tokens. Returns the full JSON response.",
-      "file_type": "rationale",
-      "source_file": "setup_oauth.py",
-      "source_location": "L150",
-      "community": 3,
-      "norm_label": "exchange authorization code for tokens. returns the full json response.",
-      "id": "setup_oauth_rationale_150"
-    },
-    {
-      "label": "Print token response with secrets redacted so the user can verify it.",
-      "file_type": "rationale",
-      "source_file": "setup_oauth.py",
-      "source_location": "L165",
-      "community": 3,
-      "norm_label": "print token response with secrets redacted so the user can verify it.",
-      "id": "setup_oauth_rationale_165"
-    },
-    {
-      "label": "Save client_id and refresh_token to the .env file.",
-      "file_type": "rationale",
-      "source_file": "setup_oauth.py",
-      "source_location": "L205",
-      "community": 3,
-      "norm_label": "save client_id and refresh_token to the .env file.",
-      "id": "setup_oauth_rationale_205"
-    },
-    {
-      "label": "test_mcp_auth.py",
-      "file_type": "code",
-      "source_file": "test_mcp_auth.py",
-      "source_location": "L1",
-      "community": 5,
-      "norm_label": "test_mcp_auth.py",
-      "id": "test_mcp_auth"
-    },
-    {
-      "label": "hr()",
-      "file_type": "code",
-      "source_file": "test_mcp_auth.py",
-      "source_location": "L45",
-      "community": 5,
-      "norm_label": "hr()",
-      "id": "test_mcp_auth_hr"
-    },
-    {
-      "label": "print_response()",
-      "file_type": "code",
-      "source_file": "test_mcp_auth.py",
-      "source_location": "L51",
-      "community": 5,
-      "norm_label": "print_response()",
-      "id": "test_mcp_auth_print_response"
-    },
-    {
-      "label": "Response",
-      "file_type": "code",
-      "source_file": "test_mcp_auth.py",
-      "source_location": "L51",
-      "community": 5,
-      "norm_label": "response",
-      "id": "response"
-    },
-    {
-      "label": "probe_mcp_no_auth()",
-      "file_type": "code",
-      "source_file": "test_mcp_auth.py",
-      "source_location": "L81",
-      "community": 5,
-      "norm_label": "probe_mcp_no_auth()",
-      "id": "test_mcp_auth_probe_mcp_no_auth"
-    },
-    {
-      "label": "AsyncClient",
-      "file_type": "code",
-      "source_file": "test_mcp_auth.py",
-      "source_location": "L81",
-      "community": 5,
-      "norm_label": "asyncclient",
-      "id": "asyncclient"
-    },
-    {
-      "label": "probe_discovery()",
-      "file_type": "code",
-      "source_file": "test_mcp_auth.py",
-      "source_location": "L103",
-      "community": 5,
-      "norm_label": "probe_discovery()",
-      "id": "test_mcp_auth_probe_discovery"
-    },
-    {
-      "label": "probe_mcp_protocol()",
-      "file_type": "code",
-      "source_file": "test_mcp_auth.py",
-      "source_location": "L131",
-      "community": 5,
-      "norm_label": "probe_mcp_protocol()",
-      "id": "test_mcp_auth_probe_mcp_protocol"
-    },
-    {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "test_mcp_auth.py",
-      "source_location": "L200",
-      "community": 5,
-      "norm_label": "main()",
-      "id": "test_mcp_auth_main"
     },
     {
       "label": "CLAUDE.md - Project Rules",
@@ -1616,76 +2615,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "decisions_run_20260621t014044z",
-      "target": "decisions_run_20260621t014044z_prompt_snapshot"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L4300",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "decisions_run_20260621t014044z",
-      "target": "decisions_run_20260621t014044z_response_raw"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "decisions_run_20260621t014044z",
-      "target": "decisions_run_20260621t014044z_timestamp"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "decisions_run_20260621t014044z_prompt_snapshot",
-      "target": "decisions_run_20260621t014044z_prompt_snapshot_holdings"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "decisions_run_20260621t014044z_prompt_snapshot",
-      "target": "decisions_run_20260621t014044z_prompt_snapshot_trend_radar"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "decisions_run_20260621t014044z_prompt_snapshot_holdings",
-      "target": "decisions_run_20260621t014044z_holdings_balance"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "decisions/run-20260621T014044Z.json",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "decisions_run_20260621t014044z_prompt_snapshot_holdings",
-      "target": "decisions_run_20260621t014044z_holdings_positions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
       "source_location": "L861",
       "weight": 1.0,
@@ -1742,6 +2671,16 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot",
       "target": "deepseek_trading_bot_deepseekclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L742",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot",
+      "target": "deepseek_trading_bot_extract_json_from_text"
     },
     {
       "relation": "contains",
@@ -1867,6 +2806,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L816",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot",
+      "target": "deepseek_trading_bot_normalise_holdings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L155",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -1892,6 +2841,26 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot",
       "target": "deepseek_trading_bot_ordersresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1340",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot",
+      "target": "deepseek_trading_bot_paperexecutor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1124",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot",
+      "target": "deepseek_trading_bot_paperportfolio",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1967,6 +2936,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L730",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot",
+      "target": "deepseek_trading_bot_strip_code_fences"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L109",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -1992,6 +2971,16 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot",
       "target": "deepseek_trading_bot_verify_holdings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1490",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot",
+      "target": "deepseek_trading_bot_verify_paper_portfolio",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -2117,6 +3106,17 @@
       "target": "deepseek_trading_bot"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "test/test_strip_fences.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "test_test_strip_fences",
+      "target": "deepseek_trading_bot"
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
@@ -2231,6 +3231,17 @@
       "target": "deepseek_trading_bot_order"
     },
     {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1357",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperexecutor_send_order",
+      "target": "deepseek_trading_bot_order",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
@@ -2238,6 +3249,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_156",
+      "target": "deepseek_trading_bot_order"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L159",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_159",
       "target": "deepseek_trading_bot_order"
     },
     {
@@ -2293,6 +3314,16 @@
       "target": "deepseek_trading_bot_ordersresponse"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L185",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_185",
+      "target": "deepseek_trading_bot_ordersresponse"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -2325,6 +3356,16 @@
       "target": "deepseek_trading_bot_retry_with_backoff"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L281",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_281",
+      "target": "deepseek_trading_bot_retry_with_backoff"
+    },
+    {
       "relation": "references",
       "context": "return_type",
       "confidence": "EXTRACTED",
@@ -2334,6 +3375,17 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_retry_with_backoff",
       "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L273",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_retry_with_backoff",
+      "target": "deepseek_trading_bot_py_any",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2439,77 +3491,143 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L770",
+      "source_location": "L871",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "deepseek_trading_bot_iter_holdings",
-      "target": "any"
+      "target": "deepseek_trading_bot_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1229",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_execute_buy",
+      "target": "deepseek_trading_bot_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1297",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_execute_sell",
+      "target": "deepseek_trading_bot_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1180",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_positions",
+      "target": "deepseek_trading_bot_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1199",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_to_holdings_dict",
+      "target": "deepseek_trading_bot_py_any",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L471",
+      "source_location": "L474",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "deepseek_trading_bot_signummcpclient_call_tool",
-      "target": "any"
+      "target": "deepseek_trading_bot_py_any",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L576",
+      "source_location": "L585",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "deepseek_trading_bot_signummcpclient_edit_bot_field",
-      "target": "any"
+      "target": "deepseek_trading_bot_py_any",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L540",
+      "source_location": "L543",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "deepseek_trading_bot_signummcpclient_fetch_available_pairs",
-      "target": "any"
+      "target": "deepseek_trading_bot_py_any",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L492",
+      "source_location": "L495",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "deepseek_trading_bot_signummcpclient_fetch_holdings",
-      "target": "any"
+      "target": "deepseek_trading_bot_py_any",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L506",
+      "source_location": "L509",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "deepseek_trading_bot_signummcpclient_fetch_trend_radar",
-      "target": "any"
+      "target": "deepseek_trading_bot_py_any",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
-      "source_location": "L371",
+      "source_location": "L374",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_signummcpclient_rpc",
+      "target": "deepseek_trading_bot_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L314",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "deepseek_trading_bot_signummcpclient_rpc",
-      "target": "any"
+      "source": "deepseek_trading_bot_signummcpclient",
+      "target": "deepseek_trading_bot_orderexecutor_init"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1353",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperexecutor_init",
+      "target": "deepseek_trading_bot_signummcpclient",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -2522,6 +3640,16 @@
       "target": "deepseek_trading_bot_signummcpclient"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L304",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_304",
+      "target": "deepseek_trading_bot_signummcpclient"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -2531,17 +3659,6 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_run",
       "target": "deepseek_trading_bot_signummcpclient"
-    },
-    {
-      "relation": "method",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "deepseek_trading_bot.py",
-      "source_location": "L314",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "deepseek_trading_bot_signummcpclient",
-      "target": "deepseek_trading_bot_orderexecutor_init"
     },
     {
       "relation": "method",
@@ -2657,6 +3774,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L317",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_signummcpclient",
+      "target": "deepseek_trading_bot_signummcpclient_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L325",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -2759,6 +3886,16 @@
       "target": "deepseek_trading_bot_signummcpclient_get_access_token"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L343",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_343",
+      "target": "deepseek_trading_bot_signummcpclient_get_access_token"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -2777,6 +3914,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_372",
+      "target": "deepseek_trading_bot_signummcpclient_rpc"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L375",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_375",
       "target": "deepseek_trading_bot_signummcpclient_rpc"
     },
     {
@@ -2802,6 +3949,17 @@
       "target": "deepseek_trading_bot_signummcpclient_rpc"
     },
     {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L371",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_signummcpclient_rpc",
+      "target": "any"
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
@@ -2809,6 +3967,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_397",
+      "target": "deepseek_trading_bot_signummcpclient_connect"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L400",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_400",
       "target": "deepseek_trading_bot_signummcpclient_connect"
     },
     {
@@ -2830,6 +3998,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_462",
+      "target": "deepseek_trading_bot_signummcpclient_close"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L465",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_465",
       "target": "deepseek_trading_bot_signummcpclient_close"
     },
     {
@@ -2857,10 +4035,41 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L475",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_475",
+      "target": "deepseek_trading_bot_signummcpclient_call_tool"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L471",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_signummcpclient_call_tool",
+      "target": "any"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L493",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_493",
+      "target": "deepseek_trading_bot_signummcpclient_fetch_holdings"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L496",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_496",
       "target": "deepseek_trading_bot_signummcpclient_fetch_holdings"
     },
     {
@@ -2873,6 +4082,28 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_run",
       "target": "deepseek_trading_bot_signummcpclient_fetch_holdings"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L492",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_signummcpclient_fetch_holdings",
+      "target": "any"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L507",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_signummcpclient_fetch_holdings",
+      "target": "deepseek_trading_bot_normalise_holdings"
     },
     {
       "relation": "calls",
@@ -2896,6 +4127,16 @@
       "target": "deepseek_trading_bot_signummcpclient_fetch_trend_radar"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L510",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_510",
+      "target": "deepseek_trading_bot_signummcpclient_fetch_trend_radar"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -2907,6 +4148,17 @@
       "target": "deepseek_trading_bot_signummcpclient_fetch_trend_radar"
     },
     {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L506",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_signummcpclient_fetch_trend_radar",
+      "target": "any"
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
@@ -2914,6 +4166,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_541",
+      "target": "deepseek_trading_bot_signummcpclient_fetch_available_pairs"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L544",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_544",
       "target": "deepseek_trading_bot_signummcpclient_fetch_available_pairs"
     },
     {
@@ -2928,6 +4190,28 @@
       "target": "deepseek_trading_bot_signummcpclient_fetch_available_pairs"
     },
     {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L540",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_signummcpclient_fetch_available_pairs",
+      "target": "any"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1362",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperexecutor_send_order",
+      "target": "deepseek_trading_bot_signummcpclient_fetch_pair_price",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
@@ -2935,6 +4219,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_555",
+      "target": "deepseek_trading_bot_signummcpclient_fetch_pair_price"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L558",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_558",
       "target": "deepseek_trading_bot_signummcpclient_fetch_pair_price"
     },
     {
@@ -2957,6 +4251,27 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_577",
       "target": "deepseek_trading_bot_signummcpclient_edit_bot_field"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L586",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_586",
+      "target": "deepseek_trading_bot_signummcpclient_edit_bot_field"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L576",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_signummcpclient_edit_bot_field",
+      "target": "any"
     },
     {
       "relation": "calls",
@@ -2991,6 +4306,16 @@
       "target": "deepseek_trading_bot_signummcpclient_set_trading_pair"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L608",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_608",
+      "target": "deepseek_trading_bot_signummcpclient_set_trading_pair"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -3009,6 +4334,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_616",
+      "target": "deepseek_trading_bot_signummcpclient_update_bot_title_suffix"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L625",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_625",
       "target": "deepseek_trading_bot_signummcpclient_update_bot_title_suffix"
     },
     {
@@ -3036,6 +4371,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L652",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_deepseekclient",
+      "target": "deepseek_trading_bot_deepseekclient_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L643",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3050,6 +4395,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_641",
+      "target": "deepseek_trading_bot_deepseekclient"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L650",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_650",
       "target": "deepseek_trading_bot_deepseekclient"
     },
     {
@@ -3068,11 +4423,33 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L697",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_deepseekclient_get_orders",
+      "target": "deepseek_trading_bot_extract_json_from_text"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L698",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_deepseekclient_get_orders",
       "target": "deepseek_trading_bot_save_decision"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L708",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_deepseekclient_get_orders",
+      "target": "deepseek_trading_bot_strip_code_fences"
     },
     {
       "relation": "rationale_for",
@@ -3082,6 +4459,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_651",
+      "target": "deepseek_trading_bot_deepseekclient_get_orders"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L660",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_660",
       "target": "deepseek_trading_bot_deepseekclient_get_orders"
     },
     {
@@ -3099,11 +4486,62 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L731",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_731",
+      "target": "deepseek_trading_bot_strip_code_fences"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "test/test_strip_fences.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "test_test_strip_fences",
+      "target": "deepseek_trading_bot_strip_code_fences"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L743",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_743",
+      "target": "deepseek_trading_bot_extract_json_from_text"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L721",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_721",
       "target": "deepseek_trading_bot_save_decision"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L787",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_787",
+      "target": "deepseek_trading_bot_save_decision"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L817",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_817",
+      "target": "deepseek_trading_bot_normalise_holdings"
     },
     {
       "relation": "calls",
@@ -3128,6 +4566,17 @@
       "target": "deepseek_trading_bot_norm_asset"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1258",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_execute_buy",
+      "target": "deepseek_trading_bot_is_stablecoin",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
@@ -3135,6 +4584,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_743",
+      "target": "deepseek_trading_bot_is_stablecoin"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L844",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_844",
       "target": "deepseek_trading_bot_is_stablecoin"
     },
     {
@@ -3169,6 +4628,17 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_is_fiat",
       "target": "deepseek_trading_bot_norm_asset"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1258",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_execute_buy",
+      "target": "deepseek_trading_bot_is_fiat",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3230,6 +4700,50 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1031",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_orderexecutor_get_quote_balance",
+      "target": "deepseek_trading_bot_norm_asset"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1177",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_balances",
+      "target": "deepseek_trading_bot_norm_asset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1246",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_execute_buy",
+      "target": "deepseek_trading_bot_norm_asset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1306",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_execute_sell",
+      "target": "deepseek_trading_bot_norm_asset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L1197",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3246,6 +4760,17 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_verify_holdings",
       "target": "deepseek_trading_bot_norm_asset"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1499",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_verify_paper_portfolio",
+      "target": "deepseek_trading_bot_norm_asset",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3270,6 +4795,17 @@
       "target": "deepseek_trading_bot_iter_holdings"
     },
     {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L770",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_iter_holdings",
+      "target": "any"
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
@@ -3277,6 +4813,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_771",
+      "target": "deepseek_trading_bot_iter_holdings"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L872",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_872",
       "target": "deepseek_trading_bot_iter_holdings"
     },
     {
@@ -3336,6 +4882,16 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L879",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_879",
+      "target": "deepseek_trading_bot_get_quote_balance"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L929",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3361,6 +4917,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_794",
+      "target": "deepseek_trading_bot_compute_nav"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L895",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_895",
       "target": "deepseek_trading_bot_compute_nav"
     },
     {
@@ -3393,6 +4959,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_802",
+      "target": "deepseek_trading_bot_find_trend_radar_row"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L903",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_903",
       "target": "deepseek_trading_bot_find_trend_radar_row"
     },
     {
@@ -3431,10 +5007,30 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L916",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_916",
+      "target": "deepseek_trading_bot_latest_candle"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L824",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_824",
+      "target": "deepseek_trading_bot_prev_candle"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L925",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_925",
       "target": "deepseek_trading_bot_prev_candle"
     },
     {
@@ -3462,6 +5058,16 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L934",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_934",
+      "target": "deepseek_trading_bot_candle_close"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L840",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3472,10 +5078,30 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L941",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_941",
+      "target": "deepseek_trading_bot_candle_gc_upper"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L847",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_847",
+      "target": "deepseek_trading_bot_get_ref_price"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L948",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_948",
       "target": "deepseek_trading_bot_get_ref_price"
     },
     {
@@ -3500,6 +5126,16 @@
       "target": "deepseek_trading_bot_breakout_within_days"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L963",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_963",
+      "target": "deepseek_trading_bot_breakout_within_days"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -3518,6 +5154,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_886",
+      "target": "deepseek_trading_bot_validate_min_order"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L987",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_987",
       "target": "deepseek_trading_bot_validate_min_order"
     },
     {
@@ -3555,6 +5201,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1029",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_orderexecutor",
+      "target": "deepseek_trading_bot_orderexecutor_get_quote_balance"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L918",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3582,6 +5238,26 @@
       "target": "deepseek_trading_bot_orderexecutor_update_balances"
     },
     {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1340",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperexecutor",
+      "target": "deepseek_trading_bot_orderexecutor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1017",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_1017",
+      "target": "deepseek_trading_bot_orderexecutor"
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
@@ -3606,6 +5282,16 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1026",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_1026",
+      "target": "deepseek_trading_bot_orderexecutor_update_balances"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L925",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3622,6 +5308,59 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_run",
       "target": "deepseek_trading_bot_orderexecutor_update_balances"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1054",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_orderexecutor_compute_order_pct",
+      "target": "deepseek_trading_bot_orderexecutor_get_quote_balance"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1371",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperexecutor_send_order",
+      "target": "deepseek_trading_bot_orderexecutor_get_quote_balance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1030",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_1030",
+      "target": "deepseek_trading_bot_orderexecutor_get_quote_balance"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1330",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_run",
+      "target": "deepseek_trading_bot_orderexecutor_get_quote_balance"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1034",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_1034",
+      "target": "deepseek_trading_bot_orderexecutor_debit_quote"
     },
     {
       "relation": "rationale_for",
@@ -3648,6 +5387,16 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1045",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_1045",
+      "target": "deepseek_trading_bot_orderexecutor_compute_order_pct"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
       "source_location": "L944",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3664,6 +5413,16 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_run",
       "target": "deepseek_trading_bot_orderexecutor_compute_order_pct"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1075",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_1075",
+      "target": "deepseek_trading_bot_orderexecutor_send_order"
     },
     {
       "relation": "rationale_for",
@@ -3687,6 +5446,393 @@
       "target": "deepseek_trading_bot_orderexecutor_send_order"
     },
     {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1353",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperexecutor_init",
+      "target": "deepseek_trading_bot_paperportfolio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1172",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio",
+      "target": "deepseek_trading_bot_paperportfolio_balances",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1229",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio",
+      "target": "deepseek_trading_bot_paperportfolio_execute_buy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1297",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio",
+      "target": "deepseek_trading_bot_paperportfolio_execute_sell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1134",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio",
+      "target": "deepseek_trading_bot_paperportfolio_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1157",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio",
+      "target": "deepseek_trading_bot_paperportfolio_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1183",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio",
+      "target": "deepseek_trading_bot_paperportfolio_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1180",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio",
+      "target": "deepseek_trading_bot_paperportfolio_positions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1162",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio",
+      "target": "deepseek_trading_bot_paperportfolio_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1199",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio",
+      "target": "deepseek_trading_bot_paperportfolio_to_holdings_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1192",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio",
+      "target": "deepseek_trading_bot_paperportfolio_trade_count",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1125",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1125",
+      "target": "deepseek_trading_bot_paperportfolio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1609",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_run",
+      "target": "deepseek_trading_bot_paperportfolio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1142",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_init",
+      "target": "deepseek_trading_bot_paperportfolio_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1151",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_init",
+      "target": "deepseek_trading_bot_paperportfolio_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1618",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_run",
+      "target": "deepseek_trading_bot_paperportfolio_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1294",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_execute_buy",
+      "target": "deepseek_trading_bot_paperportfolio_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1332",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_execute_sell",
+      "target": "deepseek_trading_bot_paperportfolio_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1173",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1173",
+      "target": "deepseek_trading_bot_paperportfolio_balances",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1679",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_run",
+      "target": "deepseek_trading_bot_paperportfolio_balances",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1186",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperportfolio_nav",
+      "target": "deepseek_trading_bot_paperportfolio_positions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1498",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_verify_paper_portfolio",
+      "target": "deepseek_trading_bot_paperportfolio_positions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1184",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1184",
+      "target": "deepseek_trading_bot_paperportfolio_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1611",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_run",
+      "target": "deepseek_trading_bot_paperportfolio_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1611",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_run",
+      "target": "deepseek_trading_bot_paperportfolio_trade_count",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1200",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1200",
+      "target": "deepseek_trading_bot_paperportfolio_to_holdings_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1637",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_run",
+      "target": "deepseek_trading_bot_paperportfolio_to_holdings_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1377",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperexecutor_send_order",
+      "target": "deepseek_trading_bot_paperportfolio_execute_buy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1233",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1233",
+      "target": "deepseek_trading_bot_paperportfolio_execute_buy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1392",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperexecutor_send_order",
+      "target": "deepseek_trading_bot_paperportfolio_execute_sell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1300",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1300",
+      "target": "deepseek_trading_bot_paperportfolio_execute_sell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1353",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperexecutor",
+      "target": "deepseek_trading_bot_paperexecutor_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1357",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_paperexecutor",
+      "target": "deepseek_trading_bot_paperexecutor_send_order",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1341",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1341",
+      "target": "deepseek_trading_bot_paperexecutor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1678",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_run",
+      "target": "deepseek_trading_bot_paperexecutor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1358",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1358",
+      "target": "deepseek_trading_bot_paperexecutor_send_order",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1829",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_run",
+      "target": "deepseek_trading_bot_paperexecutor_send_order",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "deepseek_trading_bot.py",
@@ -3695,6 +5841,26 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_1017",
       "target": "deepseek_trading_bot_verify_holdings"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1127",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_1127",
+      "target": "deepseek_trading_bot_verify_holdings"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1418",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1418",
+      "target": "deepseek_trading_bot_verify_holdings",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3729,6 +5895,47 @@
       "target": "deepseek_trading_bot_send_telegram"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1173",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_1173",
+      "target": "deepseek_trading_bot_send_telegram"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1464",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1464",
+      "target": "deepseek_trading_bot_send_telegram",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1496",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1496",
+      "target": "deepseek_trading_bot_verify_paper_portfolio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1867",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_run",
+      "target": "deepseek_trading_bot_verify_paper_portfolio",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -3748,6 +5955,26 @@
       "confidence_score": 1.0,
       "source": "deepseek_trading_bot_rationale_1093",
       "target": "deepseek_trading_bot_build_telegram_summary"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1207",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_1207",
+      "target": "deepseek_trading_bot_build_telegram_summary"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1527",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1527",
+      "target": "deepseek_trading_bot_build_telegram_summary",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3771,6 +5998,26 @@
       "target": "deepseek_trading_bot_run"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1252",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deepseek_trading_bot_rationale_1252",
+      "target": "deepseek_trading_bot_run"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1582",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1582",
+      "target": "deepseek_trading_bot_run",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -3792,24 +6039,381 @@
       "target": "deepseek_trading_bot_maybe_notify"
     },
     {
-      "relation": "contains",
+      "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L2",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1539",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_devdependencies"
+      "source": "deepseek_trading_bot_rationale_1539",
+      "target": "deepseek_trading_bot_maybe_notify"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "deepseek_trading_bot.py",
+      "source_location": "L1903",
+      "weight": 1.0,
+      "source": "deepseek_trading_bot_rationale_1903",
+      "target": "deepseek_trading_bot_maybe_notify",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "package.json",
+      "source_file": "paper_state.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "paper_state",
+      "target": "paper_state_balances",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_state.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "paper_state",
+      "target": "paper_state_created",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_state.json",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_gitlawb_openclaude"
+      "source": "paper_state",
+      "target": "paper_state_initial_balance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_state.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "paper_state",
+      "target": "paper_state_positions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_state.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "paper_state",
+      "target": "paper_state_trade_history",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_state.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "paper_state_balances",
+      "target": "paper_state_balances_usd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "paper_summary",
+      "target": "paper_summary_compute_current_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "paper_summary",
+      "target": "paper_summary_load_paper_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L287",
+      "weight": 1.0,
+      "source": "paper_summary",
+      "target": "paper_summary_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "source": "paper_summary",
+      "target": "paper_summary_nav_curve",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L262",
+      "weight": 1.0,
+      "source": "paper_summary",
+      "target": "paper_summary_print_brief",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L195",
+      "weight": 1.0,
+      "source": "paper_summary",
+      "target": "paper_summary_print_full",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L275",
+      "weight": 1.0,
+      "source": "paper_summary",
+      "target": "paper_summary_print_trades",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "paper_summary",
+      "target": "paper_summary_win_loss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "paper_summary_load_paper_state",
+      "target": "paper_summary_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L293",
+      "weight": 1.0,
+      "source": "paper_summary_main",
+      "target": "paper_summary_load_paper_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "paper_summary_compute_current_nav",
+      "target": "paper_summary_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "source": "paper_summary_nav_curve",
+      "target": "paper_summary_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L262",
+      "weight": 1.0,
+      "source": "paper_summary_print_brief",
+      "target": "paper_summary_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L195",
+      "weight": 1.0,
+      "source": "paper_summary_print_full",
+      "target": "paper_summary_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L275",
+      "weight": 1.0,
+      "source": "paper_summary_print_trades",
+      "target": "paper_summary_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "paper_summary_win_loss",
+      "target": "paper_summary_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L263",
+      "weight": 1.0,
+      "source": "paper_summary_print_brief",
+      "target": "paper_summary_compute_current_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L207",
+      "weight": 1.0,
+      "source": "paper_summary_print_full",
+      "target": "paper_summary_compute_current_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "paper_summary_rationale_43",
+      "target": "paper_summary_compute_current_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L266",
+      "weight": 1.0,
+      "source": "paper_summary_print_brief",
+      "target": "paper_summary_win_loss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L197",
+      "weight": 1.0,
+      "source": "paper_summary_print_full",
+      "target": "paper_summary_win_loss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L276",
+      "weight": 1.0,
+      "source": "paper_summary_print_trades",
+      "target": "paper_summary_win_loss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "paper_summary_rationale_53",
+      "target": "paper_summary_win_loss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L233",
+      "weight": 1.0,
+      "source": "paper_summary_print_full",
+      "target": "paper_summary_nav_curve",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "paper_summary_rationale_149",
+      "target": "paper_summary_nav_curve",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L302",
+      "weight": 1.0,
+      "source": "paper_summary_main",
+      "target": "paper_summary_print_full",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L298",
+      "weight": 1.0,
+      "source": "paper_summary_main",
+      "target": "paper_summary_print_brief",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "paper_summary.py",
+      "source_location": "L300",
+      "weight": 1.0,
+      "source": "paper_summary_main",
+      "target": "paper_summary_print_trades",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -4090,6 +6694,36 @@
       "target": "setup_oauth_save_to_env"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test/test_orders.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "test_test_orders",
+      "target": "test_test_orders_comment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test/test_orders.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "test_test_orders",
+      "target": "test_test_orders_orders"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "test/test_strip_fences.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "test_test_strip_fences_rationale_1",
+      "target": "test_test_strip_fences"
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -4326,6 +6960,196 @@
       "target": "test_mcp_auth_probe_mcp_protocol"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "claude",
+      "target": "claude_rules_for_this_project"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "claude_rules_for_this_project",
+      "target": "claude_critical_do_not_explore_files_directly"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "claude_rules_for_this_project",
+      "target": "claude_how_to_understand_this_project"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "claude_rules_for_this_project",
+      "target": "claude_workflow_for_every_task"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme",
+      "target": "readme_deepseek_trading_bot_tr_gc_crypto_9"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_deepseek_trading_bot_tr_gc_crypto_9",
+      "target": "readme_architecture"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L141",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_deepseek_trading_bot_tr_gc_crypto_9",
+      "target": "readme_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_deepseek_trading_bot_tr_gc_crypto_9",
+      "target": "readme_environment_variables"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L130",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_deepseek_trading_bot_tr_gc_crypto_9",
+      "target": "readme_files"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_deepseek_trading_bot_tr_gc_crypto_9",
+      "target": "readme_license"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_deepseek_trading_bot_tr_gc_crypto_9",
+      "target": "readme_quick_start"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L118",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_deepseek_trading_bot_tr_gc_crypto_9",
+      "target": "readme_scheduling_cron_compatible_one_shot"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_deepseek_trading_bot_tr_gc_crypto_9",
+      "target": "readme_strategy_tr_gc_crypto_9_verified_against_spec_as_of_2026_06_21"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L113",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_strategy_tr_gc_crypto_9_verified_against_spec_as_of_2026_06_21",
+      "target": "readme_audit_trail"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L84",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_strategy_tr_gc_crypto_9_verified_against_spec_as_of_2026_06_21",
+      "target": "readme_entry_sizing_computed_from_nav_snapshot_never_recomputed_mid_run"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_strategy_tr_gc_crypto_9_verified_against_spec_as_of_2026_06_21",
+      "target": "readme_long_entries"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_strategy_tr_gc_crypto_9_verified_against_spec_as_of_2026_06_21",
+      "target": "readme_long_exits"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_strategy_tr_gc_crypto_9_verified_against_spec_as_of_2026_06_21",
+      "target": "readme_ordersize_calculation_recomputed_before_each_order"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_strategy_tr_gc_crypto_9_verified_against_spec_as_of_2026_06_21",
+      "target": "readme_safety_guardrails_enforced_in_python_only_never_in_the_llm_prompt"
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4467,5 +7291,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6bc6afd40b175e6b3f80549cf2486e2acf682cd0"
+  "built_at_commit": "880bbd2a283ccdacc259d0e03f7d1c2ba7cd4021"
 }
