@@ -565,13 +565,19 @@ class SignumMCPClient:
                 "fetch_pair_price",
                 self._call_tool,
                 tool,
-                {"pair": pair},
+                {"symbol": pair, "botId": CONFIG["BOT_ID"]},
             )
+            log.debug("fetch_pair_price(%s) raw: %s", pair, data)
             # Try common response shapes
             if isinstance(data, (int, float)):
                 return float(data)
             if isinstance(data, dict):
-                return float(data.get("priceUsd", data.get("price", data.get("last", 0))))
+                val = float(data.get("priceUsd", data.get("price", data.get("last", data.get("value", 0)))))
+                if val:
+                    return val
+                # Log unexpected dict shape
+                log.warning("fetch_pair_price(%s) unexpected dict keys: %s", pair, list(data.keys())[:10])
+                return None
         except Exception as exc:
             log.warning("Failed to fetch price for %s: %s", pair, exc)
         return None
@@ -698,6 +704,9 @@ class DeepSeekClient:
         # Save full decision to disk for audit trail
         _save_decision(user_message, raw_text)
 
+        # DeepSeek sometimes wraps JSON in markdown code fences
+        raw_text = _strip_code_fences(raw_text)
+
         # Parse + validate
         try:
             parsed = json.loads(raw_text)
@@ -716,6 +725,18 @@ class DeepSeekClient:
 
         log.info("DeepSeek returned %d order(s).", len(orders_resp.orders))
         return orders_resp
+
+
+def _strip_code_fences(text: str) -> str:
+    """Remove markdown code fences (```json ... ```) from DeepSeek output."""
+    t = text.strip()
+    if t.startswith("```"):
+        newline = t.find("\n")
+        if newline != -1:
+            t = t[newline + 1 :]
+        if t.endswith("```"):
+            t = t[: t.rfind("```")]
+    return t.strip()
 
 
 def _extract_json_from_text(text: str) -> str | None:
@@ -1039,7 +1060,16 @@ class OrderExecutor:
             )
             return 0.0
         pct = (target_usd / current_balance) * 100.0
-        return min(pct, 100.0)
+        final_pct = min(pct, 100.0)
+        log.info(
+            "  Sizing: target_usd = $%.2f NAV × %.1f%% = $%.2f | "
+            "quote_balance(%s) = $%.2f | "
+            "order_pct = ($%.2f / $%.2f) × 100 = %.2f%% (capped %.2f%%)",
+            nav, size_pct_of_nav, target_usd,
+            quote_asset, current_balance,
+            target_usd, current_balance, pct, final_pct,
+        )
+        return final_pct
 
     async def send_order(self, order: Order, timestamp: str) -> bool:
         """
@@ -1218,8 +1248,13 @@ def _build_telegram_summary(
 # 13. Main Orchestrator
 # ═══════════════════════════════════════════════════════════════════════════
 
-async def run(dry_run: bool = True) -> None:
-    """Execute one full run of the trading bot."""
+async def run(dry_run: bool = True, simulate_orders_path: str | None = None) -> None:
+    """Execute one full run of the trading bot.
+
+    When simulate_orders_path is provided, DeepSeek is bypassed and orders
+    are loaded from a JSON file instead. Each order may include an optional
+    ``_force_size_pct`` field to override the breakout-based entry sizing.
+    """
     # --- Collect errors/warnings for final report ---
     errors: list[str] = []
     orders_sent: list[dict] = []
@@ -1232,6 +1267,15 @@ async def run(dry_run: bool = True) -> None:
 
     telegram_token = os.getenv("TELEGRAM_BOT_TOKEN", "")
     telegram_chat_id = os.getenv("TELEGRAM_CHAT_ID", "")
+
+    # --- Simulated orders: load from file, skip DeepSeek ---
+    simulated_orders_raw: Optional[dict] = None
+    if simulate_orders_path:
+        log.info("=== Simulated orders mode — loading from %s ===", simulate_orders_path)
+        with open(simulate_orders_path, "r", encoding="utf-8") as f:
+            simulated_orders_raw = json.load(f)
+        if not isinstance(simulated_orders_raw, dict) or "orders" not in simulated_orders_raw:
+            sys.exit(f"ERROR: {simulate_orders_path} must contain {{\"orders\": [...]}}.")
 
     # --- Connect MCP ---
     log.info("=== DeepSeek Trading Bot (TR-GC-Crypto-9) starting === mode=%s", "dry-run" if dry_run else "LIVE")
@@ -1259,14 +1303,27 @@ async def run(dry_run: bool = True) -> None:
         for p in available_pairs:
             pair_set.add(p.get("symbol", p.get("pair", p.get("ticker", ""))))
 
-        # --- Step 4: Get DeepSeek decisions ---
-        deepseek = DeepSeekClient(deepseek_key)
-        try:
-            orders_resp = await deepseek.get_orders(holdings_data, trend_radar)
-        except Exception as exc:
-            errors.append(f"DeepSeek decision failed: {exc}")
-            await _maybe_notify(telegram_token, telegram_chat_id, nav_before, None, [], [], errors, dry_run)
-            return
+        # --- Step 4: Get DeepSeek decisions (or use simulated orders) ---
+        force_size_map: dict[str, float] = {}  # asset → forced size pct
+        if simulated_orders_raw is not None:
+            # Load orders from file, bypassing DeepSeek
+            raw_list = simulated_orders_raw["orders"]
+            log.info("Simulated: %d order(s) loaded from %s.", len(raw_list), simulate_orders_path)
+            # Extract _force_size_pct before Pydantic strips extra fields
+            for item in raw_list:
+                key = _norm_asset(item.get("asset", ""))
+                fsp = item.get("_force_size_pct")
+                if key and fsp is not None:
+                    force_size_map[key] = float(fsp)
+            orders_resp = OrdersResponse.model_validate({"orders": raw_list})
+        else:
+            deepseek = DeepSeekClient(deepseek_key)
+            try:
+                orders_resp = await deepseek.get_orders(holdings_data, trend_radar)
+            except Exception as exc:
+                errors.append(f"DeepSeek decision failed: {exc}")
+                await _maybe_notify(telegram_token, telegram_chat_id, nav_before, None, [], [], errors, dry_run)
+                return
 
         # --- Step 5: Set up order executor ---
         executor = OrderExecutor(CONFIG["BOT_ID"], mcp, dry_run=dry_run)
@@ -1316,6 +1373,10 @@ async def run(dry_run: bool = True) -> None:
                     pair_price = await mcp.fetch_pair_price(order.ticker)
                     if pair_price is not None:
                         divergence = abs(pair_price - ref_price) / ref_price
+                        log.info(
+                            "  Ticker check: %s pair_price=$%.6f ref_price=$%.6f divergence=%.2f%% (max %.0f%%)",
+                            order.ticker, pair_price, ref_price, divergence * 100, CONFIG["TICKER_PRICE_DIVERGENCE_MAX"] * 100,
+                        )
                         if divergence > CONFIG["TICKER_PRICE_DIVERGENCE_MAX"]:
                             reason = (
                                 f"ticker collision: {order.ticker} price ${pair_price:.4f} "
@@ -1329,10 +1390,14 @@ async def run(dry_run: bool = True) -> None:
                 if ref_price is None:
                     pair_price = await mcp.fetch_pair_price(order.ticker)
                     if pair_price is None:
-                        reason = "cannot verify price — both ref and pair_price missing"
-                        orders_skipped.append({"asset": order.asset, "reason": reason})
-                        log.warning("SKIP %s: %s", order.asset, reason)
-                        continue
+                        if simulate_orders_path:
+                            # Simulated: ticker collision check not applicable
+                            log.info("  [SIM] Ticker collision bypassed — no ref price available for %s", order.asset)
+                        else:
+                            reason = "cannot verify price — both ref and pair_price missing"
+                            orders_skipped.append({"asset": order.asset, "reason": reason})
+                            log.warning("SKIP %s: %s", order.asset, reason)
+                            continue
 
             # ---- 6c. Determine quote asset and recompute order_size ----
             ticker = order.ticker or ""
@@ -1368,11 +1433,16 @@ async def run(dry_run: bool = True) -> None:
                 # Exit: close 100 % of the position
                 order.order_size = 100.0
             else:
-                # Entry: determine size from breakout recency
-                if radar_row and _breakout_within_days(radar_row):
+                # Entry: determine size from breakout recency (unless simulated override)
+                if asset_key in force_size_map:
+                    size_pct_of_nav = force_size_map[asset_key]
+                    log.info("  [SIM] Forced entry size: %.1f%% NAV (from _force_size_pct)", size_pct_of_nav)
+                elif radar_row and _breakout_within_days(radar_row):
                     size_pct_of_nav = CONFIG["BREAKOUT_RECENT_SIZE_PCT"]
+                    log.info("  Recent breakout (%s) → %.0f%% NAV sizing", radar_row.get("breakoutDate"), size_pct_of_nav)
                 else:
                     size_pct_of_nav = CONFIG["DEFAULT_ENTRY_SIZE_PCT"]
+                    log.info("  No recent breakout → default %.0f%% NAV sizing", size_pct_of_nav)
                 fresh_pct = executor.compute_order_pct(nav_before, size_pct_of_nav, quote_asset)
                 if fresh_pct <= 0:
                     reason = f"insufficient quote balance for {quote_asset}"
@@ -1388,6 +1458,13 @@ async def run(dry_run: bool = True) -> None:
                 orders_skipped.append({"asset": order.asset, "reason": min_err})
                 log.warning("SKIP %s: %s", order.asset, min_err)
                 continue
+            order_value_usd = (order.order_size / 100.0) * quote_balance
+            log.info(
+                "  Min order PASS: order_value = %.2f%% × $%.2f = $%.2f (min $%.2f + %.0f%% NAV = $%.2f)",
+                order.order_size, quote_balance, order_value_usd,
+                CONFIG["MIN_ORDER_USD"], CONFIG["MIN_ORDER_NAV_PCT"],
+                nav_before * CONFIG["MIN_ORDER_NAV_PCT_DECIMAL"],
+            )
 
             # ---- 6e. Set trading pair (best-effort, warn if unsupported) ----
             if order.ticker:
@@ -1481,15 +1558,28 @@ def main() -> None:
         default=False,
         help="Send real orders to Signum (default: dry-run, which only logs intended actions).",
     )
+    parser.add_argument(
+        "--simulate-orders",
+        type=str,
+        default=None,
+        metavar="PATH",
+        help="Path to a JSON file with simulated orders (bypasses DeepSeek). "
+             "Each order may include _force_size_pct to override breakout-based sizing. "
+             "Only effective in dry-run mode.",
+    )
     args = parser.parse_args()
     live = args.live
+    simulate_orders = args.simulate_orders
+
+    if live and simulate_orders:
+        sys.exit("ERROR: --simulate-orders can only be used in dry-run mode (without --live).")
 
     if live:
         log.warning("=" * 60)
         log.warning("  LIVE MODE — real orders will be sent to the exchange.")
         log.warning("=" * 60)
 
-    asyncio.run(run(dry_run=not live))
+    asyncio.run(run(dry_run=not live, simulate_orders_path=simulate_orders))
 
 
 if __name__ == "__main__":

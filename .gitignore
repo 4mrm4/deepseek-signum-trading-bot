@@ -36,3 +36,8 @@ Thumbs.db
 
 # Node (if present)
 node_modules/
+package.json
+package-lock.json
+
+# Runtime audit trail
+decisions/
