@@ -1,0 +1,287 @@
+{
+  "communities": {
+    "0": [
+      "deepseek_trading_bot",
+      "deepseek_trading_bot_breakout_within_days",
+      "deepseek_trading_bot_build_telegram_summary",
+      "deepseek_trading_bot_candle_gc_upper",
+      "deepseek_trading_bot_find_trend_radar_row",
+      "deepseek_trading_bot_flushinghandler",
+      "deepseek_trading_bot_flushinghandler_emit",
+      "deepseek_trading_bot_is_in_trend_radar",
+      "deepseek_trading_bot_main",
+      "deepseek_trading_bot_maybe_notify",
+      "deepseek_trading_bot_prev_candle",
+      "deepseek_trading_bot_rationale_102",
+      "deepseek_trading_bot_rationale_1063",
+      "deepseek_trading_bot_rationale_1093",
+      "deepseek_trading_bot_rationale_110",
+      "deepseek_trading_bot_rationale_135",
+      "deepseek_trading_bot_rationale_1362",
+      "deepseek_trading_bot_rationale_802",
+      "deepseek_trading_bot_rationale_824",
+      "deepseek_trading_bot_rationale_840",
+      "deepseek_trading_bot_rationale_862",
+      "deepseek_trading_bot_require_secret",
+      "deepseek_trading_bot_send_telegram",
+      "deepseek_trading_bot_update_env_refresh_token",
+      "deepseek_v4_pro",
+      "entry_sizing",
+      "httpx",
+      "long_entries",
+      "long_exits",
+      "mcp",
+      "openai",
+      "pydantic",
+      "python_dotenv",
+      "readme_md",
+      "requirements_txt",
+      "safety_guardrails",
+      "signum_mcp",
+      "signum_rest",
+      "telegram",
+      "tr_gc_crypto_9"
+    ],
+    "1": [
+      "any",
+      "deepseek_trading_bot_rationale_278",
+      "deepseek_trading_bot_rationale_301",
+      "deepseek_trading_bot_rationale_340",
+      "deepseek_trading_bot_rationale_372",
+      "deepseek_trading_bot_rationale_397",
+      "deepseek_trading_bot_rationale_472",
+      "deepseek_trading_bot_rationale_493",
+      "deepseek_trading_bot_rationale_507",
+      "deepseek_trading_bot_rationale_541",
+      "deepseek_trading_bot_rationale_555",
+      "deepseek_trading_bot_rationale_577",
+      "deepseek_trading_bot_rationale_599",
+      "deepseek_trading_bot_rationale_616",
+      "deepseek_trading_bot_retry_with_backoff",
+      "deepseek_trading_bot_signummcpclient",
+      "deepseek_trading_bot_signummcpclient_auth_headers",
+      "deepseek_trading_bot_signummcpclient_bot_edit_supported",
+      "deepseek_trading_bot_signummcpclient_call_tool",
+      "deepseek_trading_bot_signummcpclient_connect",
+      "deepseek_trading_bot_signummcpclient_edit_bot_field",
+      "deepseek_trading_bot_signummcpclient_fetch_available_pairs",
+      "deepseek_trading_bot_signummcpclient_fetch_holdings",
+      "deepseek_trading_bot_signummcpclient_fetch_pair_price",
+      "deepseek_trading_bot_signummcpclient_fetch_trend_radar",
+      "deepseek_trading_bot_signummcpclient_get_access_token",
+      "deepseek_trading_bot_signummcpclient_next_id",
+      "deepseek_trading_bot_signummcpclient_rpc",
+      "deepseek_trading_bot_signummcpclient_set_trading_pair",
+      "deepseek_trading_bot_signummcpclient_update_bot_title_suffix"
+    ],
+    "2": [
+      "deepseek_trading_bot_compute_nav",
+      "deepseek_trading_bot_get_quote_balance",
+      "deepseek_trading_bot_is_fiat",
+      "deepseek_trading_bot_is_stablecoin",
+      "deepseek_trading_bot_iter_holdings",
+      "deepseek_trading_bot_norm_asset",
+      "deepseek_trading_bot_orderexecutor",
+      "deepseek_trading_bot_orderexecutor_compute_order_pct",
+      "deepseek_trading_bot_orderexecutor_debit_quote",
+      "deepseek_trading_bot_orderexecutor_send_order",
+      "deepseek_trading_bot_orderexecutor_update_balances",
+      "deepseek_trading_bot_rationale_1017",
+      "deepseek_trading_bot_rationale_1138",
+      "deepseek_trading_bot_rationale_462",
+      "deepseek_trading_bot_rationale_743",
+      "deepseek_trading_bot_rationale_771",
+      "deepseek_trading_bot_rationale_778",
+      "deepseek_trading_bot_rationale_794",
+      "deepseek_trading_bot_rationale_916",
+      "deepseek_trading_bot_rationale_925",
+      "deepseek_trading_bot_rationale_929",
+      "deepseek_trading_bot_rationale_933",
+      "deepseek_trading_bot_rationale_944",
+      "deepseek_trading_bot_rationale_965",
+      "deepseek_trading_bot_run",
+      "deepseek_trading_bot_signummcpclient_close",
+      "deepseek_trading_bot_verify_holdings"
+    ],
+    "3": [
+      "basehttprequesthandler",
+      "setup_oauth",
+      "setup_oauth_build_authorize_url",
+      "setup_oauth_callbackhandler",
+      "setup_oauth_callbackhandler_do_get",
+      "setup_oauth_callbackhandler_log_message",
+      "setup_oauth_callbackhandler_respond",
+      "setup_oauth_exchange_code",
+      "setup_oauth_main",
+      "setup_oauth_pkce_challenge",
+      "setup_oauth_print_token_summary",
+      "setup_oauth_rationale_116",
+      "setup_oauth_rationale_133",
+      "setup_oauth_rationale_150",
+      "setup_oauth_rationale_165",
+      "setup_oauth_rationale_205",
+      "setup_oauth_rationale_61",
+      "setup_oauth_rationale_75",
+      "setup_oauth_register_client",
+      "setup_oauth_save_to_env"
+    ],
+    "4": [
+      "basemodel",
+      "deepseek_trading_bot_deepseekclient",
+      "deepseek_trading_bot_deepseekclient_get_orders",
+      "deepseek_trading_bot_order",
+      "deepseek_trading_bot_order_validate_action",
+      "deepseek_trading_bot_order_validate_order_size",
+      "deepseek_trading_bot_orderexecutor_init",
+      "deepseek_trading_bot_ordersresponse",
+      "deepseek_trading_bot_ordersresponse_validate_orders_non_empty",
+      "deepseek_trading_bot_rationale_156",
+      "deepseek_trading_bot_rationale_182",
+      "deepseek_trading_bot_rationale_641",
+      "deepseek_trading_bot_rationale_651",
+      "deepseek_trading_bot_rationale_721",
+      "deepseek_trading_bot_rationale_886",
+      "deepseek_trading_bot_save_decision",
+      "deepseek_trading_bot_validate_min_order"
+    ],
+    "5": [
+      "asyncclient",
+      "response",
+      "test_mcp_auth",
+      "test_mcp_auth_hr",
+      "test_mcp_auth_main",
+      "test_mcp_auth_print_response",
+      "test_mcp_auth_probe_discovery",
+      "test_mcp_auth_probe_mcp_no_auth",
+      "test_mcp_auth_probe_mcp_protocol"
+    ],
+    "6": [
+      "decisions_run_20260621t014044z",
+      "decisions_run_20260621t014044z_holdings_balance",
+      "decisions_run_20260621t014044z_holdings_positions",
+      "decisions_run_20260621t014044z_prompt_snapshot",
+      "decisions_run_20260621t014044z_prompt_snapshot_holdings",
+      "decisions_run_20260621t014044z_prompt_snapshot_trend_radar",
+      "decisions_run_20260621t014044z_response_raw",
+      "decisions_run_20260621t014044z_timestamp"
+    ],
+    "7": [
+      "deepseek_trading_bot_candle_close",
+      "deepseek_trading_bot_get_ref_price",
+      "deepseek_trading_bot_latest_candle",
+      "deepseek_trading_bot_rationale_815",
+      "deepseek_trading_bot_rationale_833",
+      "deepseek_trading_bot_rationale_847"
+    ],
+    "8": [
+      "decide_phase",
+      "notify_phase",
+      "read_phase",
+      "verify_phase",
+      "write_phase"
+    ],
+    "9": [
+      "claude_md",
+      "graphify_query",
+      "graphify_report"
+    ],
+    "10": [
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_gitlawb_openclaude"
+    ]
+  },
+  "cohesion": {
+    "0": 0.05897435897435897,
+    "1": 0.11954022988505747,
+    "2": 0.1225071225071225,
+    "3": 0.1368421052631579,
+    "4": 0.125,
+    "5": 0.5833333333333334,
+    "6": 0.25,
+    "7": 0.3333333333333333,
+    "8": 0.4,
+    "9": 0.6666666666666666,
+    "10": 0.6666666666666666
+  },
+  "gods": [
+    {
+      "id": "deepseek_trading_bot_run",
+      "label": "run()",
+      "degree": 32
+    },
+    {
+      "id": "deepseek_trading_bot_signummcpclient",
+      "label": "SignumMCPClient",
+      "degree": 20
+    },
+    {
+      "id": "deepseek_trading_bot_retry_with_backoff",
+      "label": "_retry_with_backoff()",
+      "degree": 14
+    },
+    {
+      "id": "deepseek_trading_bot_orderexecutor",
+      "label": "OrderExecutor",
+      "degree": 9
+    },
+    {
+      "id": "deepseek_trading_bot_verify_holdings",
+      "label": "verify_holdings()",
+      "degree": 9
+    },
+    {
+      "id": "deepseek_trading_bot_order",
+      "label": "Order",
+      "degree": 8
+    },
+    {
+      "id": "any",
+      "label": "Any",
+      "degree": 8
+    },
+    {
+      "id": "deepseek_trading_bot_norm_asset",
+      "label": "_norm_asset()",
+      "degree": 8
+    },
+    {
+      "id": "deepseek_trading_bot_iter_holdings",
+      "label": "_iter_holdings()",
+      "degree": 8
+    },
+    {
+      "id": "deepseek_trading_bot_get_quote_balance",
+      "label": "_get_quote_balance()",
+      "degree": 8
+    }
+  ],
+  "surprises": [
+    {
+      "source": "README.md - Project Overview",
+      "target": "requirements.txt - Python Dependencies",
+      "source_files": [
+        "README.md",
+        "requirements.txt"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `README.md - Project Overview` unexpectedly reaches hub `requirements.txt - Python Dependencies`"
+    },
+    {
+      "source": "CLAUDE.md - Project Rules",
+      "target": "graphify-out/GRAPH_REPORT.md",
+      "source_files": [
+        "CLAUDE.md",
+        "graphify-out/GRAPH_REPORT.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "tokens": {
+    "input": 1590,
+    "output": 8401
+  }
+}

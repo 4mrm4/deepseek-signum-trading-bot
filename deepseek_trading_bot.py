@@ -35,6 +35,7 @@ import os
 import sys
 import textwrap
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import httpx
@@ -58,7 +59,7 @@ CONFIG: dict[str, Any] = {
     "MIN_ORDER_NAV_PCT": 1.0,         # 1 % of NAV minimum entry value
     "MIN_ORDER_NAV_PCT_DECIMAL": 0.01,
     "MAX_TREND_RADAR_ROWS": 50,       # sort by market rank, take first N
-    "TREND_RADAR_MIN_ROWS": 50,       # if < 50 rows, re-fetch up to 3 times
+    "TREND_RADAR_MIN_ROWS": 50,       # if fewer than this, re-fetch up to 3 times
     "BREAKOUT_RECENT_DAYS": 25,       # breakout within this → larger size
     "BREAKOUT_RECENT_SIZE_PCT": 8.0,  # 8 % of NAV for recent breakouts
     "DEFAULT_ENTRY_SIZE_PCT": 2.0,    # 2 % of NAV for older/no breakout
@@ -130,10 +131,17 @@ def _update_env_refresh_token(new_token: str) -> None:
 # 2. Logging
 # ═══════════════════════════════════════════════════════════════════════════
 
+class _FlushingHandler(logging.StreamHandler):
+    """StreamHandler that flushes after every emit — needed on Windows."""
+    def emit(self, record):
+        super().emit(record)
+        self.flush()
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     datefmt="%Y-%m-%dT%H:%M:%S",
+    handlers=[_FlushingHandler(sys.stderr)],
 )
 log = logging.getLogger("deepseek_bot")
 
@@ -488,7 +496,7 @@ class SignumMCPClient:
             "fetch_holdings",
             self._call_tool,
             CONFIG["MCP_TOOL_HOLDINGS"],
-            {"bot_id": CONFIG["BOT_ID"]},
+            {"botId": CONFIG["BOT_ID"]},
         )
         # Normalise: the MCP may return {holdings: [...]} or a raw list
         if isinstance(data, list):
@@ -511,11 +519,12 @@ class SignumMCPClient:
                 self._call_tool,
                 CONFIG["MCP_TOOL_TREND_RADAR"],
                 {
+                    "assetClass": "crypto",
                     "detector": "gc",
                     "includeIndicators": True,
                 },
             )
-            rows: list[dict[str, Any]] = data if isinstance(data, list) else data.get("assets", data.get("data", []))
+            rows: list[dict[str, Any]] = data if isinstance(data, list) else data.get("results", data.get("assets", data.get("data", [])))
             if len(rows) >= CONFIG["TREND_RADAR_MIN_ROWS"]:
                 log.info("Trend Radar: %d rows received.", len(rows))
                 return rows
@@ -538,7 +547,7 @@ class SignumMCPClient:
             "fetch_pairs",
             self._call_tool,
             tool,
-            {"bot_id": CONFIG["BOT_ID"]},
+            {"botId": CONFIG["BOT_ID"]},
         )
         return data if isinstance(data, list) else data.get("pairs", data.get("data", []))
 
@@ -578,7 +587,7 @@ class SignumMCPClient:
                 f"edit_bot_{field}",
                 self._call_tool,
                 CONFIG["MCP_TOOL_EDIT_BOT"],
-                {"bot_id": CONFIG["BOT_ID"], field: value},
+                {"botId": CONFIG["BOT_ID"], field: value},
             )
             log.info("Bot field '%s' updated successfully.", field)
             return True
@@ -594,7 +603,7 @@ class SignumMCPClient:
                     "set_trading_pair",
                     self._call_tool,
                     "set-bot-trading-pair",
-                    {"bot_id": CONFIG["BOT_ID"], "pair": pair},
+                    {"botId": CONFIG["BOT_ID"], "pair": pair},
                 )
                 log.info("Trading pair set to '%s'.", pair)
                 return True
@@ -611,7 +620,7 @@ class SignumMCPClient:
                     "update_bot_title",
                     self._call_tool,
                     "update-bot-title",
-                    {"bot_id": CONFIG["BOT_ID"], "suffix": suffix},
+                    {"botId": CONFIG["BOT_ID"], "suffix": suffix},
                 )
                 return True
             except Exception as exc:
@@ -659,19 +668,32 @@ class DeepSeekClient:
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user", "content": user_message},
                 ],
-                response_format={"type": "json_object"},
                 temperature=0.0,  # deterministic for trading
-                max_tokens=4096,
+                max_tokens=16384,  # high — reasoning models need room for CoT + JSON
             )
         except Exception as exc:
             log.error("DeepSeek API call failed: %s", exc)
             raise
 
-        raw_text = response.choices[0].message.content
-        if not raw_text:
-            raise RuntimeError("DeepSeek returned empty response content.")
+        # DeepSeek V4 Pro is a reasoning model: content may be in
+        # reasoning_content with content empty.
+        choice = response.choices[0]
+        raw_text = choice.message.content
 
-        log.info("DeepSeek raw response: %s", raw_text[:500])
+        if not raw_text:
+            reasoning = getattr(choice.message, "reasoning_content", None) or ""
+            if not reasoning:
+                raise RuntimeError("DeepSeek returned empty content and no reasoning_content.")
+            log.info("DeepSeek reasoning length: %d chars (extracting JSON...)", len(reasoning))
+            raw_text = _extract_json_from_text(reasoning)
+            if not raw_text:
+                log.error("Could not extract JSON from reasoning_content. First 500: %s", reasoning[:500])
+                raise RuntimeError("DeepSeek reasoning complete but no JSON found in output.")
+
+        log.info("DeepSeek raw response: %s", raw_text[:500] if len(raw_text or "") > 500 else raw_text)
+
+        # Save full decision to disk for audit trail
+        _save_decision(user_message, raw_text)
 
         # Parse + validate
         try:
@@ -691,6 +713,68 @@ class DeepSeekClient:
 
         log.info("DeepSeek returned %d order(s).", len(orders_resp.orders))
         return orders_resp
+
+
+def _extract_json_from_text(text: str) -> str | None:
+    """Extract the last valid JSON object from reasoning model output.
+
+    Reasoning models embed their final JSON answer at the end of chain-of-thought.
+    Scans from the end backwards to find a balanced {...} or [...] block.
+    """
+    # Scan the last ~25% of the text for a JSON block
+    tail = text[max(0, len(text) - len(text) // 4):]
+    # Find the last '{' and try to match it
+    start = tail.rfind('{')
+    if start == -1:
+        # Try array form
+        start = tail.rfind('[')
+        if start == -1:
+            return None
+        end_char = ']'
+    else:
+        end_char = '}'
+
+    open_char = tail[start]
+    depth = 0
+    i = start
+    while i < len(tail):
+        ch = tail[i]
+        if ch == open_char:
+            depth += 1
+        elif ch == end_char:
+            depth -= 1
+            if depth == 0:
+                candidate = tail[start:i + 1]
+                try:
+                    json.loads(candidate)
+                    return candidate
+                except json.JSONDecodeError:
+                    start = tail.rfind(open_char, 0, start - 1) if start > 0 else -1
+                    if start == -1:
+                        return None
+                    i = start
+                    depth = 0
+                    continue
+        i += 1
+    return None
+
+
+def _save_decision(prompt: str, response: str) -> None:
+    """Persist the DeepSeek prompt + response to decisions/ for audit trail."""
+    decisions_dir = Path("decisions")
+    try:
+        decisions_dir.mkdir(exist_ok=True)
+        ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        fpath = decisions_dir / f"run-{ts}.json"
+        with open(fpath, "w", encoding="utf-8") as f:
+            json.dump({
+                "timestamp": ts,
+                "prompt_snapshot": json.loads(prompt) if isinstance(prompt, str) else prompt,
+                "response_raw": response,
+            }, f, indent=2, default=str)
+        log.info("Decision saved to %s", fpath)
+    except Exception as exc:
+        log.warning("Failed to save decision file: %s", exc)
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -927,7 +1011,7 @@ class OrderExecutor:
         In dry-run mode, logs the order without sending.
         """
         payload = {
-            "bot_id": self.bot_id,
+            "botId": self.bot_id,
             "ticker": order.ticker,
             "action": order.action,
             "order_size": order.order_size,
@@ -1211,14 +1295,30 @@ async def run(dry_run: bool = True) -> None:
             # ---- 6c. Determine quote asset and recompute order_size ----
             ticker = order.ticker or ""
             quote_asset = ticker.split("/")[-1] if "/" in ticker else "USDT"
-            if _is_stablecoin(quote_asset) or _is_fiat(quote_asset):
-                pass  # usable as quote
-            else:
-                # Quote is not a stablecoin — we'd need conversion. Skip.
+            if not (_is_stablecoin(quote_asset) or _is_fiat(quote_asset)):
                 reason = f"quote asset {quote_asset} is not a stablecoin/fiat — conversion needed"
                 orders_skipped.append({"asset": order.asset, "reason": reason})
                 log.warning("SKIP %s: %s", order.asset, reason)
                 continue
+
+            # Check if we actually hold this quote coin — if not, auto-conversion
+            # is assumed (Signum backend). Log so user can audit before --live.
+            # When auto-converting, use total stablecoin balance for sizing.
+            quote_balance = executor._get_quote_balance(quote_asset)
+            if quote_balance <= 0 and order.action == "buy":
+                held_quotes = {k: v for k, v in executor._quote_balances.items()
+                               if v > 0 and (_is_stablecoin(k) or _is_fiat(k))}
+                total_stable = sum(held_quotes.values())
+                log.warning(
+                    "AUTO-CONVERT: entry for %s needs quote %s (balance $%.2f). "
+                    "Total held stablecoins: %s. Using total ($%.2f) for sizing.",
+                    order.asset, quote_asset, quote_balance,
+                    ", ".join(f"{k}=${v:.2f}" for k, v in held_quotes.items()) if held_quotes else "none",
+                    total_stable,
+                )
+                if total_stable > 0:
+                    # Temporarily use total stablecoin balance so sizing works
+                    executor._quote_balances[_norm_asset(quote_asset)] = total_stable
 
             # For exits: size = 100 % of position (close full position)
             # For entries: size comes from strategy rules
@@ -1308,6 +1408,9 @@ async def run(dry_run: bool = True) -> None:
 
     log.info("=== Run complete === mode=%s orders_sent=%d skipped=%d errors=%d",
              "dry-run" if dry_run else "LIVE", len(orders_sent), len(orders_skipped), len(errors))
+    # Ensure logs are flushed on Windows before process exits
+    for h in logging.getLogger().handlers:
+        h.flush()
 
 
 async def _maybe_notify(

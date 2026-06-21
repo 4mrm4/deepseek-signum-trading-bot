@@ -1,0 +1,4301 @@
+{
+  "timestamp": "20260621T015543Z",
+  "prompt_snapshot": {
+    "holdings": {
+      "balance": [
+        {
+          "coin": "USDC",
+          "balance": "11.3526701300",
+          "visibleBalance": "11.3526701300"
+        },
+        {
+          "coin": "GBP",
+          "balance": "0.8351000000",
+          "visibleBalance": "0.8351000000"
+        },
+        {
+          "coin": "USD",
+          "balance": "220.4913000000",
+          "visibleBalance": "220.4913000000"
+        }
+      ],
+      "positions": []
+    },
+    "trend_radar": [
+      {
+        "id": 49630,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "TRON",
+        "symbol": "BINANCE:TRXUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-20",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-20",
+        "pnlPct": null,
+        "breakoutDate": "2025-12-30",
+        "breakoutResistance": 0.2833,
+        "breakoutSupport": 0.2683,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-03-22",
+        "marketCap": 30948845483.51401,
+        "marketRank": 8,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.2683,
+            "resistance": 0.2833,
+            "breakoutDate": "2025-12-30",
+            "supportLineStart": "2025-11-20",
+            "resistanceLineStart": "2025-11-30"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.33291385,
+                "trend": "Green",
+                "upper": 0.35076402,
+                "filter": 0.34183894
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.3208,
+                "h": 0.3226,
+                "l": 0.3183,
+                "o": 0.3218
+              },
+              "volume": 101775236.9
+            },
+            {
+              "gc": {
+                "lower": 0.33286391,
+                "trend": "Green",
+                "upper": 0.35084877,
+                "filter": 0.34185634
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.3239,
+                "h": 0.3239,
+                "l": 0.3195,
+                "o": 0.3208
+              },
+              "volume": 123995784.7
+            },
+            {
+              "gc": {
+                "lower": 0.33275887,
+                "trend": "Red",
+                "upper": 0.35086349,
+                "filter": 0.34181118
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.3268,
+                "h": 0.3269,
+                "l": 0.3219,
+                "o": 0.3239
+              },
+              "volume": 134850517.3
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.32633739
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49631,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Cosmos",
+        "symbol": "BINANCE:ATOMUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-19",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-20",
+        "pnlPct": null,
+        "breakoutDate": null,
+        "breakoutResistance": null,
+        "breakoutSupport": null,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": null,
+        "marketCap": 929097522.6345423,
+        "marketRank": 56,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 1.7993198,
+                "trend": "Green",
+                "upper": 2.09827571,
+                "filter": 1.94879775
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 1.813,
+                "h": 1.908,
+                "l": 1.779,
+                "o": 1.901
+              },
+              "volume": 1560223.33
+            },
+            {
+              "gc": {
+                "lower": 1.79777434,
+                "trend": "Red",
+                "upper": 2.09941708,
+                "filter": 1.94859571
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 1.81,
+                "h": 1.854,
+                "l": 1.795,
+                "o": 1.814
+              },
+              "volume": 564189.13
+            },
+            {
+              "gc": {
+                "lower": 1.79610057,
+                "trend": "Red",
+                "upper": 2.1002605,
+                "filter": 1.94818054
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 1.803,
+                "h": 1.818,
+                "l": 1.762,
+                "o": 1.811
+              },
+              "volume": 518449.53
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 1.80475269
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49632,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Render",
+        "symbol": "BINANCE:RENDERUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-19",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-20",
+        "pnlPct": null,
+        "breakoutDate": "2026-03-12",
+        "breakoutResistance": 1.549,
+        "breakoutSupport": 1.298,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-03-28",
+        "marketCap": 876233999.5129505,
+        "marketRank": 58,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 1.298,
+            "resistance": 1.549,
+            "breakoutDate": "2026-03-12",
+            "supportLineStart": "2025-12-15",
+            "resistanceLineStart": "2026-02-14"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 1.69067665,
+                "trend": "Green",
+                "upper": 2.1009531,
+                "filter": 1.89581487
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 1.678,
+                "h": 1.738,
+                "l": 1.62,
+                "o": 1.696
+              },
+              "volume": 3139725.38
+            },
+            {
+              "gc": {
+                "lower": 1.6881417,
+                "trend": "Red",
+                "upper": 2.10302102,
+                "filter": 1.89558136
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 1.759,
+                "h": 1.764,
+                "l": 1.652,
+                "o": 1.679
+              },
+              "volume": 3249441.2
+            },
+            {
+              "gc": {
+                "lower": 1.68536731,
+                "trend": "Red",
+                "upper": 2.10441382,
+                "filter": 1.89489057
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 1.722,
+                "h": 1.775,
+                "l": 1.703,
+                "o": 1.758
+              },
+              "volume": 1739823.05
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 1.68905382
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49633,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Internet Computer",
+        "symbol": "BINANCE:ICPUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-17",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-18",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-05",
+        "breakoutResistance": 2.602,
+        "breakoutSupport": 2.281,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-08",
+        "marketCap": 1272296737.866453,
+        "marketRank": 49,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 2.281,
+            "resistance": 2.602,
+            "breakoutDate": "2026-05-05",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-04-08"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 2.3498117,
+                "trend": "Red",
+                "upper": 2.98925067,
+                "filter": 2.66953119
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 2.269,
+                "h": 2.355,
+                "l": 2.177,
+                "o": 2.344
+              },
+              "volume": 3317786.45
+            },
+            {
+              "gc": {
+                "lower": 2.34594241,
+                "trend": "Red",
+                "upper": 2.98930196,
+                "filter": 2.66762218
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 2.268,
+                "h": 2.281,
+                "l": 2.202,
+                "o": 2.268
+              },
+              "volume": 1344183.54
+            },
+            {
+              "gc": {
+                "lower": 2.34175607,
+                "trend": "Red",
+                "upper": 2.98839595,
+                "filter": 2.66507601
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 2.302,
+                "h": 2.316,
+                "l": 2.243,
+                "o": 2.268
+              },
+              "volume": 1609526
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 2.2959519
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49635,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "BNB",
+        "symbol": "BINANCE:BNBUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-16",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-17",
+        "pnlPct": null,
+        "breakoutDate": "2026-03-04",
+        "breakoutResistance": 642.49,
+        "breakoutSupport": 570.06,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-15",
+        "marketCap": 79232613882.91795,
+        "marketRank": 4,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 570.06,
+            "resistance": 642.49,
+            "breakoutDate": "2026-03-04",
+            "supportLineStart": "2026-02-06",
+            "resistanceLineStart": "2026-02-15"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 610.89188206,
+                "trend": "Red",
+                "upper": 672.23776906,
+                "filter": 641.56482556
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 578.48,
+                "h": 604.31,
+                "l": 573,
+                "o": 601.63
+              },
+              "volume": 151568.812
+            },
+            {
+              "gc": {
+                "lower": 610.22944044,
+                "trend": "Red",
+                "upper": 672.36735876,
+                "filter": 641.2983996
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 581.42,
+                "h": 583.29,
+                "l": 570.82,
+                "o": 578.48
+              },
+              "volume": 94343.191
+            },
+            {
+              "gc": {
+                "lower": 609.50873207,
+                "trend": "Red",
+                "upper": 672.38210094,
+                "filter": 640.94541651
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 588.03,
+                "h": 589.43,
+                "l": 580.12,
+                "o": 581.41
+              },
+              "volume": 84540.17
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 587.85136789
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49638,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Aster",
+        "symbol": "GATE:ASTERUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-14",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-15",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-10",
+        "breakoutResistance": 0.6938,
+        "breakoutSupport": 0.5968,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-26",
+        "marketCap": 1744691009.0609038,
+        "marketRank": 40,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.5968,
+            "resistance": 0.6938,
+            "breakoutDate": "2026-05-10",
+            "supportLineStart": "2026-01-20",
+            "resistanceLineStart": "2026-03-30"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.62807846,
+                "trend": "Red",
+                "upper": 0.7217419,
+                "filter": 0.67491018
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.6381,
+                "h": 0.7267,
+                "l": 0.6286,
+                "o": 0.7173
+              },
+              "volume": 15726817.2
+            },
+            {
+              "gc": {
+                "lower": 0.62723479,
+                "trend": "Red",
+                "upper": 0.72181417,
+                "filter": 0.67452448
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.6344,
+                "h": 0.6397,
+                "l": 0.6142,
+                "o": 0.6378
+              },
+              "volume": 5913573
+            },
+            {
+              "gc": {
+                "lower": 0.62634828,
+                "trend": "Red",
+                "upper": 0.72184111,
+                "filter": 0.6740947
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.647,
+                "h": 0.6636,
+                "l": 0.622,
+                "o": 0.6343
+              },
+              "volume": 3544842.5
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.64671381
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49639,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Quant",
+        "symbol": "BINANCE:QNTUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-14",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-15",
+        "pnlPct": null,
+        "breakoutDate": "2025-11-28",
+        "breakoutResistance": 92.1,
+        "breakoutSupport": 76.41,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2025-12-12",
+        "marketCap": 846402473.0013095,
+        "marketRank": 59,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 76.41,
+            "resistance": 92.1,
+            "breakoutDate": "2025-11-28",
+            "supportLineStart": "2025-11-16",
+            "resistanceLineStart": "2025-10-20"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 67.52781647,
+                "trend": "Red",
+                "upper": 78.88937555,
+                "filter": 73.20859601
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 70.06,
+                "h": 71.5,
+                "l": 67.63,
+                "o": 70.73
+              },
+              "volume": 11333.96
+            },
+            {
+              "gc": {
+                "lower": 67.42108874,
+                "trend": "Red",
+                "upper": 78.87581178,
+                "filter": 73.14845026
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 71.95,
+                "h": 73,
+                "l": 69.02,
+                "o": 69.99
+              },
+              "volume": 8076.253
+            },
+            {
+              "gc": {
+                "lower": 67.31076024,
+                "trend": "Red",
+                "upper": 78.85167479,
+                "filter": 73.08121752
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 70.3,
+                "h": 72.05,
+                "l": 69.83,
+                "o": 72.05
+              },
+              "volume": 5356.511
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 70.10857628
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49644,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Monero",
+        "symbol": "KRAKEN:XMRUSD",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-12",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-13",
+        "pnlPct": null,
+        "breakoutDate": null,
+        "breakoutResistance": null,
+        "breakoutSupport": null,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": null,
+        "marketCap": 5993304604.588724,
+        "marketRank": 14,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 342.89962537,
+                "trend": "Red",
+                "upper": 408.75463526,
+                "filter": 375.82713031
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 319.01,
+                "h": 338.74,
+                "l": 317,
+                "o": 337.33
+              },
+              "volume": 14574.75807006
+            },
+            {
+              "gc": {
+                "lower": 341.71020262,
+                "trend": "Red",
+                "upper": 408.68667202,
+                "filter": 375.19843732
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 315.52,
+                "h": 333,
+                "l": 305,
+                "o": 319.43
+              },
+              "volume": 14861.31238147
+            },
+            {
+              "gc": {
+                "lower": 340.46717621,
+                "trend": "Red",
+                "upper": 408.55153013,
+                "filter": 374.50935317
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 320.43,
+                "h": 323.25,
+                "l": 305.84,
+                "o": 314.78
+              },
+              "volume": 8534.29957842
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 319.34239275
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49645,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "MemeCore",
+        "symbol": "KRAKEN:MUSD",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-12",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-13",
+        "pnlPct": null,
+        "breakoutDate": "2026-03-13",
+        "breakoutResistance": 1.48586,
+        "breakoutSupport": 1.2417,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-03-23",
+        "marketCap": 3752290143.142964,
+        "marketRank": 23,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 1.2417,
+            "resistance": 1.48586,
+            "breakoutDate": "2026-03-13",
+            "supportLineStart": "2025-11-27",
+            "resistanceLineStart": "2026-02-23"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 2.66708093,
+                "trend": "Red",
+                "upper": 3.67229513,
+                "filter": 3.16968803
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 2.90476,
+                "h": 3.00709,
+                "l": 2.8745,
+                "o": 2.92226
+              },
+              "volume": 39665.24352
+            },
+            {
+              "gc": {
+                "lower": 2.67016752,
+                "trend": "Red",
+                "upper": 3.66309618,
+                "filter": 3.16663185
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 2.88758,
+                "h": 2.96993,
+                "l": 2.86669,
+                "o": 2.9031
+              },
+              "volume": 19029.41943
+            },
+            {
+              "gc": {
+                "lower": 2.67297533,
+                "trend": "Red",
+                "upper": 3.65361312,
+                "filter": 3.16329422
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 2.84001,
+                "h": 2.9155,
+                "l": 2.80001,
+                "o": 2.87746
+              },
+              "volume": 16836.43415
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 2.85325668
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49647,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Dogecoin",
+        "symbol": "BINANCE:DOGEUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-11",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-12",
+        "pnlPct": null,
+        "breakoutDate": "2026-04-16",
+        "breakoutResistance": 0.09796,
+        "breakoutSupport": 0.08666,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-03",
+        "marketCap": 12934407440.446339,
+        "marketRank": 10,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.08666,
+            "resistance": 0.09796,
+            "breakoutDate": "2026-04-16",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-03-25"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.09510367,
+                "trend": "Red",
+                "upper": 0.10828466,
+                "filter": 0.10169416
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.08352,
+                "h": 0.08657,
+                "l": 0.08184,
+                "o": 0.08592
+              },
+              "volume": 397361030
+            },
+            {
+              "gc": {
+                "lower": 0.09483226,
+                "trend": "Red",
+                "upper": 0.10802384,
+                "filter": 0.10142805
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.08357,
+                "h": 0.08396,
+                "l": 0.08188,
+                "o": 0.08351
+              },
+              "volume": 236070733
+            },
+            {
+              "gc": {
+                "lower": 0.09454152,
+                "trend": "Red",
+                "upper": 0.10773845,
+                "filter": 0.10113998
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.0837,
+                "h": 0.08434,
+                "l": 0.08262,
+                "o": 0.08356
+              },
+              "volume": 226228321
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.08358523
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49651,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Sui",
+        "symbol": "BINANCE:SUIUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-10",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-11",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-08",
+        "breakoutResistance": 0.9931,
+        "breakoutSupport": 0.8815,
+        "breakoutInvalidatedAt": "2026-06-10",
+        "breakoutValidatedAt": null,
+        "marketCap": 2868994759.2030234,
+        "marketRank": 26,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.8815,
+            "resistance": 0.9931,
+            "breakoutDate": "2026-05-08",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-03-04"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.88992209,
+                "trend": "Red",
+                "upper": 1.07821099,
+                "filter": 0.98406654
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.7296,
+                "h": 0.7726,
+                "l": 0.7074,
+                "o": 0.7673
+              },
+              "volume": 46461325.4
+            },
+            {
+              "gc": {
+                "lower": 0.88593719,
+                "trend": "Red",
+                "upper": 1.07396371,
+                "filter": 0.97995045
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.7166,
+                "h": 0.7326,
+                "l": 0.7015,
+                "o": 0.7297
+              },
+              "volume": 26270071.9
+            },
+            {
+              "gc": {
+                "lower": 0.881722,
+                "trend": "Red",
+                "upper": 1.06935116,
+                "filter": 0.97553658
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.714,
+                "h": 0.7227,
+                "l": 0.6969,
+                "o": 0.7165
+              },
+              "volume": 30853274
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.71205128
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49652,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Bitget Token",
+        "symbol": "BITGET:BGBUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-10",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-11",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-01",
+        "breakoutResistance": 1.9775,
+        "breakoutSupport": 1.8291,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-20",
+        "marketCap": 1237380348.865025,
+        "marketRank": 50,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 1.8291,
+            "resistance": 1.9775,
+            "breakoutDate": "2026-05-01",
+            "supportLineStart": "2026-03-29",
+            "resistanceLineStart": "2026-04-01"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 1.92476815,
+                "trend": "Red",
+                "upper": 2.07846419,
+                "filter": 2.00161617
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 1.7936,
+                "h": 1.813,
+                "l": 1.7816,
+                "o": 1.8101
+              },
+              "volume": 6672025.0259
+            },
+            {
+              "gc": {
+                "lower": 1.92157722,
+                "trend": "Red",
+                "upper": 2.07590088,
+                "filter": 1.99873905
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 1.7739,
+                "h": 1.7943,
+                "l": 1.7605,
+                "o": 1.7936
+              },
+              "volume": 6399557.7843
+            },
+            {
+              "gc": {
+                "lower": 1.91818046,
+                "trend": "Red",
+                "upper": 2.07297711,
+                "filter": 1.99557879
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 1.7732,
+                "h": 1.7758,
+                "l": 1.755,
+                "o": 1.7739
+              },
+              "volume": 5818111.9932
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 1.77095312
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49656,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Bitcoin",
+        "symbol": "BINANCE:BTCUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-09",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-10",
+        "pnlPct": null,
+        "breakoutDate": "2026-03-04",
+        "breakoutResistance": 70983,
+        "breakoutSupport": 62510.28,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-04-22",
+        "marketCap": 1286547518803.7979,
+        "marketRank": 1,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 62510.28,
+            "resistance": 70983,
+            "breakoutDate": "2026-03-04",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-02-15"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 72116.99057991,
+                "trend": "Red",
+                "upper": 78306.95665106,
+                "filter": 75211.97361549
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 62958.01,
+                "h": 64806,
+                "l": 62272.07,
+                "o": 64509.4
+              },
+              "volume": 16935.59661
+            },
+            {
+              "gc": {
+                "lower": 71880.18670734,
+                "trend": "Red",
+                "upper": 78090.34281924,
+                "filter": 74985.26476329
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 63543.91,
+                "h": 63666,
+                "l": 62316.44,
+                "o": 62958.01
+              },
+              "volume": 14247.424
+            },
+            {
+              "gc": {
+                "lower": 71630.93716346,
+                "trend": "Red",
+                "upper": 77860.20612609,
+                "filter": 74745.57164477
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 64298.01,
+                "h": 64388,
+                "l": 63184.21,
+                "o": 63543.9
+              },
+              "volume": 9522.10324
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 64180.79342608
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49657,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "UNUS SED LEO",
+        "symbol": "BITFINEX:LEOUSD",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-09",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-10",
+        "pnlPct": null,
+        "breakoutDate": "2026-02-28",
+        "breakoutResistance": 8.8765,
+        "breakoutSupport": 7.5277,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-03-14",
+        "marketCap": 8809146823.38421,
+        "marketRank": 11,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 7.5277,
+            "resistance": 8.8765,
+            "breakoutDate": "2026-02-28",
+            "supportLineStart": "2025-12-20",
+            "resistanceLineStart": "2025-12-21"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 9.77815593,
+                "trend": "Red",
+                "upper": 10.30954842,
+                "filter": 10.04385218
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 9.6273,
+                "h": 9.7305,
+                "l": 9.511,
+                "o": 9.7305
+              },
+              "volume": 18450.33179623
+            },
+            {
+              "gc": {
+                "lower": 9.76932855,
+                "trend": "Red",
+                "upper": 10.30281297,
+                "filter": 10.03607076
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 9.5396,
+                "h": 9.666,
+                "l": 9.45,
+                "o": 9.666
+              },
+              "volume": 16397.1725704
+            },
+            {
+              "gc": {
+                "lower": 9.76022613,
+                "trend": "Red",
+                "upper": 10.2954025,
+                "filter": 10.02781432
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 9.57,
+                "h": 9.63,
+                "l": 9.5396,
+                "o": 9.5396
+              },
+              "volume": 10560.92941104
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 9.57153642
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49658,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Chainlink",
+        "symbol": "BINANCE:LINKUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-09",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-10",
+        "pnlPct": null,
+        "breakoutDate": "2026-03-04",
+        "breakoutResistance": 9.25,
+        "breakoutSupport": 8.05,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-04-29",
+        "marketCap": 5797866033.228837,
+        "marketRank": 17,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 8.05,
+            "resistance": 9.25,
+            "breakoutDate": "2026-03-04",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-02-15"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 8.72271346,
+                "trend": "Red",
+                "upper": 9.97165135,
+                "filter": 9.3471824
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 8.016,
+                "h": 8.137,
+                "l": 7.772,
+                "o": 8.093
+              },
+              "volume": 1944282.09
+            },
+            {
+              "gc": {
+                "lower": 8.69352571,
+                "trend": "Red",
+                "upper": 9.94544651,
+                "filter": 9.31948611
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 7.95,
+                "h": 8.044,
+                "l": 7.764,
+                "o": 8.015
+              },
+              "volume": 1395665.73
+            },
+            {
+              "gc": {
+                "lower": 8.66300982,
+                "trend": "Red",
+                "upper": 9.91742825,
+                "filter": 9.29021903
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 7.987,
+                "h": 8.017,
+                "l": 7.824,
+                "o": 7.949
+              },
+              "volume": 1100953.38
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 7.97395994
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49661,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Ethereum Classic",
+        "symbol": "BINANCE:ETCUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-08",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-09",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-02",
+        "breakoutResistance": 8.4,
+        "breakoutSupport": 7.8,
+        "breakoutInvalidatedAt": "2026-06-08",
+        "breakoutValidatedAt": null,
+        "marketCap": 1166503201.471122,
+        "marketRank": 53,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 7.8,
+            "resistance": 8.4,
+            "breakoutDate": "2026-05-02",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-03-25"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 8.03750772,
+                "trend": "Red",
+                "upper": 9.19421081,
+                "filter": 8.61585927
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 7.22,
+                "h": 7.4,
+                "l": 6.94,
+                "o": 7.33
+              },
+              "volume": 216578.11
+            },
+            {
+              "gc": {
+                "lower": 8.0092658,
+                "trend": "Red",
+                "upper": 9.16568333,
+                "filter": 8.58747456
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 7.6,
+                "h": 7.77,
+                "l": 7.08,
+                "o": 7.22
+              },
+              "volume": 603950.62
+            },
+            {
+              "gc": {
+                "lower": 7.97957888,
+                "trend": "Red",
+                "upper": 9.13544995,
+                "filter": 8.55751441
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 7.46,
+                "h": 7.7,
+                "l": 7.36,
+                "o": 7.61
+              },
+              "volume": 292034.31
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 7.42118122
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49662,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Hedera",
+        "symbol": "BINANCE:HBARUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-07",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-08",
+        "pnlPct": null,
+        "breakoutDate": "2026-04-26",
+        "breakoutResistance": 0.09125,
+        "breakoutSupport": 0.0836,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-23",
+        "marketCap": 3498342196.923881,
+        "marketRank": 24,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.0836,
+            "resistance": 0.09125,
+            "breakoutDate": "2026-04-26",
+            "supportLineStart": "2026-01-31",
+            "resistanceLineStart": "2026-04-01"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.08410041,
+                "trend": "Red",
+                "upper": 0.09571366,
+                "filter": 0.08990704
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.08026,
+                "h": 0.08218,
+                "l": 0.0787,
+                "o": 0.08131
+              },
+              "volume": 118815411
+            },
+            {
+              "gc": {
+                "lower": 0.08390318,
+                "trend": "Red",
+                "upper": 0.09561211,
+                "filter": 0.08975764
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.08051,
+                "h": 0.08141,
+                "l": 0.07873,
+                "o": 0.08027
+              },
+              "volume": 79975882
+            },
+            {
+              "gc": {
+                "lower": 0.08369896,
+                "trend": "Red",
+                "upper": 0.09549288,
+                "filter": 0.08959592
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.0807,
+                "h": 0.08087,
+                "l": 0.07934,
+                "o": 0.0805
+              },
+              "volume": 58889230
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.08047112
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49665,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Bittensor",
+        "symbol": "BINANCE:TAOUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-06",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-07",
+        "pnlPct": null,
+        "breakoutDate": null,
+        "breakoutResistance": null,
+        "breakoutSupport": null,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": null,
+        "marketCap": 2548993412.2956443,
+        "marketRank": 33,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 241.85047997,
+                "trend": "Red",
+                "upper": 296.65914288,
+                "filter": 269.25481142
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 236,
+                "h": 248.9,
+                "l": 230.2,
+                "o": 246.5
+              },
+              "volume": 139069.2922
+            },
+            {
+              "gc": {
+                "lower": 240.78885745,
+                "trend": "Red",
+                "upper": 295.68419968,
+                "filter": 268.23652857
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 228.8,
+                "h": 236.4,
+                "l": 222.1,
+                "o": 236.1
+              },
+              "volume": 164758.715
+            },
+            {
+              "gc": {
+                "lower": 239.69942306,
+                "trend": "Red",
+                "upper": 294.70252067,
+                "filter": 267.20097187
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 231.5,
+                "h": 235,
+                "l": 224,
+                "o": 228.8
+              },
+              "volume": 288982.2674
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 230.91938356
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49669,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Solana",
+        "symbol": "BINANCE:SOLUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-05",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-06",
+        "pnlPct": null,
+        "breakoutDate": "2026-03-16",
+        "breakoutResistance": 92.1,
+        "breakoutSupport": 75.63,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-14",
+        "marketCap": 42422514038.01944,
+        "marketRank": 7,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 75.63,
+            "resistance": 92.1,
+            "breakoutDate": "2026-03-16",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-02-15"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 79.20352413,
+                "trend": "Red",
+                "upper": 89.33839843,
+                "filter": 84.27096128
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 69.71,
+                "h": 72.68,
+                "l": 68.23,
+                "o": 72.05
+              },
+              "volume": 2263712.329
+            },
+            {
+              "gc": {
+                "lower": 78.83600319,
+                "trend": "Red",
+                "upper": 89.01728039,
+                "filter": 83.92664179
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 69.74,
+                "h": 70.09,
+                "l": 67.92,
+                "o": 69.72
+              },
+              "volume": 1884570.868
+            },
+            {
+              "gc": {
+                "lower": 78.45478661,
+                "trend": "Red",
+                "upper": 88.68303297,
+                "filter": 83.56890979
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 73.22,
+                "h": 74.3,
+                "l": 69.48,
+                "o": 69.73
+              },
+              "volume": 2267614.627
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 73.10560313
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49670,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Uniswap",
+        "symbol": "BINANCE:UNIUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-05",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-06",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-05",
+        "breakoutResistance": 3.323,
+        "breakoutSupport": 3,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-21",
+        "marketCap": 1867338147.2869625,
+        "marketRank": 37,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 3,
+            "resistance": 3.323,
+            "breakoutDate": "2026-05-05",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-04-07"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 3.0397096,
+                "trend": "Red",
+                "upper": 3.57713073,
+                "filter": 3.30842016
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 3.209,
+                "h": 3.329,
+                "l": 2.92,
+                "o": 3.227
+              },
+              "volume": 12944528.79
+            },
+            {
+              "gc": {
+                "lower": 3.02425283,
+                "trend": "Red",
+                "upper": 3.56207664,
+                "filter": 3.29316473
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 3.086,
+                "h": 3.211,
+                "l": 2.996,
+                "o": 3.209
+              },
+              "volume": 4990816.61
+            },
+            {
+              "gc": {
+                "lower": 3.00831458,
+                "trend": "Red",
+                "upper": 3.54687997,
+                "filter": 3.27759727
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 3.006,
+                "h": 3.095,
+                "l": 2.947,
+                "o": 3.085
+              },
+              "volume": 2991719.1
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 3.00379543
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49674,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Avalanche",
+        "symbol": "BINANCE:AVAXUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-04",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-05",
+        "pnlPct": null,
+        "breakoutDate": "2026-03-15",
+        "breakoutResistance": 9.75,
+        "breakoutSupport": 8.18,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-13",
+        "marketCap": 2696088816.4553685,
+        "marketRank": 32,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 8.18,
+            "resistance": 9.75,
+            "breakoutDate": "2026-03-15",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-02-15"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 8.50900094,
+                "trend": "Red",
+                "upper": 9.70796439,
+                "filter": 9.10848267
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 6.318,
+                "h": 6.804,
+                "l": 6.214,
+                "o": 6.766
+              },
+              "volume": 3654456.88
+            },
+            {
+              "gc": {
+                "lower": 8.46386507,
+                "trend": "Red",
+                "upper": 9.66504252,
+                "filter": 9.0644538
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 5.896,
+                "h": 6.324,
+                "l": 5.681,
+                "o": 6.317
+              },
+              "volume": 7913756.29
+            },
+            {
+              "gc": {
+                "lower": 8.41596642,
+                "trend": "Red",
+                "upper": 9.61920835,
+                "filter": 9.01758739
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 6.239,
+                "h": 6.263,
+                "l": 5.819,
+                "o": 5.896
+              },
+              "volume": 6784282.19
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 6.24424247
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49675,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Worldcoin",
+        "symbol": "BINANCE:WLDUSDT",
+        "trendFrom": "Red",
+        "trendTo": "Green",
+        "trendChanged": "2026-06-04",
+        "currentStatus": "OPEN",
+        "tradeDate": "2026-06-05",
+        "pnlPct": 13.639746929661339,
+        "breakoutDate": null,
+        "breakoutResistance": null,
+        "breakoutSupport": null,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": null,
+        "marketCap": 2094840157.9612556,
+        "marketRank": 35,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.2476496,
+                "trend": "Green",
+                "upper": 0.35879298,
+                "filter": 0.30322129
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.6431,
+                "h": 0.6722,
+                "l": 0.6041,
+                "o": 0.6587
+              },
+              "volume": 617315247
+            },
+            {
+              "gc": {
+                "lower": 0.24954855,
+                "trend": "Green",
+                "upper": 0.36563428,
+                "filter": 0.30759142
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.6234,
+                "h": 0.6652,
+                "l": 0.5936,
+                "o": 0.6431
+              },
+              "volume": 140951836.9
+            },
+            {
+              "gc": {
+                "lower": 0.25175526,
+                "trend": "Green",
+                "upper": 0.37276706,
+                "filter": 0.31226116
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.6107,
+                "h": 0.6273,
+                "l": 0.5903,
+                "o": 0.6233
+              },
+              "volume": 77983749.8
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.60618995
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49676,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Pepe",
+        "symbol": "BINANCE:PEPEUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-04",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-05",
+        "pnlPct": null,
+        "breakoutDate": "2026-01-02",
+        "breakoutResistance": 4.9e-06,
+        "breakoutSupport": 3.84e-06,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-01-15",
+        "marketCap": 1172827711.4468424,
+        "marketRank": 51,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 3.84e-06,
+            "resistance": 4.9e-06,
+            "breakoutDate": "2026-01-02",
+            "supportLineStart": "2025-11-21",
+            "resistanceLineStart": "2025-11-28"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 3.39e-06,
+                "trend": "Red",
+                "upper": 3.99e-06,
+                "filter": 3.69e-06
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 2.84e-06,
+                "h": 2.97e-06,
+                "l": 2.77e-06,
+                "o": 2.95e-06
+              },
+              "volume": 4924666637084
+            },
+            {
+              "gc": {
+                "lower": 3.37e-06,
+                "trend": "Red",
+                "upper": 3.97e-06,
+                "filter": 3.67e-06
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 2.82e-06,
+                "h": 2.87e-06,
+                "l": 2.77e-06,
+                "o": 2.85e-06
+              },
+              "volume": 2858531537062
+            },
+            {
+              "gc": {
+                "lower": 3.35e-06,
+                "trend": "Red",
+                "upper": 3.95e-06,
+                "filter": 3.65e-06
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 2.83e-06,
+                "h": 2.87e-06,
+                "l": 2.79e-06,
+                "o": 2.83e-06
+              },
+              "volume": 2878445013814
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 2.83e-06
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49679,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Stellar",
+        "symbol": "BINANCE:XLMUSDT",
+        "trendFrom": "Red",
+        "trendTo": "Green",
+        "trendChanged": "2026-06-03",
+        "currentStatus": "OPEN",
+        "tradeDate": "2026-06-04",
+        "pnlPct": 3.5440613026819876,
+        "breakoutDate": "2026-05-28",
+        "breakoutResistance": 0.182,
+        "breakoutSupport": 0.1549,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-06-03",
+        "marketCap": 7309578852.438579,
+        "marketRank": 13,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.1549,
+            "resistance": 0.182,
+            "breakoutDate": "2026-05-28",
+            "supportLineStart": "2026-02-07",
+            "resistanceLineStart": "2026-03-17"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.15256821,
+                "trend": "Green",
+                "upper": 0.19058828,
+                "filter": 0.17157825
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.2345,
+                "h": 0.252,
+                "l": 0.2255,
+                "o": 0.2256
+              },
+              "volume": 285590033
+            },
+            {
+              "gc": {
+                "lower": 0.15293554,
+                "trend": "Green",
+                "upper": 0.19211496,
+                "filter": 0.17252525
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.2183,
+                "h": 0.2354,
+                "l": 0.2147,
+                "o": 0.2344
+              },
+              "volume": 133855837
+            },
+            {
+              "gc": {
+                "lower": 0.15333976,
+                "trend": "Green",
+                "upper": 0.19364979,
+                "filter": 0.17349478
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.2162,
+                "h": 0.2189,
+                "l": 0.2105,
+                "o": 0.2182
+              },
+              "volume": 67173438
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.21622154
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49680,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Polygon (prev. MATIC)",
+        "symbol": "BINANCE:POLUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-02",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-03",
+        "pnlPct": null,
+        "breakoutDate": null,
+        "breakoutResistance": null,
+        "breakoutSupport": null,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": null,
+        "marketCap": 845719996.7338372,
+        "marketRank": 60,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.0864047,
+                "trend": "Red",
+                "upper": 0.09774696,
+                "filter": 0.09207583
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.07779,
+                "h": 0.07885,
+                "l": 0.07478,
+                "o": 0.07693
+              },
+              "volume": 64444577.2
+            },
+            {
+              "gc": {
+                "lower": 0.08610233,
+                "trend": "Red",
+                "upper": 0.09751371,
+                "filter": 0.09180802
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.08103,
+                "h": 0.08109,
+                "l": 0.07694,
+                "o": 0.07783
+              },
+              "volume": 31547713.9
+            },
+            {
+              "gc": {
+                "lower": 0.08578486,
+                "trend": "Red",
+                "upper": 0.09726169,
+                "filter": 0.09152328
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.07958,
+                "h": 0.08404,
+                "l": 0.07957,
+                "o": 0.08103
+              },
+              "volume": 49771084.6
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.07930006
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49682,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Litecoin",
+        "symbol": "BINANCE:LTCUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-06-01",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-02",
+        "pnlPct": null,
+        "breakoutDate": "2026-04-16",
+        "breakoutResistance": 54.78,
+        "breakoutSupport": 50.18,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-06",
+        "marketCap": 3436599408.812154,
+        "marketRank": 25,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 50.18,
+            "resistance": 54.78,
+            "breakoutDate": "2026-04-16",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-03-25"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 51.14766757,
+                "trend": "Red",
+                "upper": 56.40542907,
+                "filter": 53.77654832
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 43.86,
+                "h": 45.05,
+                "l": 42.99,
+                "o": 44.93
+              },
+              "volume": 261982.744
+            },
+            {
+              "gc": {
+                "lower": 50.91311449,
+                "trend": "Red",
+                "upper": 56.19463916,
+                "filter": 53.55387683
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 44.07,
+                "h": 44.59,
+                "l": 43.19,
+                "o": 43.85
+              },
+              "volume": 197842.738
+            },
+            {
+              "gc": {
+                "lower": 50.67136948,
+                "trend": "Red",
+                "upper": 55.97467516,
+                "filter": 53.32302232
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 44.53,
+                "h": 44.63,
+                "l": 43.77,
+                "o": 44.06
+              },
+              "volume": 157579.327
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 44.45673948
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49685,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "XRP",
+        "symbol": "BINANCE:XRPUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-05-31",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-01",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-08",
+        "breakoutResistance": 1.3962,
+        "breakoutSupport": 1.2677,
+        "breakoutInvalidatedAt": "2026-06-02",
+        "breakoutValidatedAt": null,
+        "marketCap": 71257327288.83746,
+        "marketRank": 6,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 1.2677,
+            "resistance": 1.3962,
+            "breakoutDate": "2026-05-08",
+            "supportLineStart": "2026-02-23",
+            "resistanceLineStart": "2026-04-01"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 1.28935296,
+                "trend": "Red",
+                "upper": 1.43456666,
+                "filter": 1.36195981
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 1.1465,
+                "h": 1.1923,
+                "l": 1.1329,
+                "o": 1.1868
+              },
+              "volume": 114178315.8
+            },
+            {
+              "gc": {
+                "lower": 1.28432976,
+                "trend": "Red",
+                "upper": 1.43025493,
+                "filter": 1.35729235
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 1.1359,
+                "h": 1.153,
+                "l": 1.1187,
+                "o": 1.1466
+              },
+              "volume": 72664415.9
+            },
+            {
+              "gc": {
+                "lower": 1.2791491,
+                "trend": "Red",
+                "upper": 1.42578533,
+                "filter": 1.35246722
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 1.1499,
+                "h": 1.156,
+                "l": 1.1342,
+                "o": 1.1358
+              },
+              "volume": 45285668
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 1.14831342
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49686,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Cardano",
+        "symbol": "BINANCE:ADAUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-05-31",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-06-01",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-05",
+        "breakoutResistance": 0.2576,
+        "breakoutSupport": 0.2328,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-19",
+        "marketCap": 5940272837.099904,
+        "marketRank": 15,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.2328,
+            "resistance": 0.2576,
+            "breakoutDate": "2026-05-05",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-04-01"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.22770445,
+                "trend": "Red",
+                "upper": 0.26040761,
+                "filter": 0.24405603
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.1637,
+                "h": 0.1689,
+                "l": 0.1598,
+                "o": 0.1669
+              },
+              "volume": 124026091.6
+            },
+            {
+              "gc": {
+                "lower": 0.22615873,
+                "trend": "Red",
+                "upper": 0.25894484,
+                "filter": 0.24255178
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.1621,
+                "h": 0.1651,
+                "l": 0.1586,
+                "o": 0.1637
+              },
+              "volume": 86919770.1
+            },
+            {
+              "gc": {
+                "lower": 0.2245423,
+                "trend": "Red",
+                "upper": 0.25740567,
+                "filter": 0.24097399
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.1633,
+                "h": 0.1651,
+                "l": 0.16,
+                "o": 0.1621
+              },
+              "volume": 72279077.3
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.16329673
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49688,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Ethereum",
+        "symbol": "BINANCE:ETHUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-05-30",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-05-31",
+        "pnlPct": null,
+        "breakoutDate": "2026-03-15",
+        "breakoutResistance": 2107.67,
+        "breakoutSupport": 1835.36,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-04-19",
+        "marketCap": 209554347089.93283,
+        "marketRank": 2,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 1835.36,
+            "resistance": 2107.67,
+            "breakoutDate": "2026-03-15",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-02-14"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 2030.45614227,
+                "trend": "Red",
+                "upper": 2265.13781852,
+                "filter": 2147.79698039
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 1711.11,
+                "h": 1762.99,
+                "l": 1671.79,
+                "o": 1750.61
+              },
+              "volume": 312480.9656
+            },
+            {
+              "gc": {
+                "lower": 2019.30162805,
+                "trend": "Red",
+                "upper": 2254.42979053,
+                "filter": 2136.86570929
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 1711.19,
+                "h": 1719.51,
+                "l": 1679.11,
+                "o": 1711.11
+              },
+              "volume": 165078.1984
+            },
+            {
+              "gc": {
+                "lower": 2007.85442144,
+                "trend": "Red",
+                "upper": 2243.41955389,
+                "filter": 2125.63698767
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 1741.08,
+                "h": 1749.55,
+                "l": 1704.06,
+                "o": 1711.18
+              },
+              "volume": 159791.8211
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 1736.38972717
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49689,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Shiba Inu",
+        "symbol": "BINANCE:SHIBUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-05-30",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-05-31",
+        "pnlPct": null,
+        "breakoutDate": "2026-04-16",
+        "breakoutResistance": 6.16e-06,
+        "breakoutSupport": 5.62e-06,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-01",
+        "marketCap": 2793345532.9581213,
+        "marketRank": 29,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 5.62e-06,
+            "resistance": 6.16e-06,
+            "breakoutDate": "2026-04-16",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-03-16"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 5.5e-06,
+                "trend": "Red",
+                "upper": 6.2e-06,
+                "filter": 5.85e-06
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 4.76e-06,
+                "h": 4.98e-06,
+                "l": 4.63e-06,
+                "o": 4.96e-06
+              },
+              "volume": 580937824919
+            },
+            {
+              "gc": {
+                "lower": 5.48e-06,
+                "trend": "Red",
+                "upper": 6.17e-06,
+                "filter": 5.82e-06
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 4.75e-06,
+                "h": 4.8e-06,
+                "l": 4.69e-06,
+                "o": 4.77e-06
+              },
+              "volume": 347935391440
+            },
+            {
+              "gc": {
+                "lower": 5.45e-06,
+                "trend": "Red",
+                "upper": 6.14e-06,
+                "filter": 5.8e-06
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 4.75e-06,
+                "h": 4.78e-06,
+                "l": 4.66e-06,
+                "o": 4.75e-06
+              },
+              "volume": 307536309492
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 4.74e-06
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49694,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Sky",
+        "symbol": "KRAKEN:SKYUSD",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-05-26",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-05-27",
+        "pnlPct": null,
+        "breakoutDate": "2025-12-20",
+        "breakoutResistance": 0.06061,
+        "breakoutSupport": 0.05718,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2025-12-25",
+        "marketCap": 1354147541.5091624,
+        "marketRank": 47,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.05718,
+            "resistance": 0.06061,
+            "breakoutDate": "2025-12-20",
+            "supportLineStart": "2025-12-04",
+            "resistanceLineStart": "2025-10-21"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.06847395,
+                "trend": "Red",
+                "upper": 0.07737207,
+                "filter": 0.07292301
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.05789,
+                "h": 0.05817,
+                "l": 0.05589,
+                "o": 0.05698
+              },
+              "volume": 2409353.53595
+            },
+            {
+              "gc": {
+                "lower": 0.06811065,
+                "trend": "Red",
+                "upper": 0.07696245,
+                "filter": 0.07253655
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.05825,
+                "h": 0.05898,
+                "l": 0.05735,
+                "o": 0.05813
+              },
+              "volume": 1135415.74424
+            },
+            {
+              "gc": {
+                "lower": 0.06773844,
+                "trend": "Red",
+                "upper": 0.07654329,
+                "filter": 0.07214086
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.05809,
+                "h": 0.05843,
+                "l": 0.05768,
+                "o": 0.05826
+              },
+              "volume": 791096.4928
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.05815662
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49697,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "KuCoin Token",
+        "symbol": "KUCOIN:KCSUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-05-25",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-05-26",
+        "pnlPct": null,
+        "breakoutDate": "2026-04-07",
+        "breakoutResistance": 8.185,
+        "breakoutSupport": 7.715,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-04-25",
+        "marketCap": 971883834.091585,
+        "marketRank": 55,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 7.715,
+            "resistance": 8.185,
+            "breakoutDate": "2026-04-07",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-03-04"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 7.65571427,
+                "trend": "Red",
+                "upper": 8.45560424,
+                "filter": 8.05565926
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 7.167,
+                "h": 7.326,
+                "l": 7.001,
+                "o": 7.269
+              },
+              "volume": 31106.1506
+            },
+            {
+              "gc": {
+                "lower": 7.62100054,
+                "trend": "Red",
+                "upper": 8.43015334,
+                "filter": 8.02557694
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 7.233,
+                "h": 7.242,
+                "l": 7.061,
+                "o": 7.169
+              },
+              "volume": 14582.1083
+            },
+            {
+              "gc": {
+                "lower": 7.58556538,
+                "trend": "Red",
+                "upper": 8.40416027,
+                "filter": 7.99486283
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 7.231,
+                "h": 7.433,
+                "l": 7.129,
+                "o": 7.226
+              },
+              "volume": 22135.8479
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 7.21758331
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49699,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Canton",
+        "symbol": "KRAKEN:CCUSD",
+        "trendFrom": "Red",
+        "trendTo": "Green",
+        "trendChanged": "2026-05-13",
+        "currentStatus": "OPEN",
+        "tradeDate": "2026-05-14",
+        "pnlPct": -1.9146748907735867,
+        "breakoutDate": "2026-04-30",
+        "breakoutResistance": 0.14831,
+        "breakoutSupport": 0.13817,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-13",
+        "marketCap": 5935511969.816484,
+        "marketRank": 16,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.13817,
+            "resistance": 0.14831,
+            "breakoutDate": "2026-04-30",
+            "supportLineStart": "2025-12-31",
+            "resistanceLineStart": "2026-03-23"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.14243862,
+                "trend": "Green",
+                "upper": 0.16502317,
+                "filter": 0.1537309
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.1605,
+                "h": 0.166,
+                "l": 0.15785,
+                "o": 0.16254
+              },
+              "volume": 7728207.99588
+            },
+            {
+              "gc": {
+                "lower": 0.14255339,
+                "trend": "Green",
+                "upper": 0.16527174,
+                "filter": 0.15391256
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.1539,
+                "h": 0.16058,
+                "l": 0.15344,
+                "o": 0.16051
+              },
+              "volume": 6222521.05111
+            },
+            {
+              "gc": {
+                "lower": 0.1426733,
+                "trend": "Green",
+                "upper": 0.16552139,
+                "filter": 0.15409735
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.15266,
+                "h": 0.15405,
+                "l": 0.15005,
+                "o": 0.15378
+              },
+              "volume": 4219628.10973
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.15278999
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49700,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Ondo",
+        "symbol": "BINANCE:ONDOUSDT",
+        "trendFrom": "Red",
+        "trendTo": "Green",
+        "trendChanged": "2026-05-08",
+        "currentStatus": "OPEN",
+        "tradeDate": "2026-05-09",
+        "pnlPct": -23.931813150321005,
+        "breakoutDate": "2026-05-02",
+        "breakoutResistance": 0.2732,
+        "breakoutSupport": 0.247,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-05-08",
+        "marketCap": 1665356235.0893724,
+        "marketRank": 41,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.247,
+            "resistance": 0.2732,
+            "breakoutDate": "2026-05-02",
+            "supportLineStart": "2026-01-31",
+            "resistanceLineStart": "2026-03-31"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.29671239,
+                "trend": "Green",
+                "upper": 0.39742717,
+                "filter": 0.34706978
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.3664,
+                "h": 0.3788,
+                "l": 0.35,
+                "o": 0.3651
+              },
+              "volume": 59643065.8
+            },
+            {
+              "gc": {
+                "lower": 0.29774461,
+                "trend": "Green",
+                "upper": 0.39935967,
+                "filter": 0.34855214
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.3557,
+                "h": 0.367,
+                "l": 0.3453,
+                "o": 0.3664
+              },
+              "volume": 25601914.6
+            },
+            {
+              "gc": {
+                "lower": 0.29872976,
+                "trend": "Green",
+                "upper": 0.40113737,
+                "filter": 0.34993357
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.3436,
+                "h": 0.3569,
+                "l": 0.3361,
+                "o": 0.3557
+              },
+              "volume": 26368749.2
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.34200927
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49704,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Gram (prev. Toncoin)",
+        "symbol": "KUCOIN:GRAMUSDT",
+        "trendFrom": "Red",
+        "trendTo": "Green",
+        "trendChanged": "2026-04-27",
+        "currentStatus": "OPEN",
+        "tradeDate": "2026-04-28",
+        "pnlPct": 24.923500611995113,
+        "breakoutDate": "2026-04-11",
+        "breakoutResistance": 1.3841,
+        "breakoutSupport": 1.1869,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-04-27",
+        "marketCap": 4398387979.322902,
+        "marketRank": 21,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 1.1869,
+            "resistance": 1.3841,
+            "breakoutDate": "2026-04-11",
+            "supportLineStart": "2026-02-28",
+            "resistanceLineStart": "2026-02-23"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 1.55176187,
+                "trend": "Green",
+                "upper": 2.03439999,
+                "filter": 1.79308093
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 1.663,
+                "h": 1.697,
+                "l": 1.614,
+                "o": 1.667
+              },
+              "volume": 2901339.05
+            },
+            {
+              "gc": {
+                "lower": 1.55347328,
+                "trend": "Green",
+                "upper": 2.03912323,
+                "filter": 1.79629825
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 1.609,
+                "h": 1.697,
+                "l": 1.569,
+                "o": 1.663
+              },
+              "volume": 1897008.32
+            },
+            {
+              "gc": {
+                "lower": 1.55473441,
+                "trend": "Green",
+                "upper": 2.0429599,
+                "filter": 1.79884716
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 1.633,
+                "h": 1.636,
+                "l": 1.563,
+                "o": 1.608
+              },
+              "volume": 1094667.3
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 1.63390576
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49709,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Zcash",
+        "symbol": "BINANCE:ZECUSDT",
+        "trendFrom": "Red",
+        "trendTo": "Green",
+        "trendChanged": "2026-04-16",
+        "currentStatus": "OPEN",
+        "tradeDate": "2026-04-17",
+        "pnlPct": 38.44254343416526,
+        "breakoutDate": "2026-04-04",
+        "breakoutResistance": 247.68,
+        "breakoutSupport": 203.5,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-04-16",
+        "marketCap": 7836796468.829829,
+        "marketRank": 12,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 203.5,
+            "resistance": 247.68,
+            "breakoutDate": "2026-04-04",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-03-04"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 408.06146262,
+                "trend": "Green",
+                "upper": 563.87372604,
+                "filter": 485.96759433
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 455.84,
+                "h": 489.36,
+                "l": 440.1,
+                "o": 477.3
+              },
+              "volume": 259337.148
+            },
+            {
+              "gc": {
+                "lower": 408.98981762,
+                "trend": "Green",
+                "upper": 566.89583333,
+                "filter": 487.94282547
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 476.8,
+                "h": 479.79,
+                "l": 440,
+                "o": 455.97
+              },
+              "volume": 196068.988
+            },
+            {
+              "gc": {
+                "lower": 409.71437846,
+                "trend": "Green",
+                "upper": 569.5643717,
+                "filter": 489.63937508
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 470.94,
+                "h": 487.23,
+                "l": 461.34,
+                "o": 476.8
+              },
+              "volume": 133175.419
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 469.04805512
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49710,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Pi",
+        "symbol": "OKX:PIUSD",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-04-13",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-04-14",
+        "pnlPct": null,
+        "breakoutDate": null,
+        "breakoutResistance": null,
+        "breakoutSupport": null,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": null,
+        "marketCap": 1451212197.256848,
+        "marketRank": 45,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.15176015,
+                "trend": "Red",
+                "upper": 0.17057498,
+                "filter": 0.16116756
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.1304,
+                "h": 0.1323,
+                "l": 0.1282,
+                "o": 0.132
+              },
+              "volume": 14478.062
+            },
+            {
+              "gc": {
+                "lower": 0.15087419,
+                "trend": "Red",
+                "upper": 0.16959,
+                "filter": 0.16023209
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.1344,
+                "h": 0.136,
+                "l": 0.1299,
+                "o": 0.1307
+              },
+              "volume": 55447.402
+            },
+            {
+              "gc": {
+                "lower": 0.14998486,
+                "trend": "Red",
+                "upper": 0.16860167,
+                "filter": 0.15929326
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.1345,
+                "h": 0.139,
+                "l": 0.1338,
+                "o": 0.1351
+              },
+              "volume": 18463.737
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.13447239
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49711,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "OKB",
+        "symbol": "OKX:OKBUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-04-07",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-04-08",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-26",
+        "breakoutResistance": 88.46,
+        "breakoutSupport": 77.77,
+        "breakoutInvalidatedAt": "2026-06-04",
+        "breakoutValidatedAt": null,
+        "marketCap": 1576563484.2688484,
+        "marketRank": 44,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 77.77,
+            "resistance": 88.46,
+            "breakoutDate": "2026-05-26",
+            "supportLineStart": "2026-02-03",
+            "resistanceLineStart": "2026-03-25"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 79.06841029,
+                "trend": "Red",
+                "upper": 88.77679964,
+                "filter": 83.92260497
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 72.86,
+                "h": 73.98,
+                "l": 71.02,
+                "o": 73.8
+              },
+              "volume": 58507.303999
+            },
+            {
+              "gc": {
+                "lower": 78.83866636,
+                "trend": "Red",
+                "upper": 88.66943598,
+                "filter": 83.75405117
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 77.25,
+                "h": 78.33,
+                "l": 72.06,
+                "o": 72.86
+              },
+              "volume": 126650.220451
+            },
+            {
+              "gc": {
+                "lower": 78.60097955,
+                "trend": "Red",
+                "upper": 88.54605597,
+                "filter": 83.57351776
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 75.39,
+                "h": 77.3,
+                "l": 74.36,
+                "o": 77.24
+              },
+              "volume": 110735.712497
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 75.07445163
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49712,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Tether Gold",
+        "symbol": "BYBIT:XAUTUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-03-29",
+        "currentStatus": "CLOSED",
+        "tradeDate": null,
+        "pnlPct": null,
+        "breakoutDate": null,
+        "breakoutResistance": null,
+        "breakoutSupport": null,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": null,
+        "marketCap": 2537364801.4492702,
+        "marketRank": 34,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 4468.329555,
+                "trend": "Red",
+                "upper": 4690.07877952,
+                "filter": 4579.20416726
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 4176.7,
+                "h": 4311.2,
+                "l": 4176.7,
+                "o": 4263.8
+              },
+              "volume": 2263.67039
+            },
+            {
+              "gc": {
+                "lower": 4460.59698054,
+                "trend": "Red",
+                "upper": 4682.59207518,
+                "filter": 4571.59452786
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 4150.1,
+                "h": 4185.7,
+                "l": 4112.6,
+                "o": 4176.7
+              },
+              "volume": 3308.61626
+            },
+            {
+              "gc": {
+                "lower": 4452.56652695,
+                "trend": "Red",
+                "upper": 4674.92671198,
+                "filter": 4563.74661946
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 4145.2,
+                "h": 4152.6,
+                "l": 4140.1,
+                "o": 4150.1
+              },
+              "volume": 569.01904
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 4140.44849931
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49713,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "PAX Gold",
+        "symbol": "BINANCE:PAXGUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-03-29",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-03-30",
+        "pnlPct": null,
+        "breakoutDate": null,
+        "breakoutResistance": null,
+        "breakoutSupport": null,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": null,
+        "marketCap": 1885642748.1447816,
+        "marketRank": 36,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 4470.34961432,
+                "trend": "Red",
+                "upper": 4699.78943303,
+                "filter": 4585.06952367
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 4184.64,
+                "h": 4323.72,
+                "l": 4183.37,
+                "o": 4273.46
+              },
+              "volume": 3205.3658
+            },
+            {
+              "gc": {
+                "lower": 4462.81043313,
+                "trend": "Red",
+                "upper": 4692.40642614,
+                "filter": 4577.60842963
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 4154.95,
+                "h": 4193.71,
+                "l": 4120.04,
+                "o": 4184.72
+              },
+              "volume": 2605.5357
+            },
+            {
+              "gc": {
+                "lower": 4454.97298455,
+                "trend": "Red",
+                "upper": 4684.85084481,
+                "filter": 4569.91191468
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 4154.2,
+                "h": 4162.6,
+                "l": 4148.59,
+                "o": 4154.94
+              },
+              "volume": 675.3575
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 4149.5642462
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49714,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "NEAR Protocol",
+        "symbol": "BINANCE:NEARUSDT",
+        "trendFrom": "Red",
+        "trendTo": "Green",
+        "trendChanged": "2026-03-26",
+        "currentStatus": "OPEN",
+        "tradeDate": "2026-03-27",
+        "pnlPct": 79.39493049877349,
+        "breakoutDate": null,
+        "breakoutResistance": null,
+        "breakoutSupport": null,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": null,
+        "marketCap": 2845639071.147723,
+        "marketRank": 27,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 1.51923326,
+                "trend": "Green",
+                "upper": 2.01851397,
+                "filter": 1.76887362
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 2.237,
+                "h": 2.301,
+                "l": 2.13,
+                "o": 2.181
+              },
+              "volume": 23284239.5
+            },
+            {
+              "gc": {
+                "lower": 1.53173495,
+                "trend": "Green",
+                "upper": 2.04497999,
+                "filter": 1.78835747
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 2.187,
+                "h": 2.255,
+                "l": 2.084,
+                "o": 2.237
+              },
+              "volume": 17228540.7
+            },
+            {
+              "gc": {
+                "lower": 1.54408249,
+                "trend": "Green",
+                "upper": 2.07064981,
+                "filter": 1.80736615
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 2.194,
+                "h": 2.205,
+                "l": 2.099,
+                "o": 2.186
+              },
+              "volume": 11302010.3
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 2.19103968
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49716,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "DeXe",
+        "symbol": "BINANCE:DEXEUSDT",
+        "trendFrom": "Red",
+        "trendTo": "Green",
+        "trendChanged": "2026-03-12",
+        "currentStatus": "OPEN",
+        "tradeDate": "2026-03-13",
+        "pnlPct": 271.33941430628903,
+        "breakoutDate": null,
+        "breakoutResistance": null,
+        "breakoutSupport": null,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": null,
+        "marketCap": 1301202389.676625,
+        "marketRank": 48,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 11.57217109,
+                "trend": "Green",
+                "upper": 16.04906263,
+                "filter": 13.81061686
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 15.278,
+                "h": 16.077,
+                "l": 13.12,
+                "o": 14.513
+              },
+              "volume": 420763.43
+            },
+            {
+              "gc": {
+                "lower": 11.69752104,
+                "trend": "Green",
+                "upper": 16.27567079,
+                "filter": 13.98659591
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 16.866,
+                "h": 17.1,
+                "l": 15.019,
+                "o": 15.275
+              },
+              "volume": 262300.84
+            },
+            {
+              "gc": {
+                "lower": 11.81945752,
+                "trend": "Green",
+                "upper": 16.50108406,
+                "filter": 14.16027079
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 15.47,
+                "h": 16.906,
+                "l": 15.111,
+                "o": 16.865
+              },
+              "volume": 116009.21
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 15.53977282
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49717,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Morpho",
+        "symbol": "COINBASE:MORPHOUSD",
+        "trendFrom": "Red",
+        "trendTo": "Green",
+        "trendChanged": "2026-02-25",
+        "currentStatus": "OPEN",
+        "tradeDate": "2026-02-26",
+        "pnlPct": -0.698575560770624,
+        "breakoutDate": "2026-02-14",
+        "breakoutResistance": 1.3266,
+        "breakoutSupport": 1.0532,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-02-25",
+        "marketCap": 919434987.3035668,
+        "marketRank": 57,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 1.0532,
+            "resistance": 1.3266,
+            "breakoutDate": "2026-02-14",
+            "supportLineStart": "2025-12-14",
+            "resistanceLineStart": "2026-01-06"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 1.74983016,
+                "trend": "Green",
+                "upper": 2.16470723,
+                "filter": 1.9572687
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 1.9446,
+                "h": 2.0515,
+                "l": 1.9067,
+                "o": 1.9849
+              },
+              "volume": 501257.89
+            },
+            {
+              "gc": {
+                "lower": 1.74933142,
+                "trend": "Green",
+                "upper": 2.16658078,
+                "filter": 1.9579561
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 1.934,
+                "h": 2.0097,
+                "l": 1.876,
+                "o": 1.9465
+              },
+              "volume": 225061.12
+            },
+            {
+              "gc": {
+                "lower": 1.74873227,
+                "trend": "Green",
+                "upper": 2.16816133,
+                "filter": 1.9584468
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 1.8195,
+                "h": 1.9366,
+                "l": 1.778,
+                "o": 1.9324
+              },
+              "volume": 414478.45
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 1.82872039
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49718,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Hyperliquid",
+        "symbol": "BYBIT:HYPEUSDT",
+        "trendFrom": "Red",
+        "trendTo": "Green",
+        "trendChanged": "2026-02-11",
+        "currentStatus": "OPEN",
+        "tradeDate": "2026-02-12",
+        "pnlPct": 140.7142857142857,
+        "breakoutDate": "2026-01-27",
+        "breakoutResistance": 25.7,
+        "breakoutSupport": 22.2,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-02-11",
+        "marketCap": 17836434376.390194,
+        "marketRank": 9,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 22.2,
+            "resistance": 25.7,
+            "breakoutDate": "2026-01-27",
+            "supportLineStart": "2025-12-18",
+            "resistanceLineStart": "2025-12-22"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 44.07679237,
+                "trend": "Green",
+                "upper": 55.44657858,
+                "filter": 49.76168548
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 68.32,
+                "h": 73.71,
+                "l": 66.52,
+                "o": 71.17
+              },
+              "volume": 1730640.846
+            },
+            {
+              "gc": {
+                "lower": 44.44141957,
+                "trend": "Green",
+                "upper": 56.08012453,
+                "filter": 50.26077205
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 70.31,
+                "h": 71.37,
+                "l": 65.64,
+                "o": 68.32
+              },
+              "volume": 1391307.159
+            },
+            {
+              "gc": {
+                "lower": 44.80669971,
+                "trend": "Green",
+                "upper": 56.70942435,
+                "filter": 50.75806203
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 70.77,
+                "h": 71.46,
+                "l": 68.47,
+                "o": 70.31
+              },
+              "volume": 831515.441
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 70.4228704
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49719,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "World Liberty Financial",
+        "symbol": "BINANCE:WLFIUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-02-11",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-02-12",
+        "pnlPct": null,
+        "breakoutDate": "2026-01-03",
+        "breakoutResistance": 0.1588,
+        "breakoutSupport": 0.1406,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": "2026-01-11",
+        "marketCap": 1840752525.5288446,
+        "marketRank": 38,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.1406,
+            "resistance": 0.1588,
+            "breakoutDate": "2026-01-03",
+            "supportLineStart": "2025-11-13",
+            "resistanceLineStart": "2025-12-03"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.06109712,
+                "trend": "Red",
+                "upper": 0.07388511,
+                "filter": 0.06749112
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.0595,
+                "h": 0.063,
+                "l": 0.0584,
+                "o": 0.0628
+              },
+              "volume": 69105734.3
+            },
+            {
+              "gc": {
+                "lower": 0.0607225,
+                "trend": "Red",
+                "upper": 0.0734466,
+                "filter": 0.06708455
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.059,
+                "h": 0.0596,
+                "l": 0.0573,
+                "o": 0.0596
+              },
+              "volume": 72353262.9
+            },
+            {
+              "gc": {
+                "lower": 0.06036188,
+                "trend": "Red",
+                "upper": 0.07302271,
+                "filter": 0.0666923
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.058,
+                "h": 0.0591,
+                "l": 0.0575,
+                "o": 0.059
+              },
+              "volume": 28525863.3
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.05793254
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49720,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Bitcoin Cash",
+        "symbol": "BINANCE:BCHUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2026-02-07",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2026-02-08",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-06",
+        "breakoutResistance": 458.2,
+        "breakoutSupport": 419.5,
+        "breakoutInvalidatedAt": "2026-05-16",
+        "breakoutValidatedAt": null,
+        "marketCap": 4005025151.796875,
+        "marketRank": 22,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 419.5,
+            "resistance": 458.2,
+            "breakoutDate": "2026-05-06",
+            "supportLineStart": "2026-02-06",
+            "resistanceLineStart": "2026-04-08"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 363.86544698,
+                "trend": "Red",
+                "upper": 413.75865266,
+                "filter": 388.81204982
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 199.7,
+                "h": 215.4,
+                "l": 192.8,
+                "o": 212.6
+              },
+              "volume": 66118.945
+            },
+            {
+              "gc": {
+                "lower": 359.07030121,
+                "trend": "Red",
+                "upper": 409.32169707,
+                "filter": 384.19599914
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 198.6,
+                "h": 200,
+                "l": 192.9,
+                "o": 199.7
+              },
+              "volume": 39896.556
+            },
+            {
+              "gc": {
+                "lower": 354.19855447,
+                "trend": "Red",
+                "upper": 404.76921484,
+                "filter": 379.48388465
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 200.1,
+                "h": 200.9,
+                "l": 195.6,
+                "o": 198.6
+              },
+              "volume": 19193.263
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 199.74590046
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49722,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Mantle",
+        "symbol": "KRAKEN:MNTUSD",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2025-11-10",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2025-11-11",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-10",
+        "breakoutResistance": 0.6951,
+        "breakoutSupport": 0.5993,
+        "breakoutInvalidatedAt": "2026-06-03",
+        "breakoutValidatedAt": null,
+        "marketCap": 1770634177.9350178,
+        "marketRank": 39,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.5993,
+            "resistance": 0.6951,
+            "breakoutDate": "2026-05-10",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-04-01"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.60928127,
+                "trend": "Red",
+                "upper": 0.68237469,
+                "filter": 0.64582798
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.531,
+                "h": 0.5463,
+                "l": 0.5205,
+                "o": 0.5422
+              },
+              "volume": 84823.67474
+            },
+            {
+              "gc": {
+                "lower": 0.6071942,
+                "trend": "Red",
+                "upper": 0.68047573,
+                "filter": 0.64383497
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.5292,
+                "h": 0.5323,
+                "l": 0.5174,
+                "o": 0.5314
+              },
+              "volume": 66251.59773
+            },
+            {
+              "gc": {
+                "lower": 0.60502833,
+                "trend": "Red",
+                "upper": 0.67846646,
+                "filter": 0.6417474
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.5353,
+                "h": 0.5358,
+                "l": 0.525,
+                "o": 0.5296
+              },
+              "volume": 51232.40474
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.53618302
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49725,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Cronos",
+        "symbol": "COINBASE:CROUSD",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2025-10-16",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2025-10-17",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-10",
+        "breakoutResistance": 0.07192,
+        "breakoutSupport": 0.06599,
+        "breakoutInvalidatedAt": "2026-06-01",
+        "breakoutValidatedAt": null,
+        "marketCap": 2710145365.6229277,
+        "marketRank": 31,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 0.06599,
+            "resistance": 0.07192,
+            "breakoutDate": "2026-05-10",
+            "supportLineStart": "2026-02-06",
+            "resistanceLineStart": "2026-04-01"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 0.06550326,
+                "trend": "Red",
+                "upper": 0.0729591,
+                "filter": 0.06923118
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.05888,
+                "h": 0.05984,
+                "l": 0.05712,
+                "o": 0.0592
+              },
+              "volume": 7428693.8
+            },
+            {
+              "gc": {
+                "lower": 0.06529785,
+                "trend": "Red",
+                "upper": 0.07275615,
+                "filter": 0.069027
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.05853,
+                "h": 0.05908,
+                "l": 0.05771,
+                "o": 0.05883
+              },
+              "volume": 4597837.2
+            },
+            {
+              "gc": {
+                "lower": 0.06508676,
+                "trend": "Red",
+                "upper": 0.07254364,
+                "filter": 0.0688152
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.05887,
+                "h": 0.05896,
+                "l": 0.05793,
+                "o": 0.05856
+              },
+              "volume": 3865666.3
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.05888035
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49726,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Polkadot",
+        "symbol": "BINANCE:DOTUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2025-10-16",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2025-10-17",
+        "pnlPct": null,
+        "breakoutDate": "2026-05-06",
+        "breakoutResistance": 1.303,
+        "breakoutSupport": 1.179,
+        "breakoutInvalidatedAt": "2026-06-01",
+        "breakoutValidatedAt": null,
+        "marketCap": 1635345896.8471944,
+        "marketRank": 42,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "bo": {
+            "support": 1.179,
+            "resistance": 1.303,
+            "breakoutDate": "2026-05-06",
+            "supportLineStart": "2026-02-05",
+            "resistanceLineStart": "2026-04-01"
+          },
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 1.14580448,
+                "trend": "Red",
+                "upper": 1.34011961,
+                "filter": 1.24296205
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 0.974,
+                "h": 1.01,
+                "l": 0.94,
+                "o": 1.004
+              },
+              "volume": 6756333.79
+            },
+            {
+              "gc": {
+                "lower": 1.14019302,
+                "trend": "Red",
+                "upper": 1.33451066,
+                "filter": 1.23735184
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 0.961,
+                "h": 0.982,
+                "l": 0.947,
+                "o": 0.975
+              },
+              "volume": 4610690.94
+            },
+            {
+              "gc": {
+                "lower": 1.13438457,
+                "trend": "Red",
+                "upper": 1.32861234,
+                "filter": 1.23149845
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 0.969,
+                "h": 0.976,
+                "l": 0.949,
+                "o": 0.961
+              },
+              "volume": 3656225.21
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 0.9678706
+        },
+        "breakoutChartUrl": null
+      },
+      {
+        "id": 49727,
+        "runDate": "2026-06-21",
+        "assetClass": "crypto",
+        "detector": "gc",
+        "symbolTitle": "Aave",
+        "symbol": "BINANCE:AAVEUSDT",
+        "trendFrom": "Green",
+        "trendTo": "Red",
+        "trendChanged": "2025-09-30",
+        "currentStatus": "CLOSED",
+        "tradeDate": "2025-10-01",
+        "pnlPct": null,
+        "breakoutDate": null,
+        "breakoutResistance": null,
+        "breakoutSupport": null,
+        "breakoutInvalidatedAt": null,
+        "breakoutValidatedAt": null,
+        "marketCap": 1172183673.1863842,
+        "marketRank": 52,
+        "changed": "2026-06-21T00:19:56.136934",
+        "indicators": {
+          "v": 2,
+          "tz": "UTC",
+          "data": [
+            {
+              "gc": {
+                "lower": 82.54128844,
+                "trend": "Red",
+                "upper": 96.72730311,
+                "filter": 89.63429577
+              },
+              "date": "2026-06-18",
+              "ohlc": {
+                "c": 74.88,
+                "h": 76,
+                "l": 70.65,
+                "o": 73.92
+              },
+              "volume": 138443.526
+            },
+            {
+              "gc": {
+                "lower": 81.96556658,
+                "trend": "Red",
+                "upper": 96.10340522,
+                "filter": 89.0344859
+              },
+              "date": "2026-06-19",
+              "ohlc": {
+                "c": 73.65,
+                "h": 76.45,
+                "l": 71.83,
+                "o": 74.88
+              },
+              "volume": 134285.827
+            },
+            {
+              "gc": {
+                "lower": 81.3812256,
+                "trend": "Red",
+                "upper": 95.47525002,
+                "filter": 88.42823781
+              },
+              "date": "2026-06-20",
+              "ohlc": {
+                "c": 75.99,
+                "h": 77.12,
+                "l": 72.81,
+                "o": 73.65
+              },
+              "volume": 94426.758
+            }
+          ],
+          "date": "2026-06-20",
+          "detector": "gc",
+          "cmcRefPriceUsd": 76.06876239
+        },
+        "breakoutChartUrl": null
+      }
+    ]
+  },
+  "response_raw": "{\n  \"orders\": []\n}"
+}

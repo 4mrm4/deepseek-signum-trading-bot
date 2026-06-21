@@ -33,3 +33,6 @@ Thumbs.db
 # IDE
 .idea/
 .vscode/
+
+# Node (if present)
+node_modules/

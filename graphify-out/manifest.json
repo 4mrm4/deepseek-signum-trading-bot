@@ -1,0 +1,27 @@
+{
+  "decisions/run-20260621T014044Z.json": {
+    "mtime": 1782006044.7746832,
+    "ast_hash": "9476ce14068968176b22e1a278bdcc3f",
+    "semantic_hash": "9476ce14068968176b22e1a278bdcc3f"
+  },
+  "deepseek_trading_bot.py": {
+    "mtime": 1782005991.2989123,
+    "ast_hash": "8b6ccadf7d950a458fac4210b0b74644",
+    "semantic_hash": "8b6ccadf7d950a458fac4210b0b74644"
+  },
+  "package.json": {
+    "mtime": 1782001193.978313,
+    "ast_hash": "ac49fc454dc5afe8bf55d2c7b56e2f70",
+    "semantic_hash": "ac49fc454dc5afe8bf55d2c7b56e2f70"
+  },
+  "setup_oauth.py": {
+    "mtime": 1782004438.4123306,
+    "ast_hash": "70334f873744dee5bffacfae0ce61d04",
+    "semantic_hash": "70334f873744dee5bffacfae0ce61d04"
+  },
+  "test_mcp_auth.py": {
+    "mtime": 1782004079.3041396,
+    "ast_hash": "4713566dc69243460191f5b62869d031",
+    "semantic_hash": "4713566dc69243460191f5b62869d031"
+  }
+}
