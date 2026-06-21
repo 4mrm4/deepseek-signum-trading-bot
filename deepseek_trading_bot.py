@@ -501,10 +501,10 @@ class SignumMCPClient:
             CONFIG["MCP_TOOL_HOLDINGS"],
             {"botId": CONFIG["BOT_ID"]},
         )
-        # Normalise: the MCP may return {holdings: [...]} or a raw list
+        # Normalise: Signum returns {balance: [...], positions: [...]}
         if isinstance(data, list):
             return {"holdings": data}
-        return data
+        return _normalise_holdings(data)
 
     async def fetch_trend_radar(self) -> list[dict[str, Any]]:
         """
@@ -657,7 +657,7 @@ class DeepSeekClient:
         Uses response_format json_object to enforce structured output.
         """
         user_message = json.dumps({
-            "holdings": holdings,
+            "holdings": {k: v for k, v in holdings.items() if k != "_raw"},
             "trend_radar": trend_radar[: CONFIG["MAX_TREND_RADAR_ROWS"]],
         }, indent=2, default=str)
 
@@ -784,6 +784,41 @@ def _save_decision(prompt: str, response: str) -> None:
 # 8. Data helpers
 # ═══════════════════════════════════════════════════════════════════════════
 
+FIAT_USD_RATES: dict[str, float] = {
+    "USD": 1.0, "USDC": 1.0, "USDT": 1.0, "DAI": 1.0, "BUSD": 1.0,
+    "TUSD": 1.0, "USDP": 1.0, "FDUSD": 1.0, "PYUSD": 1.0,
+    "EUR": 1.08, "GBP": 1.27, "CHF": 1.10, "JPY": 0.0067,
+    "AUD": 0.64, "CAD": 0.73, "NZD": 0.59,
+}
+
+
+def _normalise_holdings(raw: dict) -> dict:
+    """Convert Signum's {balance: [...], positions: [...]} into unified 'holdings' list.
+
+    Balance items get an estimated valueUsd from FIAT_USD_RATES or stablecoin pegs.
+    """
+    items: list[dict[str, Any]] = []
+
+    for entry in raw.get("balance", raw.get("balances", [])):
+        coin = entry.get("coin", entry.get("asset", ""))
+        if not coin:
+            continue
+        amount = float(entry.get("balance", entry.get("visibleBalance", 0)) or 0)
+        usd_rate = FIAT_USD_RATES.get(coin.upper(), 1.0)
+        items.append({
+            "asset": coin,
+            "quantity": str(amount),
+            "valueUsd": round(amount * usd_rate, 6),
+            "balance": entry.get("balance"),
+            "_source": "balance",
+        })
+
+    for pos in raw.get("positions", []):
+        items.append({**pos, "_source": "position"})
+
+    return {"holdings": items, "_raw": raw}
+
+
 def _is_stablecoin(asset: str, holdings_data: dict | None = None) -> bool:
     """
     Check whether an asset ticker is a stablecoin.
@@ -816,7 +851,7 @@ def _iter_holdings(holdings_data: dict) -> list[dict[str, Any]]:
     """Extract holdings list from various response shapes."""
     if isinstance(holdings_data, list):
         return holdings_data
-    return holdings_data.get("holdings", holdings_data.get("positions", holdings_data.get("data", [])))
+    return holdings_data.get("holdings", holdings_data.get("positions", holdings_data.get("balance", holdings_data.get("data", []))))
 
 
 def _get_quote_balance(holdings_data: dict) -> dict[str, float]:
