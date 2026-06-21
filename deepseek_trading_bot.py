@@ -143,6 +143,9 @@ logging.basicConfig(
     datefmt="%Y-%m-%dT%H:%M:%S",
     handlers=[_FlushingHandler(sys.stderr)],
 )
+# Suppress httpx's own URL logging — it leaks tokens in URLs
+logging.getLogger("httpx").setLevel(logging.WARNING)
+logging.getLogger("httpcore").setLevel(logging.WARNING)
 log = logging.getLogger("deepseek_bot")
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -1119,6 +1122,10 @@ async def send_telegram(
             resp.raise_for_status()
             log.info("Telegram notification sent.")
             return True
+    except httpx.HTTPStatusError as exc:
+        # Do NOT log the full URL — it contains the bot token
+        log.error("Telegram API returned %d — check bot token and chat_id.", exc.response.status_code)
+        return False
     except Exception as exc:
         log.error("Failed to send Telegram notification: %s", exc)
         return False
