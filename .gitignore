@@ -1,0 +1,35 @@
+# Environment secrets
+.env
+.env.local
+.env.production
+.env.development
+
+# API keys, tokens, credentials (never commit)
+*_key*
+*_token*
+*_secret*
+*_password*
+*_credential*
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+credentials.json
+service-account.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
