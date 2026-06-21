@@ -74,15 +74,13 @@ CONFIG: dict[str, Any] = {
     "DEEPSEEK_BASE_URL": "https://api.deepseek.com/v1",
     "DEEPSEEK_MODEL": "deepseek-v4-pro",
     "TELEGRAM_API_BASE": "https://api.telegram.org",
-    # Signum REST webhook for orders (configurable)
-    "SIGNUM_ORDER_ENDPOINT": "https://api.signum.money/v1/bots/{bot_id}/orders",
-
-    # --- MCP tool names (adjust if Signum uses different names) ---
-    "MCP_TOOL_HOLDINGS": "get-holdings",
-    "MCP_TOOL_TREND_RADAR": "get-crypto-trend-radar",
+    # --- MCP tool names (matched to Signum's actual tool list) ---
+    "MCP_TOOL_HOLDINGS": "get-bot-assets",
+    "MCP_TOOL_TREND_RADAR": "get-trendradar-daily",
     "MCP_TOOL_GET_PAIR_PRICE": "get-pair-price",
     "MCP_TOOL_EDIT_BOT": "edit-bot",
-    "MCP_TOOL_LIST_PAIRS": "list-trading-pairs",
+    "MCP_TOOL_LIST_PAIRS": "list-bot-pairs",
+    "MCP_TOOL_SEND_ORDER": "send-trading-signal",
 
     # --- Stablecoins (fallback list; prefer asset-type field if present) ---
     "STABLECOINS": [
@@ -873,11 +871,11 @@ def validate_min_order(
 # ═══════════════════════════════════════════════════════════════════════════
 
 class OrderExecutor:
-    """Posts orders to the Signum REST webhook endpoint one-at-a-time, sequentially."""
+    """Sends orders via Signum's MCP 'send-trading-signal' tool, one-at-a-time, sequentially."""
 
-    def __init__(self, bot_id: int, endpoint_template: str, dry_run: bool = True):
+    def __init__(self, bot_id: int, mcp: SignumMCPClient, dry_run: bool = True):
         self.bot_id = bot_id
-        self.endpoint = endpoint_template.format(bot_id=bot_id)
+        self.mcp = mcp
         self.dry_run = dry_run
         self._quote_balances: dict[str, float] = {}  # tracked locally, debited per order
 
@@ -923,9 +921,10 @@ class OrderExecutor:
 
     async def send_order(self, order: Order, timestamp: str) -> bool:
         """
-        POST a single order to Signum. Returns True on success.
+        Send a single order via Signum's MCP send-trading-signal tool.
+        Returns True on success.
 
-        In dry-run mode, logs the order without POSTing.
+        In dry-run mode, logs the order without sending.
         """
         payload = {
             "bot_id": self.bot_id,
@@ -939,28 +938,25 @@ class OrderExecutor:
 
         if self.dry_run:
             log.info(
-                "[DRY-RUN] Would POST: %s %s order_size=%.2f%% pos_size=%.2f | %s",
+                "[DRY-RUN] Would send: %s %s order_size=%.2f%% pos_size=%.2f | %s",
                 order.action.upper(), order.ticker, order.order_size,
                 order.position_size, order.reasoning,
             )
             return True
 
         log.info(
-            "POST order: %s %s order_size=%.2f%% pos_size=%.2f",
+            "Sending order: %s %s order_size=%.2f%% pos_size=%.2f",
             order.action.upper(), order.ticker, order.order_size, order.position_size,
         )
         try:
-            async with httpx.AsyncClient(timeout=CONFIG["NETWORK_TIMEOUT"]) as client:
-                resp = await _retry_with_backoff(
-                    f"send_order_{order.ticker}",
-                    client.post,
-                    self.endpoint,
-                    json=payload,
-                    headers={"Content-Type": "application/json"},
-                )
-                resp.raise_for_status()
-                log.info("Order accepted: %s %s — HTTP %d", order.action, order.ticker, resp.status_code)
-                return True
+            await _retry_with_backoff(
+                f"send_order_{order.ticker}",
+                self.mcp._call_tool,
+                CONFIG["MCP_TOOL_SEND_ORDER"],
+                payload,
+            )
+            log.info("Order accepted: %s %s", order.action, order.ticker)
+            return True
         except Exception as exc:
             log.error("Order FAILED [%s %s]: %s", order.action, order.ticker, exc)
             return False
@@ -1147,7 +1143,7 @@ async def run(dry_run: bool = True) -> None:
             return
 
         # --- Step 5: Set up order executor ---
-        executor = OrderExecutor(CONFIG["BOT_ID"], CONFIG["SIGNUM_ORDER_ENDPOINT"], dry_run=dry_run)
+        executor = OrderExecutor(CONFIG["BOT_ID"], mcp, dry_run=dry_run)
         initial_balances = _get_quote_balance(holdings_data)
         executor.update_balances(initial_balances)
 
