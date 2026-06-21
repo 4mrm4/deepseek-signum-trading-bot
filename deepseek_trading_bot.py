@@ -70,6 +70,7 @@ CONFIG: dict[str, Any] = {
 
     # --- Endpoints ---
     "MCP_SERVER_URL": "https://api.signum.money/mcp",
+    "OAUTH_TOKEN_URL": "https://api.signum.money/oauth/token",
     "DEEPSEEK_BASE_URL": "https://api.deepseek.com/v1",
     "DEEPSEEK_MODEL": "deepseek-v4-pro",
     "TELEGRAM_API_BASE": "https://api.telegram.org",
@@ -104,6 +105,27 @@ def _require_secret(name: str) -> str:
     if not value:
         sys.exit(f"FATAL: environment variable {name} is not set. Aborting.")
     return value
+
+
+def _update_env_refresh_token(new_token: str) -> None:
+    """Persist a rotated refresh token back to the .env file."""
+    env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+    if not os.path.exists(env_path):
+        log.warning("Cannot update refresh token: .env file not found at %s", env_path)
+        return
+    with open(env_path, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    found = False
+    with open(env_path, "w", encoding="utf-8") as f:
+        for line in lines:
+            if line.startswith("SIGNUM_REFRESH_TOKEN="):
+                f.write(f"SIGNUM_REFRESH_TOKEN={new_token}\n")
+                found = True
+            else:
+                f.write(line)
+        if not found:
+            f.write(f"\nSIGNUM_REFRESH_TOKEN={new_token}\n")
+    log.info("Refresh token updated in .env")
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -273,34 +295,70 @@ class SignumMCPClient:
     """
     Async client for Signum's MCP server.
 
-    Auth: placeholder Bearer-token approach (SIGNUM_MCP_TOKEN env var).
-    Isolated in this single class so the auth method can be swapped easily.
+    Auth: OAuth 2.0 refresh_token grant.
+    On connect(), exchanges the stored refresh token for a fresh access token.
+    If the access token expires mid-session, auto-refreshes and retries once.
     """
 
-    def __init__(self, server_url: str, token: str):
+    def __init__(self, server_url: str, client_id: str, refresh_token: str):
         self.server_url = server_url
-        self.token = token
+        self.client_id = client_id
+        self.refresh_token = refresh_token
+        self._access_token: Optional[str] = None
         self._session: Optional[Any] = None     # MCP ClientSession
         self._read: Optional[Any] = None
         self._write: Optional[Any] = None
         self._available_tools: dict[str, Any] = {}
         self._mcp_bot_edit_supported: Optional[bool] = None
 
+    async def _get_access_token(self) -> str:
+        """Exchange the refresh token for a fresh access token via OAuth."""
+        log.info("Refreshing OAuth access token via %s…", CONFIG["OAUTH_TOKEN_URL"])
+        async with httpx.AsyncClient(timeout=CONFIG["NETWORK_TIMEOUT"]) as client:
+            resp = await _retry_with_backoff(
+                "oauth_refresh",
+                client.post,
+                CONFIG["OAUTH_TOKEN_URL"],
+                data={
+                    "grant_type": "refresh_token",
+                    "refresh_token": self.refresh_token,
+                    "client_id": self.client_id,
+                },
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            access_token = data.get("access_token")
+            if not access_token:
+                raise RuntimeError(f"OAuth token response missing access_token: {list(data.keys())}")
+            # If a new refresh token is issued, store it (rotation)
+            new_refresh = data.get("refresh_token")
+            if new_refresh and new_refresh != self.refresh_token:
+                log.info("Refresh token rotated — updating stored token.")
+                self.refresh_token = new_refresh
+                _update_env_refresh_token(new_refresh)
+            expires_in = data.get("expires_in")
+            log.info(
+                "Access token obtained%s.",
+                f" (expires in {expires_in}s)" if expires_in else "",
+            )
+            return access_token
+
     async def connect(self) -> None:
         """
         Establish an MCP session.
 
-        Uses the streamable HTTP transport with Bearer auth.
-        If Signum uses a different transport or auth scheme, swap this method.
+        Obtains an OAuth access token, then connects via streamable HTTP
+        with Bearer auth.
         """
+        self._access_token = await self._get_access_token()
+
         try:
             # Lazy-import so the rest of the script can at least start without mcp installed
             from mcp import ClientSession                       # type: ignore[import-untyped]
             from mcp.client.streamable_http import streamablehttp_client  # type: ignore[import-untyped]
 
-            headers = {"Authorization": f"Bearer {self.token}"}
-            # The streamablehttp_client context-manager API varies across mcp SDK versions.
-            # If this fails, try adjusting the transport (sse_client, stdio_client, etc.)
+            headers = {"Authorization": f"Bearer {self._access_token}"}
             self._stream_ctx = streamablehttp_client(
                 self.server_url,
                 headers=headers,
@@ -328,9 +386,8 @@ class SignumMCPClient:
             raise
         except Exception as exc:
             log.error(
-                "Failed to connect to Signum MCP at %s with Bearer token. "
-                "Auth method may need adjustment — check SIGNUM_MCP_TOKEN and "
-                "the MCP transport. Underlying error: %s",
+                "Failed to connect to Signum MCP at %s. "
+                "Underlying error: %s",
                 self.server_url, exc,
             )
             raise
@@ -990,14 +1047,15 @@ async def run(dry_run: bool = True) -> None:
 
     # --- Validate secrets ---
     deepseek_key = _require_secret("DEEPSEEK_API_KEY")
-    mcp_token = _require_secret("SIGNUM_MCP_TOKEN")
+    mcp_client_id = _require_secret("SIGNUM_CLIENT_ID")
+    mcp_refresh_token = _require_secret("SIGNUM_REFRESH_TOKEN")
 
     telegram_token = os.getenv("TELEGRAM_BOT_TOKEN", "")
     telegram_chat_id = os.getenv("TELEGRAM_CHAT_ID", "")
 
     # --- Connect MCP ---
     log.info("=== DeepSeek Trading Bot (TR-GC-Crypto-9) starting === mode=%s", "dry-run" if dry_run else "LIVE")
-    mcp = SignumMCPClient(CONFIG["MCP_SERVER_URL"], mcp_token)
+    mcp = SignumMCPClient(CONFIG["MCP_SERVER_URL"], mcp_client_id, mcp_refresh_token)
     try:
         await mcp.connect()
     except Exception as exc:
